@@ -6,14 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.finalproject.HeisigActivity
-import com.example.finalproject.R
 import com.example.finalproject.data_kanji.Data
-import com.example.finalproject.databinding.ActivityMainBinding
 import com.example.finalproject.databinding.FragmentHomeBinding
-import com.example.finalproject.recyclerview.CategoryRecyclerAdapter
-import com.example.finalproject.ui.KanjiViewModel
-import com.example.finalproject.ui.KanjiViewModelFactory
+import com.example.finalproject.utils.CategoryRecyclerAdapter
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -28,6 +23,10 @@ class HomeFragment : Fragment() {
         binding.homefragrecyclerview.layoutManager = LinearLayoutManager(context)
         binding.homefragrecyclerview.adapter = CategoryRecyclerAdapter(Data.category)
         return binding.root
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

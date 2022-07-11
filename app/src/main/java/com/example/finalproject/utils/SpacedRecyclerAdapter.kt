@@ -1,9 +1,11 @@
-package com.example.finalproject.Recyclerview
+package com.example.finalproject.utils
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.finalproject.QuizActivity
 import com.example.finalproject.R
 import com.example.finalproject.roomdatabase.KanjiEntity
 import kotlinx.android.synthetic.main.item_spacedkanji.view.*
@@ -31,6 +33,12 @@ class SpacedRecyclerAdapter:RecyclerView.Adapter<SpacedRecyclerAdapter.ViewHolde
         var kanjitext = itemview.spaceditem
         fun bind(kanji: KanjiEntity) {
             kanjitext.text = kanji.kanji
+
+            itemView.setOnClickListener {
+                val intent = Intent(itemView.context,QuizActivity::class.java)
+                intent.putExtra("kanjiquiz",kanji)
+                itemView.context.startActivity(intent)
+            }
         }
 
     }

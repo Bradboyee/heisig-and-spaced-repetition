@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="HeisigBackgroundcolor"></color>
+    <color name="kanjiboxcolor">#84FFFF</color>
 </resources>

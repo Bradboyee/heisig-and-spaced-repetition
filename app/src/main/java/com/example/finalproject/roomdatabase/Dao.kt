@@ -20,4 +20,7 @@ interface Dao {
 
     @Query("SELECT * FROM kanji_table")
     fun getkanji() : LiveData<List<KanjiEntity>>
+
+    @Query("SELECT KanjiMeaning FROM kanji_table")
+    fun getAllMeaning(): List<String>
 }

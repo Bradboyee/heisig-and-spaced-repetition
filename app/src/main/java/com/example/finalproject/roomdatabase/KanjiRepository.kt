@@ -15,4 +15,5 @@ class KanjiRepository(private val dao:Dao) {
         return dao.updatekanji(kanji)
     }
 
+
 }

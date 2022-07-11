@@ -28,4 +28,7 @@ class KanjiViewModel(private val repository: KanjiRepository):ViewModel() {
             repository.delete(kanji)
         }
     }
+
+
+
 }
