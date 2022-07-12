@@ -20,11 +20,16 @@ class SpacedFragment : Fragment() {
     lateinit var spacedRecyclerAdapter : SpacedRecyclerAdapter
     private var _binding : FragmentSpacedBinding? = null
     private val binding get() = _binding!!
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?, ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?, ): View {
         _binding = FragmentSpacedBinding.inflate(inflater,container,false)
-        initUI()
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initUI()
+    }
+
     private fun initUI() {
         val dao = KanjiDatabase.getInstance(requireContext()).dao()
         val repository = KanjiRepository(dao)
@@ -45,5 +50,4 @@ class SpacedFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-    //test update git
 }

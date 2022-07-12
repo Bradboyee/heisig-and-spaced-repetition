@@ -14,16 +14,18 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        binding.homefragrecyclerview.layoutManager = LinearLayoutManager(context)
-        binding.homefragrecyclerview.adapter = CategoryRecyclerAdapter(Data.category)
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.homefragrecyclerview.layoutManager = LinearLayoutManager(context)
+        binding.homefragrecyclerview.adapter = CategoryRecyclerAdapter(Data.category)
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
