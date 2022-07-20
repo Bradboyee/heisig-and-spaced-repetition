@@ -11,7 +11,7 @@ import com.example.finalproject.data_kanji.Kanji
 import kotlinx.android.synthetic.main.item_kanji.view.*
 
 class KanjiRecyclerViewAdapter(private val kanji: List<Kanji>,val value: Int) : RecyclerView.Adapter<KanjiRecyclerViewAdapter.viewholder>() {
-    val filteredkanji = kanji.filter { it.JLPT == value }
+    val filteredkanji = kanji.filter { it.Japanese_Language_Proficiency_Test == value }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int, ): KanjiRecyclerViewAdapter.viewholder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_kanji,parent,false)
         return viewholder(view)
@@ -28,7 +28,7 @@ class KanjiRecyclerViewAdapter(private val kanji: List<Kanji>,val value: Int) : 
     class viewholder(itemview: View):RecyclerView.ViewHolder(itemview) {
         private val kanjitextview = itemview.textview
         fun bind(kanji: Kanji) {
-            kanjitextview.text = kanji.Kanji
+            kanjitextview.text = kanji.kanji
 
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context, HeisigActivity::class.java)

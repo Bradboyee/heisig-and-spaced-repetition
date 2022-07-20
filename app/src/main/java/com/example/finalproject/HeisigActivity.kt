@@ -35,31 +35,28 @@ class HeisigActivity:AppCompatActivity() {
 
         //
         val selectedkanji = intent.getParcelableExtra<Kanji>("selectedKanji")
-        binding.component1kanji.text = selectedkanji?.Component1
-        binding.component1meaning.text = selectedkanji?.Component1Meaning
-        binding.component1readingkun.text = selectedkanji?.Component1ReadingKun
-        binding.component1readingon.text = selectedkanji?.Component1ReadingOn
+        binding.component1kanji.text = selectedkanji?.component1
+        binding.component1meaning.text = selectedkanji?.component1Meaning
+        binding.component1readingkun.text = selectedkanji?.component1ReadingKun
+        binding.component1readingon.text = selectedkanji?.component1ReadingOn
         //
-        binding.component2kanji.text = selectedkanji?.Component2
-        binding.component2meaning.text = selectedkanji?.Component2Meaning
-        binding.component2readingkun.text = selectedkanji?.Component2ReadingKun
-        binding.component2readingon.text = selectedkanji?.Component2ReadingOn
+        binding.component2kanji.text = selectedkanji?.component2
+        binding.component2meaning.text = selectedkanji?.component2Meaning
+        binding.component2readingkun.text = selectedkanji?.component2ReadingKun
+        binding.component2readingon.text = selectedkanji?.component2ReadingOn
         //
-        binding.kanji.text = selectedkanji?.Kanji
-        binding.kanjimeaning.text = selectedkanji?.KanjiMeaning
-        binding.kanjireadingkun.text = selectedkanji?.KanjiReadingKun
-        binding.kanjireadingon.text = selectedkanji?.KanjiReadingOn
+        binding.kanji.text = selectedkanji?.kanji
+        binding.kanjimeaning.text = selectedkanji?.kanjiMeaning
+        binding.kanjireadingkun.text = selectedkanji?.kanjiReadingKun
+        binding.kanjireadingon.text = selectedkanji?.kanjiReadingOn
         //
-        binding.story.text = selectedkanji?.Story
+        binding.story.text = selectedkanji?.story
 
         binding.addbutton.setOnClickListener {
-            val date = Date.now()
-            val addkanjiobject = KanjiEntity(0,selectedkanji!!.Kanji,selectedkanji!!.JLPT,selectedkanji.KanjiReadingKun,selectedkanji.KanjiReadingOn,selectedkanji.KanjiMeaning,selectedkanji.Component1,selectedkanji.Component1ReadingKun,selectedkanji.Component1ReadingOn,selectedkanji.Component1Meaning,selectedkanji.Component2,selectedkanji.Component2ReadingKun,selectedkanji.Component2ReadingOn,selectedkanji.Component2Meaning,selectedkanji?.Story)
-            Log.i("item",date.toString())
-            if (addkanjiobject != null) {
-                kanjiViewModel.insert(addkanjiobject)
-            }
-            Toast.makeText(this,"added",Toast.LENGTH_SHORT).show()
+            val addkanjiobject = KanjiEntity(0,selectedkanji!!.kanji,selectedkanji!!.Japanese_Language_Proficiency_Test,selectedkanji.kanjiReadingKun,selectedkanji.kanjiReadingOn,selectedkanji.kanjiMeaning,selectedkanji.component1,selectedkanji.component1ReadingKun,selectedkanji.component1ReadingOn,selectedkanji.component1Meaning,selectedkanji.component2,selectedkanji.component2ReadingKun,selectedkanji.component2ReadingOn,selectedkanji.component2Meaning,selectedkanji?.story,0)
+            kanjiViewModel.insert(addkanjiobject)
+            Toast.makeText(this,"Added",Toast.LENGTH_SHORT).show()
+            finish()
         }
     }
 

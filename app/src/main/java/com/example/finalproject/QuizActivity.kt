@@ -1,51 +1,81 @@
 package com.example.finalproject
 
+import android.graphics.Color.*
 import android.os.Bundle
-import android.util.Log
 import android.view.View
+import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.map
+import com.example.finalproject.data_kanji.Data
 import com.example.finalproject.databinding.ActivityQuizBinding
-import com.example.finalproject.roomdatabase.KanjiDatabase
 import com.example.finalproject.roomdatabase.KanjiEntity
-import com.example.finalproject.roomdatabase.KanjiRepository
-import com.example.finalproject.ui.KanjiViewModel
-import com.example.finalproject.ui.KanjiViewModelFactory
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import kotlinx.android.synthetic.main.activity_quiz.*
 
-class QuizActivity() : AppCompatActivity() {
-    lateinit var kanjiviewmodel : KanjiViewModel
+class QuizActivity() : AppCompatActivity(),View.OnClickListener {
     lateinit var binding : ActivityQuizBinding
+    var submitAnswer:String?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityQuizBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        initData()
+        binding.answer1.setOnClickListener(this)
+        binding.answer2.setOnClickListener(this)
+        binding.answer3.setOnClickListener(this)
+        binding.answer4.setOnClickListener(this)
+        binding.submitAnswer.setOnClickListener(this)
+
+    }
+
+    private fun initData() {
         val kanji = intent.getParcelableExtra<KanjiEntity>("kanjiquiz")
-        val questionkanji = kanji?.kanji
-        val answer = kanji?.KanjiMeaning
-        initUI()
-        var choices = listOf(answer,"bbb","ccc","xxx")
-        choices = choices.shuffled()
-        binding.kanjiquestiontextview.setText(questionkanji)
+        val question = kanji?.kanji
+        val answer = kanji?.kanjiMeaning
+        val choices = mutableListOf(answer)
+        val choiceslist = Data.kanji.map { it.kanjiMeaning }
+        for( i in 0..3){
+            choices += choiceslist[i]
+        }
+        bindingView(question,choiceslist)
+    }
+
+    private fun bindingView(question: String?, choiceslist: List<String>) {
+        val shuffledlist = choiceslist.shuffled()
+        binding.Question.text = question
         //
-        binding.answer1.setText(choices[0])
-        binding.answer2.setText(choices[1])
-        binding.answer3.setText(choices[2])
-        binding.answer4.setText(choices[3])
+        binding.answer1.text = shuffledlist[0]
+        binding.answer2.text = shuffledlist[1]
+        binding.answer3.text = shuffledlist[2]
+        binding.answer4.text = shuffledlist[3]
     }
 
-    private fun initUI() {
-        val dao = KanjiDatabase.getInstance(this).dao()
-        val repository = KanjiRepository(dao)
-        val factory = KanjiViewModelFactory(repository)
-        kanjiviewmodel = ViewModelProvider(this,factory)[KanjiViewModel::class.java]
-        getData()
+    override fun onClick(view: View?) {
+        val clicked = view as Button
+        val idView = view.id
+        val clickColor = RED
+        val defaultButtonColor = BLUE
+        answer1.setBackgroundColor(defaultButtonColor)
+        answer2.setBackgroundColor(defaultButtonColor)
+        answer3.setBackgroundColor(defaultButtonColor)
+        answer4.setBackgroundColor(defaultButtonColor)
+        when(idView){
+            R.id.submitAnswer -> {
+                if(submitAnswer.equals(null)){
+                    Toast.makeText(this,"Please Select Your Answer",Toast.LENGTH_SHORT).show()
+                }
+                else {
+                    checkAnswer()
+                }
+            }
+            else -> {
+                clicked.setBackgroundColor(clickColor)
+                submitAnswer = clicked.text.toString()
+            }
+        }
     }
 
-    private fun getData() {
-
+    private fun checkAnswer() {
     }
+
+
 }

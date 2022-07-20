@@ -5,19 +5,18 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Kanji(
-    var Kanji: String,
-    var JLPT:Int,
-    var KanjiReadingKun : String,
-    var KanjiReadingOn : String,
-    var KanjiMeaning : String,
-    var Component1 : String,
-    var Component1ReadingKun : String,
-    var Component1ReadingOn : String,
-    var Component1Meaning : String,
-    var Component2 : String,
-    var Component2ReadingKun : String,
-    var Component2ReadingOn : String,
-    var Component2Meaning : String,
-    var Story : String,
-
+    val kanji:String,
+    val Japanese_Language_Proficiency_Test:Int,
+    var kanjiReadingKun: String,
+    var kanjiReadingOn: String,
+    var kanjiMeaning: String,
+    var component1: String,
+    var component1ReadingKun: String,
+    var component1ReadingOn: String,
+    var component1Meaning: String,
+    var component2: String,
+    var component2ReadingKun: String,
+    var component2ReadingOn: String,
+    var component2Meaning: String,
+    var story: String
     ):Parcelable

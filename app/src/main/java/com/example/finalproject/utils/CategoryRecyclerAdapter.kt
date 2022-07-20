@@ -31,7 +31,7 @@ class CategoryRecyclerAdapter(category: List<Category>) : RecyclerView.Adapter<C
 
 
         fun bind(cate : Category) {
-            catetextview.text = cate.Categorytitle
+            catetextview.text = cate.categorytitle
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context,KanjiListActivity::class.java)
                 val value = cate.value
