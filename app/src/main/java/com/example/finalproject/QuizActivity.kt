@@ -11,7 +11,7 @@ import com.example.finalproject.databinding.ActivityQuizBinding
 import com.example.finalproject.roomdatabase.KanjiEntity
 import kotlinx.android.synthetic.main.activity_quiz.*
 
-class QuizActivity() : AppCompatActivity(),View.OnClickListener {
+class QuizActivity : AppCompatActivity(),View.OnClickListener {
     lateinit var binding : ActivityQuizBinding
     var submitAnswer:String?=null
     override fun onCreate(savedInstanceState: Bundle?) {

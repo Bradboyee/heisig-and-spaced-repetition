@@ -11,23 +11,23 @@ import com.example.finalproject.data_kanji.Category
 import kotlinx.android.synthetic.main.item_category.view.*
 
 
-class CategoryRecyclerAdapter(category: List<Category>) : RecyclerView.Adapter<CategoryRecyclerAdapter.viewholder>() {
+class CategoryRecyclerAdapter(category: List<Category>) : RecyclerView.Adapter<CategoryRecyclerAdapter.ViewHolder>() {
     val cate = category
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): viewholder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_category,parent,false)
-        return viewholder(view)
+        return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: viewholder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val current = cate[position]
         holder.bind(current)
     }
 
     override fun getItemCount(): Int = cate.size
 
-    class viewholder(itemview: View) : RecyclerView.ViewHolder(itemview) {
-        val catetextview = itemview.categorytextview
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val catetextview = itemView.categorytextview
 
 
         fun bind(cate : Category) {

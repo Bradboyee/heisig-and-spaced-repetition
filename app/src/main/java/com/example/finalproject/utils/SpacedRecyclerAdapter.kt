@@ -4,6 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.finalproject.QuizActivity
 import com.example.finalproject.R
@@ -25,12 +26,12 @@ class SpacedRecyclerAdapter:RecyclerView.Adapter<SpacedRecyclerAdapter.ViewHolde
 
     override fun getItemCount(): Int = kanjilist.size
 
-    fun submitlist(list: List<KanjiEntity>){
+    fun submitList(list: List<KanjiEntity>){
         this.kanjilist = list
     }
 
     class ViewHolder(itemview: View) :RecyclerView.ViewHolder(itemview) {
-        var kanjitext = itemview.spaceditem
+        var kanjitext: TextView = itemview.spaceditem
         fun bind(kanji: KanjiEntity) {
             kanjitext.text = kanji.kanji
 

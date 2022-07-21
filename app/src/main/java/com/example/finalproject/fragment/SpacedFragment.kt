@@ -42,7 +42,7 @@ class SpacedFragment : Fragment() {
         spacedRecyclerAdapter = SpacedRecyclerAdapter()
         binding.spacedrecyclerview.layoutManager = GridLayoutManager(context,5)
         kanjiViewModel.kanjiList.observe(viewLifecycleOwner, {
-            spacedRecyclerAdapter.submitlist(it)
+            spacedRecyclerAdapter.submitList(it)
             binding.spacedrecyclerview.adapter = spacedRecyclerAdapter
         })
     }
