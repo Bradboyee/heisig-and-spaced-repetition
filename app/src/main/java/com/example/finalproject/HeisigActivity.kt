@@ -1,7 +1,6 @@
 package com.example.finalproject
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.finalproject.data_kanji.Kanji
@@ -11,10 +10,11 @@ import com.example.finalproject.roomdatabase.KanjiEntity
 import com.example.finalproject.roomdatabase.KanjiRepository
 import com.example.finalproject.ui.KanjiViewModel
 import com.example.finalproject.ui.KanjiViewModelFactory
+import java.util.*
 
 class HeisigActivity:AppCompatActivity() {
-    lateinit var binding : ActivityHeisigBinding
-    lateinit var kanjiViewModel: KanjiViewModel
+    private lateinit var binding : ActivityHeisigBinding
+    private lateinit var kanjiViewModel: KanjiViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +25,7 @@ class HeisigActivity:AppCompatActivity() {
 
 
     private fun initUI() {
-        val dao = KanjiDatabase.getInstance(this).dao() // dao() is in Kanjidatabase that implement from Dao
+        val dao = KanjiDatabase.getInstance(this).dao() // dao() is in KanjiDatabase that implement from Dao
         val repository = KanjiRepository(dao)
         val factory = KanjiViewModelFactory(repository)
         kanjiViewModel = ViewModelProvider(this,factory)[KanjiViewModel::class.java]
@@ -49,10 +49,32 @@ class HeisigActivity:AppCompatActivity() {
         //
         binding.story.text = selectedKanji?.story
 
+        kanjiViewModel.kanjiList.observe(this){
+                data ->
+            val addDate = data.find { it.kanji == selectedKanji!!.kanji }
+            if (addDate != null) {
+                binding.tvAddDate.text = addDate.spacedDate.toString()
+            }
+        }
+
         binding.addbutton.setOnClickListener {
-            val addkanjiobject = KanjiEntity(0,selectedKanji!!.kanji,selectedKanji.Japanese_Language_Proficiency_Test,selectedKanji.kanjiReadingKun,selectedKanji.kanjiReadingOn,selectedKanji.kanjiMeaning,selectedKanji.component1,selectedKanji.component1ReadingKun,selectedKanji.component1ReadingOn,selectedKanji.component1Meaning,selectedKanji.component2,selectedKanji.component2ReadingKun,selectedKanji.component2ReadingOn,selectedKanji.component2Meaning,selectedKanji.story,0)
-            kanjiViewModel.insert(addkanjiobject)
-            Toast.makeText(this,"Added",Toast.LENGTH_SHORT).show()
+            val addKanjiObject = KanjiEntity(0,selectedKanji!!.kanji,
+                selectedKanji.Japanese_Language_Proficiency_Test,
+                selectedKanji.kanjiReadingKun,
+                selectedKanji.kanjiReadingOn,
+                selectedKanji.kanjiMeaning,
+                selectedKanji.component1,
+                selectedKanji.component1ReadingKun,
+                selectedKanji.component1ReadingOn,
+                selectedKanji.component1Meaning,
+                selectedKanji.component2,
+                selectedKanji.component2ReadingKun,
+                selectedKanji.component2ReadingOn,
+                selectedKanji.component2Meaning,
+                selectedKanji.story,
+                0,
+                Date(),Date())
+            kanjiViewModel.insert(addKanjiObject)
             finish()
         }
     }

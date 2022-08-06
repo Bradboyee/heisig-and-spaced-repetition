@@ -22,8 +22,8 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.homefragrecyclerview.layoutManager = LinearLayoutManager(context)
-        binding.homefragrecyclerview.adapter = CategoryRecyclerAdapter(Data.category)
+        binding.homeFragRecyclerview.layoutManager = LinearLayoutManager(context)
+        binding.homeFragRecyclerview.adapter = CategoryRecyclerAdapter(Data.category)
     }
 
     override fun onDestroyView() {

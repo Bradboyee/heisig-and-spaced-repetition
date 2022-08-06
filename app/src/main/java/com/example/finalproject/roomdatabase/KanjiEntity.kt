@@ -4,6 +4,7 @@ import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
+import java.util.*
 
 @Parcelize
 @Entity(tableName = "kanji_table")
@@ -23,5 +24,7 @@ data class KanjiEntity(
     var component2ReadingOn: String,
     var component2Meaning: String,
     var story: String,
-    var spacedstatus:Int,
+    var spacedStatus: Int,
+    var addDate: Date,
+    var spacedDate:Date
 ):Parcelable

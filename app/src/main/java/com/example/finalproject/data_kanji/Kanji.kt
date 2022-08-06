@@ -18,5 +18,6 @@ data class Kanji(
     var component2ReadingKun: String,
     var component2ReadingOn: String,
     var component2Meaning: String,
-    var story: String
+    var story: String,
+    var spacedstatus:Int,
     ):Parcelable

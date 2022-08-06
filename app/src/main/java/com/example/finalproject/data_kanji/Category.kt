@@ -1,6 +1,6 @@
 package com.example.finalproject.data_kanji
 
 data class Category(
-    var categorytitle:String,
+    var categoryTitle:String,
     var value: Int
 )

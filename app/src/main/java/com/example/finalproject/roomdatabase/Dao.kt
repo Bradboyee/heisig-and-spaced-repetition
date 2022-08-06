@@ -1,26 +1,35 @@
 package com.example.finalproject.roomdatabase
 
 import androidx.lifecycle.LiveData
+import androidx.room.*
 import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import java.util.*
 
 @Dao
 interface Dao {
-    @Insert
-    suspend fun insertkanji(kanji : KanjiEntity)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertKanji(kanji : KanjiEntity)
 
     @Update
-    suspend fun updatekanji(kanji : KanjiEntity)
+    suspend fun updateKanji(kanji : KanjiEntity)
 
     @Delete
-    suspend fun deletekanji(kanji : KanjiEntity)
+    suspend fun deleteKanji(kanji : KanjiEntity)
 
     @Query("SELECT * FROM kanji_table")
-    fun getkanji() : LiveData<List<KanjiEntity>>
+    fun getKanji() : LiveData<List<KanjiEntity>>
 
-    @Query("SELECT KanjiMeaning FROM kanji_table")
-    fun getAllMeaning(): List<String>
+    //
+
+    @Query("SELECT * FROM kanji_table WHERE kanji = :kanji")
+    fun getItemById(kanji: String): KanjiEntity
+
+    @Query("SELECT count(*) FROM kanji_table WHERE kanji = :kanji")
+    fun isExist(kanji: String): Int
+
+    //Date
+    @Query("SELECT * FROM kanji_table WHERE spacedDate <=:targetDate")
+    fun getSpaced(targetDate: Date): LiveData<List<KanjiEntity>>
+
+
 }
