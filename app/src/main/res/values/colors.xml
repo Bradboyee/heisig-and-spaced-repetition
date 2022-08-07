@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="kanjiboxcolor">#84FFFF</color>
+
     <color name="funny_dark_pink">#d94e6d</color>
     <color name="soft_red">#ef4c43</color>
     <color name="seasonal_orange">#ffc73c</color>
@@ -21,4 +22,8 @@
     <color name="space_gray">#949494</color>
     <color name="little_light_gray">#f3f3f3</color>
     <color name="angel_white">#ffffff</color>
+    //BottomNavigationBarColor
+    <color name="backgroundBottomNavigationBarColor">#0336FF</color>
+    <color name="logoBottomNavigationBarColor">#FFFFFF</color>
+    <color name="frontBottomNavigationBarColor">#FFFFFF</color>
 </resources>

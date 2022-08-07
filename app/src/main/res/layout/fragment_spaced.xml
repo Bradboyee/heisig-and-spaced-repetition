@@ -22,6 +22,13 @@
                 tools:layout_editor_absoluteX="-69dp"
                 tools:layout_editor_absoluteY="-99dp">
 
+                <TextView
+                    android:id="@+id/textView0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Start"
+                    android:textSize="@dimen/topicSpaced" />
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/spacedRecyclerview"
                     android:layout_width="match_parent"

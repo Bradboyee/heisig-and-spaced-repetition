@@ -1,5 +1,9 @@
 <resources>
-    <string name="app_name">FinalProject</string>
+    <string name="app_name">Heisig And SpacedRepetition</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sampleKanjiUI">安</string>
+    <string name="navSpaced_menu">Review</string>
+    <string name="navHome_menu">Home</string>
+    <string name="navStat_menu">Stat</string>
 </resources>

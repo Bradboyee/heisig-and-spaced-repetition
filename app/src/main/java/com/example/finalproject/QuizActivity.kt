@@ -14,10 +14,9 @@ import com.example.finalproject.roomdatabase.KanjiDatabase
 import com.example.finalproject.roomdatabase.KanjiRepository
 import com.example.finalproject.ui.KanjiViewModel
 import com.example.finalproject.ui.KanjiViewModelFactory
-import kotlinx.android.synthetic.main.activity_quiz.*
-
 import android.content.Intent
 import androidx.core.os.bundleOf
+import kotlinx.android.synthetic.main.activity_quiz.*
 import java.text.SimpleDateFormat
 import java.util.*
 
