@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id("kotlin-parcelize")
     id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -30,9 +31,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
-    }
-    dataBinding {
-        enabled = true
     }
     buildFeatures{
         viewBinding true
@@ -74,4 +72,5 @@ dependencies {
     //nav component
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
 }

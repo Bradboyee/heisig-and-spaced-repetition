@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/nav_spaced"
+        android:id="@+id/spaced"
         android:icon="@drawable/nav_repeat"
         android:title="@string/navSpaced_menu" />
     <item
-        android:id="@+id/nav_home"
+        android:id="@+id/home"
         android:icon="@drawable/nav_home"
         android:title="@string/navHome_menu" />
     <item
-        android:id="@+id/nav_static"
+        android:id="@+id/stat"
         android:icon="@drawable/nav_stat"
         android:title="@string/navStat_menu"/>
 </menu>

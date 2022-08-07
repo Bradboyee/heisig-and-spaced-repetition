@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/spaced"
+    app:startDestination="@id/spacedFragment">
+
+    <fragment
+        android:id="@+id/spacedFragment"
+        android:name="com.example.finalproject.fragment.SpacedFragment"
+        android:label="Spaced Repetition"
+        tools:layout="@layout/fragment_spaced" />
+</navigation>
