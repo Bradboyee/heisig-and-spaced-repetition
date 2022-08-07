@@ -2,21 +2,19 @@ package com.example.finalproject.utils
 
 import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.finalproject.KanjiListActivity
-import com.example.finalproject.R
 import com.example.finalproject.data_kanji.Category
-import kotlinx.android.synthetic.main.item_category.view.*
+import com.example.finalproject.databinding.ItemCategoryBinding
 
 
 class CategoryRecyclerAdapter(category: List<Category>) : RecyclerView.Adapter<CategoryRecyclerAdapter.ViewHolder>() {
     private val categorical = category
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_category,parent,false)
+        val view = ItemCategoryBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return ViewHolder(view)
     }
 
@@ -27,8 +25,8 @@ class CategoryRecyclerAdapter(category: List<Category>) : RecyclerView.Adapter<C
 
     override fun getItemCount(): Int = categorical.size
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val categoryTextView: TextView = itemView.tvCategory
+    class ViewHolder(binding:ItemCategoryBinding) : RecyclerView.ViewHolder(binding.root) {
+        private val categoryTextView: TextView = binding.tvCategory
 
 
         fun bind(cate : Category) {

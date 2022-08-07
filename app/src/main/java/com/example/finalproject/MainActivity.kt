@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity(){
         val badgeValue = 0
 //        binding.textView5.text = badgeValue.toString()
         kanjiViewModel.spacedKanji.observe(this){
-            data ->
 //            binding.textView5.text = data.size.toString()
         }
         val badge = binding.bottomNavigationView.getOrCreateBadge(R.id.nav_spaced)

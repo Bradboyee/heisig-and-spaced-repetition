@@ -1,19 +1,17 @@
 package com.example.finalproject.utils
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.finalproject.R
+import com.example.finalproject.databinding.ItemSpacedkanjiBinding
 import com.example.finalproject.roomdatabase.KanjiEntity
-import kotlinx.android.synthetic.main.item_spacedkanji.view.*
 
 class SpacedRecyclerAdapter :RecyclerView.Adapter<SpacedRecyclerAdapter.ViewHolder>() {
     private var kanjiList = listOf<KanjiEntity>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_spacedkanji,parent,false)
+        val view = ItemSpacedkanjiBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return ViewHolder(view)
     }
 
@@ -28,8 +26,8 @@ class SpacedRecyclerAdapter :RecyclerView.Adapter<SpacedRecyclerAdapter.ViewHold
         this.kanjiList = list
     }
 
-    class ViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView) {
-        private var kanjiText: TextView = itemView.spaceditem
+    class ViewHolder(binding: ItemSpacedkanjiBinding) :RecyclerView.ViewHolder(binding.root) {
+        private var kanjiText: TextView = binding.spaceditem
         fun bind(kanji: KanjiEntity) {
             kanjiText.text = kanji.kanji
 

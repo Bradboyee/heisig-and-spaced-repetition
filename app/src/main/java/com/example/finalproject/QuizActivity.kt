@@ -16,7 +16,6 @@ import com.example.finalproject.ui.KanjiViewModel
 import com.example.finalproject.ui.KanjiViewModelFactory
 import android.content.Intent
 import androidx.core.os.bundleOf
-import kotlinx.android.synthetic.main.activity_quiz.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -92,10 +91,10 @@ class QuizActivity : AppCompatActivity(),View.OnClickListener {
         val clickColor = RED
         val defaultButtonColor = ContextCompat.getColor(this,R.color.purple_500)
 
-        answer1.setBackgroundColor(defaultButtonColor)
-        answer2.setBackgroundColor(defaultButtonColor)
-        answer3.setBackgroundColor(defaultButtonColor)
-        answer4.setBackgroundColor(defaultButtonColor)
+        binding.answer1.setBackgroundColor(defaultButtonColor)
+        binding.answer2.setBackgroundColor(defaultButtonColor)
+        binding.answer3.setBackgroundColor(defaultButtonColor)
+        binding.answer4.setBackgroundColor(defaultButtonColor)
         when(idView){
             R.id.submitAnswer -> {
                 if(submitAnswerText.isNullOrEmpty()){
