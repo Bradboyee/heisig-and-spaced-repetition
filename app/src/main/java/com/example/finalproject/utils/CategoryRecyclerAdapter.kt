@@ -1,6 +1,5 @@
 package com.example.finalproject.utils
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
@@ -8,11 +7,9 @@ import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
-import com.example.finalproject.KanjiListActivity
 import com.example.finalproject.R
 import com.example.finalproject.data_kanji.Category
 import com.example.finalproject.databinding.ItemCategoryBinding
-import com.example.finalproject.fragment.HomeFragmentDirections
 
 
 class CategoryRecyclerAdapter(category: List<Category>) : RecyclerView.Adapter<CategoryRecyclerAdapter.ViewHolder>() {

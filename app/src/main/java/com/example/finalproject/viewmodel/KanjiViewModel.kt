@@ -1,4 +1,4 @@
-package com.example.finalproject.ui
+package com.example.finalproject.viewmodel
 
 import androidx.lifecycle.*
 import com.cesarferreira.tempo.*
@@ -15,6 +15,8 @@ class KanjiViewModel(private val repository: KanjiRepository):ViewModel() {
     val kanjiList = repository.getKanji
     val spacedKanji = repository.getSpaced(Date())
     val currentQuestion = MutableLiveData<Int>(0)
+
+
 
     val submitCorrectAnswer : MutableLiveData<List<String>> = MutableLiveData(listOf())
     val submitWrongAnswer : MutableLiveData<List<String>> = MutableLiveData(listOf())

@@ -12,8 +12,8 @@ import com.example.finalproject.data_kanji.Data
 import com.example.finalproject.databinding.ActivityQuizBinding
 import com.example.finalproject.roomdatabase.KanjiDatabase
 import com.example.finalproject.roomdatabase.KanjiRepository
-import com.example.finalproject.ui.KanjiViewModel
-import com.example.finalproject.ui.KanjiViewModelFactory
+import com.example.finalproject.viewmodel.KanjiViewModel
+import com.example.finalproject.viewmodel.KanjiViewModelFactory
 import android.content.Intent
 import androidx.core.os.bundleOf
 import java.text.SimpleDateFormat

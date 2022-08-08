@@ -1,122 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.SpacedFragment">
+    tools:context=".fragment.spaced.SpacedFragment">
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fillViewport="true">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/textView0"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                tools:layout_editor_absoluteX="-69dp"
-                tools:layout_editor_absoluteY="-99dp">
+                android:layout_height="wrap_content"
+                android:text="Start"
+                android:textSize="@dimen/topicSpaced" />
 
-                <TextView
-                    android:id="@+id/textView0"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Start"
-                    android:textSize="@dimen/topicSpaced" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/spacedRecyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/spacedRecyclerview"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1 Day"
+                android:textSize="@dimen/topicSpaced" />
 
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="1 Day"
-                    android:textSize="@dimen/topicSpaced" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/spacedRecyclerview1day"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/spacedRecyclerview1day"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp" />
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3 Days"
+                android:textSize="@dimen/topicSpaced" />
 
-                <TextView
-                    android:id="@+id/textView1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="3 Days"
-                    android:textSize="@dimen/topicSpaced" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/spacedRecyclerview3days"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/spacedRecyclerview3days"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1 Week"
+                android:textSize="@dimen/topicSpaced" />
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="1 Week"
-                    android:textSize="@dimen/topicSpaced" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/spacedRecyclerview1week"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/spacedRecyclerview1week"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp" />
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1 Month"
+                android:textSize="@dimen/topicSpaced" />
 
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="1 Month"
-                    android:textSize="@dimen/topicSpaced" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/spacedRecyclerview1month"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/spacedRecyclerview1month"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp" />
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="6 Months"
+                android:textSize="@dimen/topicSpaced" />
 
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="6 Months"
-                    android:textSize="@dimen/topicSpaced" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/spacedRecyclerview6month"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp" />
-
-
-            </LinearLayout>
-
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/spacedRecyclerview6month"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" />
             <Button
                 android:id="@+id/deleteDatabaseBtn"
-                android:layout_width="match_parent"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Button"
                 app:layout_constraintBottom_toBottomOf="parent"
-                tools:layout_editor_absoluteX="12dp" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/floatingActionButton2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"
-                android:src="@android:drawable/ic_popup_reminder"
-                app:layout_constraintBottom_toTopOf="@+id/deleteDatabaseBtn"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:src="@android:drawable/ic_input_add" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,6 @@
-package com.example.finalproject.fragment
+package com.example.finalproject.fragment.spaced
 
 import android.app.Activity
-import android.app.Instrumentation
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -15,12 +14,11 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.finalproject.QuizActivity
-import com.example.finalproject.data_kanji.Kanji
 import com.example.finalproject.databinding.FragmentSpacedBinding
 import com.example.finalproject.roomdatabase.KanjiDatabase
 import com.example.finalproject.roomdatabase.KanjiRepository
-import com.example.finalproject.ui.KanjiViewModel
-import com.example.finalproject.ui.KanjiViewModelFactory
+import com.example.finalproject.viewmodel.KanjiViewModel
+import com.example.finalproject.viewmodel.KanjiViewModelFactory
 import com.example.finalproject.utils.SpacedRecyclerAdapter
 
 

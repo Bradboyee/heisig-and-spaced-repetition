@@ -8,8 +8,8 @@ import com.example.finalproject.databinding.ActivityHeisigBinding
 import com.example.finalproject.roomdatabase.KanjiDatabase
 import com.example.finalproject.roomdatabase.KanjiEntity
 import com.example.finalproject.roomdatabase.KanjiRepository
-import com.example.finalproject.ui.KanjiViewModel
-import com.example.finalproject.ui.KanjiViewModelFactory
+import com.example.finalproject.viewmodel.KanjiViewModel
+import com.example.finalproject.viewmodel.KanjiViewModelFactory
 import java.util.*
 
 class HeisigActivity:AppCompatActivity() {
