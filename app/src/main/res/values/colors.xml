@@ -8,6 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="kanjiboxcolor">#84FFFF</color>
+    <color name="heisigKanji_cardColor">#8bc860</color>
+    <color name="heisigKanji_textColor">#FFFFFFFF</color>
 
     <color name="funny_dark_pink">#d94e6d</color>
     <color name="soft_red">#ef4c43</color>

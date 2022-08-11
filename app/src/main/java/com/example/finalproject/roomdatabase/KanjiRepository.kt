@@ -1,8 +1,6 @@
 package com.example.finalproject.roomdatabase
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.asLiveData
-import kotlinx.coroutines.flow.Flow
 import java.util.*
 
 
@@ -31,6 +29,10 @@ class KanjiRepository(private val dao:Dao) {
 
     fun getSpaced(date: Date): LiveData<List<KanjiEntity>> {
         return dao.getSpaced(date)
+    }
+
+    fun getArrayListSpaced(date: Date): LiveData<Array<KanjiEntity>>{
+        return dao.getArrayListSpaced(date)
     }
 
 

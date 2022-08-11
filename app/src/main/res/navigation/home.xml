@@ -17,5 +17,18 @@
         android:id="@+id/kanjiListFragment"
         android:name="com.example.finalproject.fragment.home.KanjiListFragment"
         android:label="Kanji"
-        tools:layout="@layout/fragment_kanji_list" />
+        tools:layout="@layout/fragment_kanji_list" >
+        <action
+            android:id="@+id/action_kanjiListFragment_to_heisigFragment"
+            app:destination="@id/heisigFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/heisigFragment"
+        android:name="com.example.finalproject.fragment.home.HeisigFragment"
+        android:label="fragment_heisig"
+        tools:layout="@layout/fragment_heisig" >
+        <argument
+            android:name="selectedHeisig"
+            app:argType="com.example.finalproject.data_kanji.Kanji" />
+    </fragment>
 </navigation>

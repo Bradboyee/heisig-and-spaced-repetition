@@ -14,7 +14,8 @@ class KanjiViewModel(private val repository: KanjiRepository):ViewModel() {
     lateinit var todoDate: Date
     val kanjiList = repository.getKanji
     val spacedKanji = repository.getSpaced(Date())
-    val currentQuestion = MutableLiveData<Int>(0)
+    val arraySpacedKanji = repository.getArrayListSpaced(Date())
+    val currentQuestion = MutableLiveData(0)
 
 
 

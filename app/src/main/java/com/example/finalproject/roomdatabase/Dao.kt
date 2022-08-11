@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.room.*
 import androidx.room.Dao
 import java.util.*
-
 @Dao
 interface Dao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
@@ -30,6 +29,9 @@ interface Dao {
     //Date
     @Query("SELECT * FROM kanji_table WHERE spacedDate <=:targetDate")
     fun getSpaced(targetDate: Date): LiveData<List<KanjiEntity>>
+
+    @Query("SELECT * FROM kanji_table WHERE spacedDate <=:targetDate")
+    fun getArrayListSpaced(targetDate: Date): LiveData<Array<KanjiEntity>>
 
 
 }

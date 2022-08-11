@@ -6,4 +6,10 @@
     <string name="navSpaced_menu">Review</string>
     <string name="navHome_menu">Home</string>
     <string name="navStat_menu">Stat</string>
+    <string name="meaning">Meaning</string>
+    <string name="reading">Reading</string>
+    <string name="add_fab">ADD</string>
+    <string name="exampleMeaning">relax, cheap, low, quiet, rested, contented, peaceful</string>
+    <string name="exampleKun">やす.い、 やす.まる、 やす、 やす.らか</string>
+    <string name="exampleOn">アン</string>
 </resources>
