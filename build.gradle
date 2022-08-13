@@ -3,7 +3,11 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        maven {
+            url 'https://emusute1212.github.io/LifecycleLogger/repository/'
+        }
     }
+
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.4"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10"

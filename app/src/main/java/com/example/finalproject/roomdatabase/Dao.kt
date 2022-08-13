@@ -3,6 +3,7 @@ package com.example.finalproject.roomdatabase
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import androidx.room.Dao
+import kotlinx.coroutines.flow.Flow
 import java.util.*
 @Dao
 interface Dao {
@@ -16,7 +17,7 @@ interface Dao {
     suspend fun deleteKanji(kanji : KanjiEntity)
 
     @Query("SELECT * FROM kanji_table")
-    fun getKanji() : LiveData<List<KanjiEntity>>
+    fun getKanji() : Flow<List<KanjiEntity>>
 
     //
 
@@ -28,10 +29,13 @@ interface Dao {
 
     //Date
     @Query("SELECT * FROM kanji_table WHERE spacedDate <=:targetDate")
-    fun getSpaced(targetDate: Date): LiveData<List<KanjiEntity>>
+    fun getSpaced(targetDate: Date): Flow<List<KanjiEntity>>
 
     @Query("SELECT * FROM kanji_table WHERE spacedDate <=:targetDate")
-    fun getArrayListSpaced(targetDate: Date): LiveData<Array<KanjiEntity>>
+    fun getArrayListSpaced(targetDate: Date): Flow<Array<KanjiEntity>>
+
+    @Query("SELECT * FROM kanji_table ORDER BY spacedDate ASC")
+    fun getAllKanji(): Flow<List<KanjiEntity>>
 
 
 }

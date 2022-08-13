@@ -5,6 +5,7 @@ import com.cesarferreira.tempo.*
 import com.example.finalproject.roomdatabase.KanjiEntity
 import com.example.finalproject.roomdatabase.KanjiRepository
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 import java.util.*
 import kotlin.collections.ArrayList
@@ -12,15 +13,12 @@ import kotlin.collections.ArrayList
 
 class KanjiViewModel(private val repository: KanjiRepository):ViewModel() {
     lateinit var todoDate: Date
-    val kanjiList = repository.getKanji
-    val spacedKanji = repository.getSpaced(Date())
-    val arraySpacedKanji = repository.getArrayListSpaced(Date())
-    val currentQuestion = MutableLiveData(0)
+    val kanjiList = repository.getKanji.asLiveData()
+    fun spacedKanji(): Flow<List<KanjiEntity>> = repository.getSpaced(Date())
+
+    val allKanji: LiveData<List<KanjiEntity>> = repository.allKanji.asLiveData()
 
 
-
-    val submitCorrectAnswer : MutableLiveData<List<String>> = MutableLiveData(listOf())
-    val submitWrongAnswer : MutableLiveData<List<String>> = MutableLiveData(listOf())
 
 
     fun insert(kanji:KanjiEntity){
@@ -78,23 +76,6 @@ class KanjiViewModel(private val repository: KanjiRepository):ViewModel() {
             val updateObject = kanjiList.value!!.find { it.kanji == item }
             updateWrong(updateObject!!)
         }
-    }
-
-    // Quiz function
-    fun getQuestion(): List<String> {
-        val data = spacedKanji.value!!.filter { it.spacedDate.before(Date()) }
-        return data.map { it.kanji }
-    }
-    fun getAnswer(): List<String> {
-        val data = spacedKanji.value!!.filter { it.spacedDate.before(Date()) }
-        return data.map{ it.kanjiMeaning }
-    }
-
-    fun addCorrectAnswer(answer:String){
-        submitCorrectAnswer.value = submitCorrectAnswer.value!!.plus(answer)
-    }
-    fun addWrongAnswer(answer:String){
-        submitWrongAnswer.value = submitWrongAnswer.value!!.plus(answer)
     }
 
 }

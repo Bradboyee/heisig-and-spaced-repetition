@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.cesarferreira.tempo.Tempo
@@ -40,27 +41,33 @@ class HeisigFragment : Fragment() {
         val spacedDate = Tempo.now //when user add kanji this is the time that user can do , If u add today user can do the quiz today
         val changedObject = KanjiEntity(
             0,
-            args.selectedHeisig.kanji,
-            args.selectedHeisig.Japanese_Language_Proficiency_Test,
-            args.selectedHeisig.kanjiReadingKun,
-            args.selectedHeisig.kanjiReadingOn,
-            args.selectedHeisig.kanjiMeaning,
-            args.selectedHeisig.component1,
-            args.selectedHeisig.component1ReadingKun,
-            args.selectedHeisig.component1ReadingOn,
-            args.selectedHeisig.component1Meaning,
-            args.selectedHeisig.component2,
-            args.selectedHeisig.component2ReadingKun,
-            args.selectedHeisig.component2ReadingOn,
-            args.selectedHeisig.component2Meaning,
-            args.selectedHeisig.story,
-            0,
-            addDate,
-            spacedDate)
+            kanji = args.selectedHeisig.kanji,
+            Japanese_Language_Proficiency_Test = args.selectedHeisig.Japanese_Language_Proficiency_Test,
+            kanjiReadingKun = args.selectedHeisig.kanjiReadingKun,
+            kanjiReadingOn = args.selectedHeisig.kanjiReadingOn,
+            kanjiMeaning = args.selectedHeisig.kanjiMeaning,
+            component1kanji = args.selectedHeisig.component1,
+            component1ReadingKun = args.selectedHeisig.component1ReadingKun,
+            component1ReadingOn = args.selectedHeisig.component1ReadingOn,
+            component1Meaning = args.selectedHeisig.component1Meaning,
+            component2kanji = args.selectedHeisig.component2,
+            component2ReadingKun = args.selectedHeisig.component2ReadingKun,
+            component2ReadingOn = args.selectedHeisig.component2ReadingOn,
+            component2Meaning = args.selectedHeisig.component2Meaning,
+            story = args.selectedHeisig.story,
+            spacedStatus = 0,
+            addDate = addDate,
+            spacedDate = spacedDate)
         kanjiViewModel.kanjiList.observe(viewLifecycleOwner,{
             binding.addFab.setOnClickListener {
                 kanjiViewModel.insert(changedObject)
             }
         })
+        kanjiViewModel.kanjiList.observe(viewLifecycleOwner,){
+                data ->
+            binding.floatingActionButton3.setOnClickListener {
+                Toast.makeText(this.context,data.map{it.kanji}.toString(),Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 }

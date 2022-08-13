@@ -25,9 +25,7 @@
             app:argType="com.example.finalproject.roomdatabase.KanjiEntity[]" />
         <action
             android:id="@+id/action_quizFragment_to_resultFragment"
-            app:destination="@id/resultFragment"
-            app:popUpTo="@id/spacedFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/resultFragment" />
     </fragment>
     <fragment
         android:id="@+id/resultFragment"

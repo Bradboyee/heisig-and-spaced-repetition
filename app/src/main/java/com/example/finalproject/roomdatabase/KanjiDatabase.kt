@@ -23,7 +23,7 @@ abstract class KanjiDatabase : RoomDatabase() {
                 if (instance == null){
                     instance = Room.databaseBuilder(context.applicationContext,
                         KanjiDatabase::class.java,
-                        "testDatabase14")
+                        "testDatabase18")
                         .build()
                 }
                 return instance
