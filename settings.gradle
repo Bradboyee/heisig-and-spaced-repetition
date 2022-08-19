@@ -4,9 +4,6 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         jcenter() // Warning: this repository is going to shut down soon
-        maven {
-            url 'https://emusute1212.github.io/LifecycleLogger/repository/'
-        }
     }
 }
 rootProject.name = "FinalProject"

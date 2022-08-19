@@ -1,6 +1,7 @@
 package com.example.finalproject.fragment.spaced
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -18,53 +19,63 @@ import com.example.finalproject.databinding.FragmentQuizBinding
 import com.example.finalproject.viewmodel.SharedViewModel
 
 class QuizFragment : Fragment(), View.OnClickListener {
-    private var _binding: FragmentQuizBinding?=null
+    private var _binding: FragmentQuizBinding? = null
     private val binding get() = _binding!!
     private val args by navArgs<QuizFragmentArgs>()
-    private val sharedViewModel:SharedViewModel by activityViewModels()
-    private var answer:String?=null
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View {
-        _binding = FragmentQuizBinding.inflate(inflater,container,false)
-        sharedViewModel.index.observe(viewLifecycleOwner, { checkEnd() })
-        sharedViewModel.answer.observe(viewLifecycleOwner, {})
+    private val sharedViewModel: SharedViewModel by activityViewModels()
+    private var submitAnswer: String? = null
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
+    ): View {
+        _binding = FragmentQuizBinding.inflate(inflater, container, false)
+        sharedViewModel.index.observe(viewLifecycleOwner, {
+            initChoice()
+            progressBar()
+        })
         initOnClickListener()
-        initChoice()
         return binding.root
     }
 
-    private fun checkEnd() {
-        if(sharedViewModel.index.value==args.quizKanji.size){
-            val test = arrayOf("test2","test12")
-            val action = QuizFragmentDirections.actionQuizFragmentToResultFragment(test)
-            sharedViewModel.clearViewModel()
-            findNavController().navigate(action)
-        }else{initChoice()}
+    private fun progressBar() {
+        binding.progressBar.max = args.quizKanji.size
+        binding.progressBar.step = sharedViewModel.index.value!!
     }
+
+    private fun checkEnd() {
+        when (sharedViewModel.index.value) {
+            args.quizKanji.size - 1 -> {
+                val correct = sharedViewModel.correct.value
+                val wrong = sharedViewModel.wrong.value
+                val action =
+                    QuizFragmentDirections.actionQuizFragmentToResultFragment(correct!!.toTypedArray(), wrong!!.toTypedArray())
+                findNavController().navigate(action)
+            }
+            else -> {
+                sharedViewModel.plusIndex()
+            }
+        }
+    }
+
 
     private fun initChoice() {
         val index = sharedViewModel.index.value!!
-        binding.tvQuizCurrent.text = index.toString()
-//        if (index.plus(1) == args.quizKanji.size) {
-//            val action = QuizFragmentDirections.actionQuizFragmentToResultFragment()
-//            findNavController().navigate(action)
-//        }
+        binding.textViewTotal.text = "${index+1}/${args.quizKanji.size}"
         val question = args.quizKanji[index].kanji
         val answer = args.quizKanji[index].kanjiMeaning
-        val choice = (Data.kanji).let {
-                data ->
+        val choice = (Data.kanji).let { data ->
             val list = data.map { it.kanjiMeaning }
             val listWithoutAnswer = list.minus(answer)
             val shuffledList = listWithoutAnswer.shuffled()
-            val threeChoices = shuffledList.subList(0,3)
+            val threeChoices = shuffledList.subList(0, 3)
             val fourChoices = threeChoices.plus(answer)
             fourChoices.shuffled()
         }
-        setQuiz(question,choice)
+        setQuiz(question, choice)
     }
 
     private fun setQuiz(question: String, choice: List<String>) {
-        binding.tvQuizSize.text = args.quizKanji.size.toString()
-        binding.tvAnswerList.text = sharedViewModel.answer.value.toString()
         binding.question.text = question
         binding.button.text = choice[0]
         binding.button2.text = choice[1]
@@ -73,33 +84,55 @@ class QuizFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(buttonView: View?) {
-        val index = sharedViewModel.index.value!!
         val clickedBtn = buttonView as Button
-        val buttonClickedColor = ContextCompat.getColor(requireContext(), R.color.sky_light_blue)
-        binding.button.setBackgroundColor(0)
-        binding.button2.setBackgroundColor(0)
-        binding.button3.setBackgroundColor(0)
-        binding.button4.setBackgroundColor(0)
+        val buttonClickedColor = ContextCompat.getColor(requireContext(),
+            R.color.ripple)
+        setDefaultColor()
         when (buttonView.id) {
-            R.id.next_fab -> {
-                if (answer.isNullOrBlank()) {
-                    Toast.makeText(activity, "Please Select Your Answer", Toast.LENGTH_SHORT).show()
-                } else {
-                    checkAnswer()
-                }
+            R.id.buttonSubmit -> {
+                checkNull()
             }
             else -> {
                 clickedBtn.setBackgroundColor(buttonClickedColor)
-                answer = clickedBtn.text.toString()
+                submitAnswer = clickedBtn.text.toString()
             }
         }
     }
 
+    private fun setDefaultColor() {
+        val defaultTextColor = ContextCompat.getColor(requireContext(),
+            R.color.purple_500)
+        binding.button.setBackgroundColor(0)
+        binding.button2.setBackgroundColor(0)
+        binding.button3.setBackgroundColor(0)
+        binding.button4.setBackgroundColor(0)
+        binding.button.setTextColor(defaultTextColor)
+        binding.button2.setTextColor(defaultTextColor)
+        binding.button3.setTextColor(defaultTextColor)
+        binding.button4.setTextColor(defaultTextColor)
+    }
+
+    private fun checkNull() {
+        if (submitAnswer.isNullOrBlank()) {
+            Toast.makeText(activity, "Please Select Your Answer", Toast.LENGTH_SHORT).show()
+        } else {
+            checkAnswer()
+        }
+    }
+
     private fun checkAnswer() {
-        sharedViewModel.addAnswer(answer!!)
-        Toast.makeText(context,sharedViewModel.answer.value.toString(),Toast.LENGTH_SHORT).show()
-        answer = null
-        sharedViewModel.plusIndex()
+        val index = sharedViewModel.index.value!!
+        when (args.quizKanji[index].kanjiMeaning) {
+            submitAnswer -> {
+                sharedViewModel.addCorrect(submitAnswer!!)
+            }
+            else -> {
+                sharedViewModel.addWrong(submitAnswer!!)
+            }
+        }
+        Log.i("Selected ",submitAnswer!!)
+        submitAnswer = null
+        checkEnd()
     }
 
 
@@ -108,7 +141,7 @@ class QuizFragment : Fragment(), View.OnClickListener {
         binding.button2.setOnClickListener(this)
         binding.button3.setOnClickListener(this)
         binding.button4.setOnClickListener(this)
-        binding.nextFab.setOnClickListener(this)
+        binding.buttonSubmit.setOnClickListener(this)
         //close backButton press
         requireActivity().onBackPressedDispatcher.addCallback(this) {
             // With blank your fragment BackPressed will be disabled.

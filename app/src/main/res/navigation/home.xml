@@ -11,7 +11,11 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_kanjiListFragment"
-            app:destination="@id/kanjiListFragment" />
+            app:destination="@id/kanjiListFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/kanjiListFragment"
@@ -20,7 +24,11 @@
         tools:layout="@layout/fragment_kanji_list" >
         <action
             android:id="@+id/action_kanjiListFragment_to_heisigFragment"
-            app:destination="@id/heisigFragment" />
+            app:destination="@id/heisigFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/heisigFragment"

@@ -5,7 +5,6 @@ plugins {
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
 }
-
 android {
     compileSdk 32
 
@@ -41,15 +40,19 @@ android {
                 "-Xjvm-default=all",
         ]
     }
+    kapt {
+        correctErrorTypes = true
+    }
 }
 
 dependencies {
     def lifecycle_version = "2.6.0-alpha01"
     def room_version = "2.4.3"
     def nav_version = "2.5.1"
+    def epoxyVersion = "5.0.0-beta05"
 
     implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'androidx.appcompat:appcompat:1.5.0'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
@@ -73,7 +76,10 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
     implementation 'com.google.android.material:material:1.6.1'
-
-    implementation "com.github.emusute1212.lifecyclelogger:core:0.1.0.1"
-
+    //progressbar
+    implementation 'kr.co.prnd:stepprogressbar:1.0.0-alpha1'
+    //epoxy
+    implementation "com.airbnb.android:epoxy:$epoxyVersion"
+    // Add the annotation processor if you are using Epoxy's annotations (recommended)
+    kapt "com.airbnb.android:epoxy-processor:$epoxyVersion"
 }

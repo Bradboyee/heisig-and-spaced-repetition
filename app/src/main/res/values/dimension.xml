@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="topicSpaced">15sp</dimen>
-    <dimen name="heisigKanjiCard_size">50dp</dimen>
+    <dimen name="heisigKanjiCard_size">65dp</dimen>
     <dimen name="heisigKanjiCard_elevation">5dp</dimen>
     <dimen name="heisigKanjiCard_textSize">20sp</dimen>
+    <dimen name="spaced_view">10dp</dimen>
+
 
 
 </resources>

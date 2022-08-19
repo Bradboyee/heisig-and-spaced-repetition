@@ -12,4 +12,7 @@
     <string name="exampleMeaning">relax, cheap, low, quiet, rested, contented, peaceful</string>
     <string name="exampleKun">やす.い、 やす.まる、 やす、 やす.らか</string>
     <string name="exampleOn">アン</string>
+    <string name="exampleKanji">語</string>
+    <string name="next">next</string>
+    <string name="finish">FINISH</string>
 </resources>

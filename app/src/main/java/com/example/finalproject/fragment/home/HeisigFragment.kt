@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.cesarferreira.tempo.Tempo
@@ -17,7 +16,7 @@ import com.example.finalproject.viewmodel.KanjiViewModel
 import com.example.finalproject.viewmodel.KanjiViewModelFactory
 
 class HeisigFragment : Fragment() {
-    private var _binding:FragmentHeisigBinding?=null
+    private var _binding: FragmentHeisigBinding?=null
     private val binding get() = _binding!!
     private val args by navArgs<HeisigFragmentArgs>()
     private lateinit var kanjiViewModel: KanjiViewModel
@@ -63,11 +62,5 @@ class HeisigFragment : Fragment() {
                 kanjiViewModel.insert(changedObject)
             }
         })
-        kanjiViewModel.kanjiList.observe(viewLifecycleOwner,){
-                data ->
-            binding.floatingActionButton3.setOnClickListener {
-                Toast.makeText(this.context,data.map{it.kanji}.toString(),Toast.LENGTH_SHORT).show()
-            }
         }
     }
-}

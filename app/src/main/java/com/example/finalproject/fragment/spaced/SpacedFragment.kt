@@ -8,14 +8,16 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.coroutineScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.finalproject.databinding.FragmentSpacedBinding
+import com.example.finalproject.epoxy.Controller
 import com.example.finalproject.roomdatabase.KanjiDatabase
 import com.example.finalproject.roomdatabase.KanjiRepository
 import com.example.finalproject.utils.KanjiListAdapter
 import com.example.finalproject.viewmodel.KanjiViewModelFactory
 import com.example.finalproject.viewmodel.KanjiViewModel
-import io.github.emusute1212.lifecyclelogger.Logger
 import kotlinx.coroutines.launch
 
 
@@ -26,33 +28,42 @@ class SpacedFragment : Fragment() {
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View {
-        Logger.bind(this)
         _binding = FragmentSpacedBinding.inflate(inflater, container, false)
         val dao = KanjiDatabase.getInstance(requireContext()).dao()
         val repository = KanjiRepository(dao)
         val factory = KanjiViewModelFactory(repository)
         kanjiViewModel = ViewModelProvider(this, factory)[KanjiViewModel::class.java]
         val adapter = KanjiListAdapter()
-        binding.spacedRecyclerView.adapter = adapter
-        binding.spacedRecyclerView.layoutManager = GridLayoutManager(this.context,5)
+//        binding.spacedRecyclerView.adapter = adapter
+//        binding.spacedRecyclerView.layoutManager = GridLayoutManager(this.context,5)
+
+        //
+        val epoxyRecyclerView = binding.epoxyRecyclerview
+
+
+
+
+
         lifecycle.coroutineScope.launch{
             kanjiViewModel.spacedKanji().collect {
-                adapter.submitList(it)
+                spacedKanji ->
+                adapter.submitList(spacedKanji)
+                binding.floatingActionButton.setOnClickListener {
+                val action = SpacedFragmentDirections.actionSpacedFragmentToQuizFragment(spacedKanji.toTypedArray())
+                    findNavController().navigate(action)
+                }
+                //epoxy
+                val controller = Controller().apply {
+                    kanjiController = spacedKanji
+                }
+                epoxyRecyclerView.layoutManager = LinearLayoutManager(context)
+                epoxyRecyclerView.setHasFixedSize(false)
+                epoxyRecyclerView.setController(controller)
+
+
             }
 
         }
-        kanjiViewModel.allKanji.observe(viewLifecycleOwner,{
-            kanji ->
-            binding.floatingActionButton.setOnClickListener {
-                Toast.makeText(this.context,kanji.map { it.kanji }.toString(),Toast.LENGTH_SHORT).show()
-            }
-        })
-        kanjiViewModel.kanjiList.observe(viewLifecycleOwner,{
-            data ->
-            binding.floatingActionButton2.setOnClickListener {
-                Toast.makeText(this.context,data.map { it.kanji }.toString(),Toast.LENGTH_SHORT).show()
-            }
-        })
         return binding.root
     }
 

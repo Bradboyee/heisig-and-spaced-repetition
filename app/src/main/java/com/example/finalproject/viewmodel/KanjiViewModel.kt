@@ -12,10 +12,9 @@ import kotlin.collections.ArrayList
 
 
 class KanjiViewModel(private val repository: KanjiRepository):ViewModel() {
-    lateinit var todoDate: Date
+    private lateinit var todoDate: Date
     val kanjiList = repository.getKanji.asLiveData()
     fun spacedKanji(): Flow<List<KanjiEntity>> = repository.getSpaced(Date())
-
     val allKanji: LiveData<List<KanjiEntity>> = repository.allKanji.asLiveData()
 
 
@@ -49,6 +48,7 @@ class KanjiViewModel(private val repository: KanjiRepository):ViewModel() {
             0 -> todoDate = 1.day.forward
             1 -> todoDate = 3.day.forward
             2 -> todoDate = 1.week.forward
+
         }
         val status = kanji.spacedStatus + 1
         val newStatus = kanji.copy(spacedStatus = status, spacedDate = todoDate)

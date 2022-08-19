@@ -25,7 +25,10 @@
             app:argType="com.example.finalproject.roomdatabase.KanjiEntity[]" />
         <action
             android:id="@+id/action_quizFragment_to_resultFragment"
-            app:destination="@id/resultFragment" />
+            app:destination="@id/resultFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popUpTo="@id/spacedFragment" />
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
@@ -34,6 +37,10 @@
         tools:layout="@layout/fragment_result">
         <argument
             android:name="correct"
+            app:argType="string[]"
+            app:nullable="true" />
+        <argument
+            android:name="wrong"
             app:argType="string[]"
             app:nullable="true" />
     </fragment>
