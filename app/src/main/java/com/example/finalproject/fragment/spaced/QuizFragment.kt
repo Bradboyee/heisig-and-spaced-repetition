@@ -124,10 +124,10 @@ class QuizFragment : Fragment(), View.OnClickListener {
         val index = sharedViewModel.index.value!!
         when (args.quizKanji[index].kanjiMeaning) {
             submitAnswer -> {
-                sharedViewModel.addCorrect(submitAnswer!!)
+                sharedViewModel.addCorrect(args.quizKanji[index])
             }
             else -> {
-                sharedViewModel.addWrong(submitAnswer!!)
+                sharedViewModel.addWrong(args.quizKanji[index])
             }
         }
         Log.i("Selected ",submitAnswer!!)

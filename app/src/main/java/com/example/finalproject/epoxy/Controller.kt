@@ -9,9 +9,9 @@ import com.example.finalproject.epoxy.model.KotlinModel
 import com.example.finalproject.roomdatabase.KanjiEntity
 import kotlin.properties.Delegates
 
-class Controller:EpoxyController() {
+class Controller : EpoxyController() {
 
-    var kanjiController by Delegates.observable(emptyList<KanjiEntity>()){ _, _, _ ->
+    var kanjiController by Delegates.observable(emptyList<KanjiEntity>()) { _, _, _ ->
         requestModelBuild()
     }
 
@@ -23,7 +23,7 @@ class Controller:EpoxyController() {
         val spaced1Month = kanjiController.filter { it.spacedStatus == 4 }
         val spaced6Months = kanjiController.filter { it.spacedStatus == 5 }
 
-        HeaderModel("START",spacedStart.size).id("HEADER_START").addTo(this)
+        HeaderModel("START", spacedStart.size).id("HEADER_START").addTo(this)
 
         GridCarouselModel_()
             .id("CATEGORY_LIST")
@@ -35,7 +35,7 @@ class Controller:EpoxyController() {
             })
             .addTo(this)
 
-        HeaderModel("1 DAY",spaced1Day.size).id("HEADER_1DAY").addTo(this)
+        HeaderModel("1 DAY", spaced1Day.size).id("HEADER_1DAY").addTo(this)
 
         GridCarouselModel_()
             .id("1DAY_KANJI")
@@ -43,7 +43,7 @@ class Controller:EpoxyController() {
                 KanjiItemModel(kanji.kanji).id(kanji.id)
             }).addTo(this)
 
-        HeaderModel("1 DAY",spaced3Days.size).id("HEADER_1DAY").addTo(this)
+        HeaderModel("1 DAY", spaced3Days.size).id("HEADER_1DAY").addTo(this)
 
         GridCarouselModel_()
             .id("1DAY_KANJI")
@@ -52,7 +52,7 @@ class Controller:EpoxyController() {
             }).addTo(this)
 
 
-        HeaderModel("3 DAYS",spaced1Week.size).id("HEADER_3DAYS").addTo(this)
+        HeaderModel("3 DAYS", spaced1Week.size).id("HEADER_3DAYS").addTo(this)
 
         GridCarouselModel_()
             .id("1DAY_KANJI")
@@ -60,7 +60,7 @@ class Controller:EpoxyController() {
                 KanjiItemModel(kanji.kanji).id(kanji.id)
             }).addTo(this)
 
-        HeaderModel("1 WEEK",spaced1Month.size).id("HEADER_1WEEK").addTo(this)
+        HeaderModel("1 WEEK", spaced1Month.size).id("HEADER_1WEEK").addTo(this)
 
         GridCarouselModel_()
             .id("1DAY_KANJI")
@@ -68,7 +68,7 @@ class Controller:EpoxyController() {
                 KanjiItemModel(kanji.kanji).id(kanji.id)
             }).addTo(this)
 
-        HeaderModel("1 MONTH",spaced6Months.size).id("HEADER_1MONTH").addTo(this)
+        HeaderModel("1 MONTH", spaced6Months.size).id("HEADER_1MONTH").addTo(this)
 
         GridCarouselModel_()
             .id("1DAY_KANJI")
@@ -77,9 +77,10 @@ class Controller:EpoxyController() {
             }).addTo(this)
 
 
-
     }
-    data class HeaderModel(val topic : String, val total :Int):KotlinModel(R.layout.epoxy_header_kanji_item){
+
+    data class HeaderModel(val topic: String, val total: Int) :
+        KotlinModel(R.layout.epoxy_header_kanji_item) {
         private val textViewTopic by bind<TextView>(R.id.textView_topic)
         private val textViewTotal by bind<TextView>(R.id.textView_total_kanji)
         override fun bind() {
@@ -88,7 +89,8 @@ class Controller:EpoxyController() {
         }
 
     }
-    data class KanjiItemModel(val kanji:String):KotlinModel(R.layout.epoxy_kanji_item){
+
+    data class KanjiItemModel(val kanji: String) : KotlinModel(R.layout.epoxy_kanji_item) {
         private val textViewKanji by bind<TextView>(R.id.textview_epoxy_kanji)
         override fun bind() {
             textViewKanji.text = kanji

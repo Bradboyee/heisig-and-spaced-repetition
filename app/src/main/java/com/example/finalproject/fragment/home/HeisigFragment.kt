@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.cesarferreira.tempo.Tempo
 import com.example.finalproject.databinding.FragmentHeisigBinding
+import com.example.finalproject.epoxy.ControllerHeisig
 import com.example.finalproject.roomdatabase.KanjiDatabase
 import com.example.finalproject.roomdatabase.KanjiEntity
 import com.example.finalproject.roomdatabase.KanjiRepository
@@ -23,19 +25,25 @@ class HeisigFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View {
         _binding = FragmentHeisigBinding.inflate(inflater,container,false)
-        binding.tvKanji.text = args.selectedHeisig.kanji
-        binding.tvMeaning.text = args.selectedHeisig.kanjiMeaning
-        binding.tvReadingKun.text = args.selectedHeisig.kanjiReadingKun
-        binding.tvReadingOn.text = args.selectedHeisig.kanjiReadingOn
+        initUI()
         addHeisigToSpaced()
         return binding.root
     }
 
-    private fun addHeisigToSpaced() {
+    private fun initUI() {
         val dao = KanjiDatabase.getInstance(requireContext()).dao()
         val repository = KanjiRepository(dao)
         val factory = KanjiViewModelFactory(repository)
         kanjiViewModel = ViewModelProvider(this,factory)[KanjiViewModel::class.java]
+        //epoxy
+        val epoxyRecyclerView = binding.recyclerviewHeisig
+        val controller = ControllerHeisig().apply { kanjiController = listOf(args.selectedHeisig) }
+        epoxyRecyclerView.layoutManager = LinearLayoutManager(context)
+        epoxyRecyclerView.setHasFixedSize(false)
+        epoxyRecyclerView.setController(controller)
+    }
+
+    private fun addHeisigToSpaced() {
         val addDate = Tempo.now // collect date that user add to Spaced
         val spacedDate = Tempo.now //when user add kanji this is the time that user can do , If u add today user can do the quiz today
         val changedObject = KanjiEntity(
@@ -45,11 +53,11 @@ class HeisigFragment : Fragment() {
             kanjiReadingKun = args.selectedHeisig.kanjiReadingKun,
             kanjiReadingOn = args.selectedHeisig.kanjiReadingOn,
             kanjiMeaning = args.selectedHeisig.kanjiMeaning,
-            component1kanji = args.selectedHeisig.component1,
+            component1kanji = args.selectedHeisig.component1kanji,
             component1ReadingKun = args.selectedHeisig.component1ReadingKun,
             component1ReadingOn = args.selectedHeisig.component1ReadingOn,
             component1Meaning = args.selectedHeisig.component1Meaning,
-            component2kanji = args.selectedHeisig.component2,
+            component2kanji = args.selectedHeisig.component2kanji,
             component2ReadingKun = args.selectedHeisig.component2ReadingKun,
             component2ReadingOn = args.selectedHeisig.component2ReadingOn,
             component2Meaning = args.selectedHeisig.component2Meaning,
@@ -57,10 +65,8 @@ class HeisigFragment : Fragment() {
             spacedStatus = 0,
             addDate = addDate,
             spacedDate = spacedDate)
-        kanjiViewModel.kanjiList.observe(viewLifecycleOwner,{
-            binding.addFab.setOnClickListener {
+            binding.fabAdd.setOnClickListener {
                 kanjiViewModel.insert(changedObject)
             }
-        })
         }
     }

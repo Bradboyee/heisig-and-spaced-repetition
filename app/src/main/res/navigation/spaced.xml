@@ -37,11 +37,11 @@
         tools:layout="@layout/fragment_result">
         <argument
             android:name="correct"
-            app:argType="string[]"
+            app:argType="com.example.finalproject.roomdatabase.KanjiEntity[]"
             app:nullable="true" />
         <argument
             android:name="wrong"
-            app:argType="string[]"
+            app:argType="com.example.finalproject.roomdatabase.KanjiEntity[]"
             app:nullable="true" />
     </fragment>
 </navigation>

@@ -4,16 +4,17 @@ import android.widget.Button
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.finalproject.roomdatabase.KanjiEntity
 
 class SharedViewModel:ViewModel() {
     private val _index = MutableLiveData(0)
     val index:LiveData<Int> = _index
 
-    private val _correct = MutableLiveData<MutableList<String>>(mutableListOf())
-    val correct:LiveData<MutableList<String>> = _correct
+    private val _correct = MutableLiveData<MutableList<KanjiEntity>>(mutableListOf())
+    val correct:LiveData<MutableList<KanjiEntity>> = _correct
 
-    private val _wrong = MutableLiveData<MutableList<String>>(mutableListOf())
-    val wrong:LiveData<MutableList<String>> = _wrong
+    private val _wrong = MutableLiveData<MutableList<KanjiEntity>>(mutableListOf())
+    val wrong:LiveData<MutableList<KanjiEntity>> = _wrong
 
 
     fun plusIndex(){
@@ -24,11 +25,11 @@ class SharedViewModel:ViewModel() {
         _correct.value = mutableListOf()
         _wrong.value = mutableListOf()
     }
-    fun addCorrect(string: String){
-        _correct.value!!.add(string)
+    fun addCorrect(kanjiEntity: KanjiEntity){
+        _correct.value!!.add(kanjiEntity)
     }
-    fun addWrong(string: String){
-        _wrong.value!!.add(string)
+    fun addWrong(kanjiEntity: KanjiEntity){
+        _wrong.value!!.add(kanjiEntity)
     }
 
 

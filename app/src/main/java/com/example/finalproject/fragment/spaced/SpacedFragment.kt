@@ -27,39 +27,46 @@ class SpacedFragment : Fragment() {
     private lateinit var kanjiViewModel: KanjiViewModel
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
+    ): View {
         _binding = FragmentSpacedBinding.inflate(inflater, container, false)
         val dao = KanjiDatabase.getInstance(requireContext()).dao()
         val repository = KanjiRepository(dao)
         val factory = KanjiViewModelFactory(repository)
         kanjiViewModel = ViewModelProvider(this, factory)[KanjiViewModel::class.java]
         val adapter = KanjiListAdapter()
-//        binding.spacedRecyclerView.adapter = adapter
-//        binding.spacedRecyclerView.layoutManager = GridLayoutManager(this.context,5)
-
-        //
         val epoxyRecyclerView = binding.epoxyRecyclerview
+        lifecycle.coroutineScope.launch {
+            kanjiViewModel.allKanji.collect { allKanji ->
 
-
-
-
-
-        lifecycle.coroutineScope.launch{
-            kanjiViewModel.spacedKanji().collect {
-                spacedKanji ->
-                adapter.submitList(spacedKanji)
-                binding.floatingActionButton.setOnClickListener {
-                val action = SpacedFragmentDirections.actionSpacedFragmentToQuizFragment(spacedKanji.toTypedArray())
-                    findNavController().navigate(action)
-                }
                 //epoxy
+                adapter.submitList(allKanji)
                 val controller = Controller().apply {
-                    kanjiController = spacedKanji
+                    kanjiController = allKanji
                 }
                 epoxyRecyclerView.layoutManager = LinearLayoutManager(context)
                 epoxyRecyclerView.setHasFixedSize(false)
                 epoxyRecyclerView.setController(controller)
-
+            }
+        }
+        lifecycle.coroutineScope.launch {
+            kanjiViewModel.spacedKanji().collect { spacedKanji ->
+                if (spacedKanji.isNullOrEmpty()) {
+                    binding.floatingActionButton.setOnClickListener {
+                        Toast.makeText(requireContext(),
+                            "You don't have TODO today !",
+                            Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    binding.floatingActionButton.setOnClickListener {
+                        val action =
+                            SpacedFragmentDirections.actionSpacedFragmentToQuizFragment(spacedKanji.toTypedArray())
+                        findNavController().navigate(action)
+                    }
+                }
 
             }
 

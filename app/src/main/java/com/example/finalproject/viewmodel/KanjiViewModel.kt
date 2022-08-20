@@ -13,9 +13,8 @@ import kotlin.collections.ArrayList
 
 class KanjiViewModel(private val repository: KanjiRepository):ViewModel() {
     private lateinit var todoDate: Date
-    val kanjiList = repository.getKanji.asLiveData()
     fun spacedKanji(): Flow<List<KanjiEntity>> = repository.getSpaced(Date())
-    val allKanji: LiveData<List<KanjiEntity>> = repository.allKanji.asLiveData()
+    val allKanji: Flow<List<KanjiEntity>> = repository.allKanji
 
 
 
@@ -43,38 +42,29 @@ class KanjiViewModel(private val repository: KanjiRepository):ViewModel() {
 
     //Update Spaced function
 
-    private fun updateCorrect(kanji: KanjiEntity){
-        when(kanji.spacedStatus){
-            0 -> todoDate = 1.day.forward
-            1 -> todoDate = 3.day.forward
-            2 -> todoDate = 1.week.forward
-
-        }
-        val status = kanji.spacedStatus + 1
-        val newStatus = kanji.copy(spacedStatus = status, spacedDate = todoDate)
-        update(newStatus)
-    }
-
-    private fun updateWrong(kanji: KanjiEntity){
-        if(kanji.spacedStatus>0){
-            val status = kanji.spacedStatus - 1
-            val doDate = Tempo.now // if wrong reset to today
-            val newStatus = kanji.copy(spacedStatus = status, spacedDate = doDate)
+    fun updateCorrect(ArrayKanji: Array<KanjiEntity>){
+        for(kanji in ArrayKanji){
+            when(kanji.spacedStatus){
+                0 -> todoDate = 1.day.forward
+                1 -> todoDate = 3.day.forward
+                2 -> todoDate = 1.week.forward
+                3 -> todoDate = 1.month.forward
+                4 -> todoDate = 6.months.forward
+            }
+            val status = kanji.spacedStatus + 1
+            val newStatus = kanji.copy(spacedStatus = status, spacedDate = todoDate)
             update(newStatus)
         }
     }
 
-    fun updateCorrectByList(arrayList: ArrayList<String>){
-        for (item in arrayList){
-            val updateObject = kanjiList.value!!.find { it.kanji == item }
-            updateCorrect(updateObject!!)
-        }
-    }
-
-    fun updateWrongByList(arrayList: ArrayList<String>){
-        for (item in arrayList){
-            val updateObject = kanjiList.value!!.find { it.kanji == item }
-            updateWrong(updateObject!!)
+    fun updateWrong(ArrayKanji: Array<KanjiEntity>){
+        for(kanji in ArrayKanji){
+            if(kanji.spacedStatus>0){
+                val status = kanji.spacedStatus - 1
+                val doDate = Tempo.now // if wrong reset to today
+                val newStatus = kanji.copy(spacedStatus = status, spacedDate = doDate)
+                update(newStatus)
+            }
         }
     }
 
