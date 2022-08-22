@@ -37,14 +37,14 @@ class SpacedFragment : Fragment() {
         val repository = KanjiRepository(dao)
         val factory = KanjiViewModelFactory(repository)
         kanjiViewModel = ViewModelProvider(this, factory)[KanjiViewModel::class.java]
-        val adapter = KanjiListAdapter()
         val epoxyRecyclerView = binding.epoxyRecyclerview
+        val controller = Controller()
+        epoxyRecyclerView.setHasFixedSize(false)
+        epoxyRecyclerView.setController(controller)
         lifecycle.coroutineScope.launch {
             kanjiViewModel.allKanji.collect { allKanji ->
-
                 //epoxy
-                adapter.submitList(allKanji)
-                val controller = Controller().apply {
+                controller.apply {
                     kanjiController = allKanji
                 }
                 epoxyRecyclerView.layoutManager = LinearLayoutManager(context)

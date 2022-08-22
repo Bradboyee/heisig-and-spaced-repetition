@@ -3,7 +3,6 @@ package com.example.finalproject.epoxy
 import android.widget.TextView
 import com.airbnb.epoxy.EpoxyController
 import com.example.finalproject.R
-import com.example.finalproject.epoxy.model.EpoxyKanjiItem_
 import com.example.finalproject.epoxy.model.GridCarouselModel_
 import com.example.finalproject.epoxy.model.KotlinModel
 import com.example.finalproject.roomdatabase.KanjiEntity
@@ -26,14 +25,10 @@ class Controller : EpoxyController() {
         HeaderModel("START", spacedStart.size).id("HEADER_START").addTo(this)
 
         GridCarouselModel_()
-            .id("CATEGORY_LIST")
-//            .numViewsToShowOnScreen(3.2f)
+            .id("1DAY_KANJI")
             .models(spacedStart.map { kanji ->
-                EpoxyKanjiItem_()
-                    .id(kanji.id)
-                    .kanji(kanji)
-            })
-            .addTo(this)
+                KanjiItemModel(kanji.kanji).id(kanji.id)
+            }).addTo(this)
 
         HeaderModel("1 DAY", spaced1Day.size).id("HEADER_1DAY").addTo(this)
 
