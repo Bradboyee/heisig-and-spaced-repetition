@@ -1,62 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--on below line we are creating a swipe to refresh layout-->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.stat.StatFragment">
+    android:fillViewport="true"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
+        android:id="@+id/idTVHead"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/textView22"
-        app:layout_constraintTop_toBottomOf="@+id/textView23"
-        tools:layout_editor_absoluteX="61dp" />
+        android:layout_margin="4dp"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="Kanji Pie Chart"
+        android:textAlignment="center"
+        android:textColor="@color/purple_200"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
+    <!--Ui component for our pie chart-->
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pieChart"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_below="@id/idTVHead"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="@+id/textView23"
-        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+        android:layout_below="@id/pieChart"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        android:weightSum="3">
 
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/textView19"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="176dp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="Android"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:drawableTint="@color/purple_200"
+            app:drawableLeftCompat="@drawable/ic_circle" />
 
-    <TextView
-        android:id="@+id/textView24"
-        android:layout_width="55dp"
-        android:layout_height="32dp"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="205dp"
-        tools:layout_editor_absoluteY="310dp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="Apple"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:drawableLeftCompat="@drawable/ic_circle"
+            app:drawableTint="@color/seasonal_orange" />
 
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/textView27"
-        app:layout_constraintTop_toTopOf="@+id/textView24"
-        tools:layout_editor_absoluteX="91dp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="Microsoft"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:drawableLeftCompat="@drawable/ic_circle"
+            app:drawableTint="@color/soft_red" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="71dp"
-        android:layout_height="0dp"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="189dp"
-        tools:layout_editor_absoluteY="467dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

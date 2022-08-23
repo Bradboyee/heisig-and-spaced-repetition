@@ -6,9 +6,7 @@ import java.util.*
 
 
 class KanjiRepository(private val dao:Dao) {
-    val getKanji = dao.getKanji()
     val allKanji: Flow<List<KanjiEntity>> = dao.getAllKanji()
-
 
     suspend fun insert(kanji:KanjiEntity){
         return dao.insertKanji(kanji)
@@ -22,10 +20,6 @@ class KanjiRepository(private val dao:Dao) {
         return dao.updateKanji(kanji)
     }
 
-    fun getItemById(kanji: String): KanjiEntity {
-        return dao.getItemById(kanji)
-    }
-
     fun isExist(kanji: String): Int {
         return dao.isExist(kanji)
     }
@@ -34,11 +28,8 @@ class KanjiRepository(private val dao:Dao) {
         return dao.getSpaced(date)
     }
 
-    fun getArrayListSpaced(date: Date): Flow<Array<KanjiEntity>> {
-        return dao.getArrayListSpaced(date)
+    fun getSpacedNumber(date: Date): Flow<Int> {
+        return dao.getSpacedNumber(date)
     }
-
-
-
 
 }

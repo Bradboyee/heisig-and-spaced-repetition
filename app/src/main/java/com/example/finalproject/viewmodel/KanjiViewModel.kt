@@ -5,7 +5,8 @@ import com.cesarferreira.tempo.*
 import com.example.finalproject.roomdatabase.KanjiEntity
 import com.example.finalproject.roomdatabase.KanjiRepository
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import java.util.*
 import kotlin.collections.ArrayList
@@ -15,9 +16,7 @@ class KanjiViewModel(private val repository: KanjiRepository):ViewModel() {
     private lateinit var todoDate: Date
     fun spacedKanji(): Flow<List<KanjiEntity>> = repository.getSpaced(Date())
     val allKanji: Flow<List<KanjiEntity>> = repository.allKanji
-
-
-
+    val spacedNumber : Flow<Int> = repository.getSpacedNumber(Date())
 
     fun insert(kanji:KanjiEntity){
         viewModelScope.launch(Dispatchers.IO){
@@ -63,6 +62,10 @@ class KanjiViewModel(private val repository: KanjiRepository):ViewModel() {
                 val status = kanji.spacedStatus - 1
                 val doDate = Tempo.now // if wrong reset to today
                 val newStatus = kanji.copy(spacedStatus = status, spacedDate = doDate)
+                update(newStatus)
+            }else if (kanji.spacedStatus == 0){
+                val doDate = Tempo.tomorrow // if wrong reset to today
+                val newStatus = kanji.copy(spacedDate = doDate)
                 update(newStatus)
             }
         }

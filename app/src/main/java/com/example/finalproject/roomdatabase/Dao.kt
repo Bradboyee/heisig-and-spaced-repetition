@@ -16,14 +16,6 @@ interface Dao {
     @Delete
     suspend fun deleteKanji(kanji : KanjiEntity)
 
-    @Query("SELECT * FROM kanji_table")
-    fun getKanji() : Flow<List<KanjiEntity>>
-
-    //
-
-    @Query("SELECT * FROM kanji_table WHERE kanji = :kanji")
-    fun getItemById(kanji: String): KanjiEntity
-
     @Query("SELECT count(*) FROM kanji_table WHERE kanji = :kanji")
     fun isExist(kanji: String): Int
 
@@ -31,8 +23,8 @@ interface Dao {
     @Query("SELECT * FROM kanji_table WHERE spacedDate <=:targetDate")
     fun getSpaced(targetDate: Date): Flow<List<KanjiEntity>>
 
-    @Query("SELECT * FROM kanji_table WHERE spacedDate <=:targetDate")
-    fun getArrayListSpaced(targetDate: Date): Flow<Array<KanjiEntity>>
+    @Query("SELECT COUNT(*) FROM kanji_table WHERE spacedDate <=:targetDate")
+    fun getSpacedNumber(targetDate: Date): Flow<Int>
 
     @Query("SELECT * FROM kanji_table ORDER BY spacedDate ASC")
     fun getAllKanji(): Flow<List<KanjiEntity>>

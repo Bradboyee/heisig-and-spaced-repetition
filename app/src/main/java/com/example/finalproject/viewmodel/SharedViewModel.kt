@@ -16,6 +16,12 @@ class SharedViewModel:ViewModel() {
     private val _wrong = MutableLiveData<MutableList<KanjiEntity>>(mutableListOf())
     val wrong:LiveData<MutableList<KanjiEntity>> = _wrong
 
+    private val _quantity = MutableLiveData<Int>(7)
+    val quantity: LiveData<Int> = _quantity
+
+    fun plusQuantity(){
+        _quantity.value = _quantity.value!!.plus(1)
+    }
 
     fun plusIndex(){
         _index.value = _index.value!!.plus(1)
