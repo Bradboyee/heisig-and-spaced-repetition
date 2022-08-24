@@ -9,6 +9,8 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.example.finalproject.databinding.FragmentResultBinding
+import com.example.finalproject.notification.CreateChannel
+import com.example.finalproject.notification.NotificationModel
 import com.example.finalproject.roomdatabase.KanjiDatabase
 import com.example.finalproject.roomdatabase.KanjiRepository
 import com.example.finalproject.viewmodel.KanjiViewModel
@@ -23,32 +25,50 @@ class ResultFragment : Fragment() {
     private lateinit var kanjiViewModel: KanjiViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View {
-        _binding = FragmentResultBinding.inflate(inflater,container,false)
+        _binding = FragmentResultBinding.inflate(inflater, container, false)
         sharedViewModel.clearViewModel()
         bindView()
         init()
         updateSpaced()
+        setNotification()
         return binding.root
+    }
+
+    private fun setNotification() {
+        val builder = NotificationModel(requireContext(),"test intent","test content").createNotificationBuilder()
+        val notification = CreateChannel(requireContext(),builder)
+        notification.createNotificationChannel()
+        binding.button5.setOnClickListener {
+            notification.startNotify(1)
+        }
     }
 
     private fun init() {
         val dao = KanjiDatabase.getInstance(requireContext()).dao()
         val repository = KanjiRepository(dao)
         val factory = KanjiViewModelFactory(repository)
-        kanjiViewModel = ViewModelProvider(this,factory)[KanjiViewModel::class.java]
+        kanjiViewModel = ViewModelProvider(this, factory)[KanjiViewModel::class.java]
     }
 
     private fun bindView() {
         val correctTotal = args.correct!!.size
         val wrongTotal = args.wrong!!.size
-        binding.textViewTotalCorrect.text = "Point ${correctTotal}/${correctTotal+wrongTotal}"
-        binding.textViewDescript.text = "Correct : ${args.correct.contentToString()}\nWrong : ${args.wrong.contentToString()}"
+        binding.textViewTotalCorrect.text = "Point ${correctTotal}/${correctTotal + wrongTotal}"
     }
 
     private fun updateSpaced() {
-        if(args.correct.isNullOrEmpty()){
-            kanjiViewModel.updateWrong(args.wrong!!)
-        }else{kanjiViewModel.updateCorrect(args.correct!!)}
+        when {
+            args.correct.isNullOrEmpty() -> {
+                kanjiViewModel.updateWrong(args.wrong!!)
+            }
+            args.wrong.isNullOrEmpty() -> {
+                kanjiViewModel.updateCorrect(args.correct!!)
+            }
+            else -> {
+                kanjiViewModel.updateCorrect(args.correct!!)
+                kanjiViewModel.updateWrong(args.wrong!!)
+            }
+        }
     }
 
     override fun onDestroyView() {
