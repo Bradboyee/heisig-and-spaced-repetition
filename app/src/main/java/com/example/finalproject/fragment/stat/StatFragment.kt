@@ -9,11 +9,8 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.coroutineScope
-import com.example.finalproject.MyValueFormatter
 import com.example.finalproject.R
 import com.example.finalproject.databinding.FragmentStatBinding
-import com.example.finalproject.notification.CreateChannel
-import com.example.finalproject.notification.NotificationModel
 import com.example.finalproject.roomdatabase.KanjiDatabase
 import com.example.finalproject.roomdatabase.KanjiEntity
 import com.example.finalproject.roomdatabase.KanjiRepository

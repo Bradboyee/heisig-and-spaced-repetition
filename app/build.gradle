@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-parcelize'
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'dagger.hilt.android.plugin'
 }
 android {
     compileSdk 32
@@ -84,4 +85,7 @@ dependencies {
     kapt "com.airbnb.android:epoxy-processor:$epoxyVersion"
     //MPAndroidChart
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    //hilt
+    implementation "com.google.dagger:hilt-android:2.43.2"
+    kapt "com.google.dagger:hilt-compiler:2.43.2"
 }

@@ -1,4 +1,4 @@
-package com.example.finalproject
+package com.example.finalproject.fragment.stat
 
 import com.github.mikephil.charting.formatter.ValueFormatter
 import kotlin.math.roundToInt
