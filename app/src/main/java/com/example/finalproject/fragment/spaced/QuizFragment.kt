@@ -11,11 +11,17 @@ import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.finalproject.R
 import com.example.finalproject.data_kanji.Data
 import com.example.finalproject.databinding.FragmentQuizBinding
+import com.example.finalproject.roomdatabase.KanjiDatabase
+import com.example.finalproject.roomdatabase.KanjiEntity
+import com.example.finalproject.roomdatabase.KanjiRepository
+import com.example.finalproject.viewmodel.KanjiViewModel
+import com.example.finalproject.viewmodel.KanjiViewModelFactory
 import com.example.finalproject.viewmodel.SharedViewModel
 
 class QuizFragment : Fragment(), View.OnClickListener {
@@ -24,16 +30,17 @@ class QuizFragment : Fragment(), View.OnClickListener {
     private val args by navArgs<QuizFragmentArgs>()
     private val sharedViewModel: SharedViewModel by activityViewModels()
     private var submitAnswer: String? = null
+    private lateinit var kanjiViewModel: KanjiViewModel
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentQuizBinding.inflate(inflater, container, false)
-        sharedViewModel.index.observe(viewLifecycleOwner, {
+        sharedViewModel.index.observe(viewLifecycleOwner) {
             initChoice()
             progressBar()
-        })
+        }
         initOnClickListener()
         return binding.root
     }
@@ -48,8 +55,11 @@ class QuizFragment : Fragment(), View.OnClickListener {
             args.quizKanji.size - 1 -> {
                 val correct = sharedViewModel.correct.value
                 val wrong = sharedViewModel.wrong.value
+                updateSpaced(correct!!.toTypedArray(),
+                    wrong!!.toTypedArray())
                 val action =
-                    QuizFragmentDirections.actionQuizFragmentToResultFragment(correct!!.toTypedArray(), wrong!!.toTypedArray())
+                    QuizFragmentDirections.actionQuizFragmentToResultFragment(correct.toTypedArray(),
+                        wrong.toTypedArray())
                 findNavController().navigate(action)
             }
             else -> {
@@ -61,7 +71,7 @@ class QuizFragment : Fragment(), View.OnClickListener {
 
     private fun initChoice() {
         val index = sharedViewModel.index.value!!
-        binding.textViewTotal.text = "${index+1}/${args.quizKanji.size}"
+        binding.textViewTotal.text = "${index + 1}/${args.quizKanji.size}"
         val question = args.quizKanji[index].kanji
         val answer = args.quizKanji[index].kanjiMeaning
         val choice = (Data.kanji).let { data ->
@@ -130,7 +140,7 @@ class QuizFragment : Fragment(), View.OnClickListener {
                 sharedViewModel.addWrong(args.quizKanji[index])
             }
         }
-        Log.i("Selected ",submitAnswer!!)
+        Log.i("Selected ", submitAnswer!!)
         submitAnswer = null
         checkEnd()
     }
@@ -146,5 +156,28 @@ class QuizFragment : Fragment(), View.OnClickListener {
         requireActivity().onBackPressedDispatcher.addCallback(this) {
             // With blank your fragment BackPressed will be disabled.
         }
+    }
+
+    private fun updateSpaced(correct: Array<KanjiEntity>, wrong: Array<KanjiEntity>) {
+        init()
+        when {
+            correct.isEmpty() -> {
+                kanjiViewModel.updateWrong(wrong)
+            }
+            wrong.isEmpty() -> {
+                kanjiViewModel.updateCorrect(correct)
+            }
+            else -> {
+                kanjiViewModel.updateCorrect(correct)
+                kanjiViewModel.updateWrong(wrong)
+            }
+        }
+    }
+
+    private fun init() {
+        val dao = KanjiDatabase.getInstance(requireContext()).dao()
+        val repository = KanjiRepository(dao)
+        val factory = KanjiViewModelFactory(repository)
+        kanjiViewModel = ViewModelProvider(this, factory)[KanjiViewModel::class.java]
     }
 }

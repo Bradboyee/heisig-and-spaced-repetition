@@ -9,13 +9,11 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.coroutineScope
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.finalproject.databinding.FragmentSpacedBinding
 import com.example.finalproject.epoxy.Controller
 import com.example.finalproject.roomdatabase.KanjiDatabase
 import com.example.finalproject.roomdatabase.KanjiRepository
-import com.example.finalproject.utils.KanjiListAdapter
 import com.example.finalproject.viewmodel.KanjiViewModelFactory
 import com.example.finalproject.viewmodel.KanjiViewModel
 import kotlinx.coroutines.launch
@@ -54,7 +52,7 @@ class SpacedFragment : Fragment() {
         }
         lifecycle.coroutineScope.launch {
             kanjiViewModel.spacedKanji().collect { spacedKanji ->
-                if (spacedKanji.isNullOrEmpty()) {
+                if (spacedKanji.isEmpty()) {
                     binding.floatingActionButton.setOnClickListener {
                         Toast.makeText(requireContext(),
                             "You don't have TODO today !",

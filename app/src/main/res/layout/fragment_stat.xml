@@ -35,58 +35,52 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/pieChart"
-        android:layout_marginTop="40dp"
-        android:orientation="horizontal"
-        android:weightSum="3">
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/pieChart"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:weightSum="3">-->
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="3dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="4dp"
-            android:text="Android"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            app:drawableTint="@color/purple_200"
-            app:drawableLeftCompat="@drawable/ic_circle" />
+<!--        <TextView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="3dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:gravity="center"-->
+<!--            android:padding="4dp"-->
+<!--            android:text="Android"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/black"-->
+<!--            app:drawableTint="@color/purple_200"-->
+<!--            app:drawableLeftCompat="@drawable/ic_circle" />-->
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="3dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="4dp"
-            android:text="Apple"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            app:drawableLeftCompat="@drawable/ic_circle"
-            app:drawableTint="@color/seasonal_orange" />
+<!--        <TextView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="3dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:gravity="center"-->
+<!--            android:padding="4dp"-->
+<!--            android:text="Apple"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/black"-->
+<!--            app:drawableLeftCompat="@drawable/ic_circle"-->
+<!--            app:drawableTint="@color/seasonal_orange" />-->
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="3dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:padding="4dp"
-            android:text="Microsoft"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            app:drawableLeftCompat="@drawable/ic_circle"
-            app:drawableTint="@color/soft_red" />
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button" />
+<!--        <TextView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="3dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:gravity="center"-->
+<!--            android:padding="4dp"-->
+<!--            android:text="Microsoft"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="@color/black"-->
+<!--            app:drawableLeftCompat="@drawable/ic_circle"-->
+<!--            app:drawableTint="@color/soft_red" />-->
+<!--    </LinearLayout>-->
 
 </RelativeLayout>

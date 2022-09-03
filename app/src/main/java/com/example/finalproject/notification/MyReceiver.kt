@@ -17,6 +17,6 @@ class MyReceiver : BroadcastReceiver() {
             NotificationModel(context, massage!!.title, massage.content).createNotificationBuilder()
         val notificationCall = CreateChannel(context, builder)
         notificationCall.createNotificationChannel()
-        notificationCall.startNotify(2)
+        notificationCall.startNotify(massage.notificationID)
     }
 }

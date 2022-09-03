@@ -36,7 +36,6 @@ class StatFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View {
         _binding = FragmentStatBinding.inflate(inflater,container,false)
         init()
-        setNotification()
         return binding.root
     }
 
@@ -92,14 +91,6 @@ class StatFragment : Fragment() {
         colors.add(ContextCompat.getColor(requireContext(),R.color.sky_light_blue))
         colors.add(ContextCompat.getColor(requireContext(),R.color.supreme_blue))
         setChart()
-    }
-    private fun setNotification() {
-        val builder = NotificationModel(requireContext(),"test intent","test content").createNotificationBuilder()
-        val notification = CreateChannel(requireContext(),builder)
-        notification.createNotificationChannel()
-        binding.button7.setOnClickListener {
-            notification.startNotify(1)
-        }
     }
 
 

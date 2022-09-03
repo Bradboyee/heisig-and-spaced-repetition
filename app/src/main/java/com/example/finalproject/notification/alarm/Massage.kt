@@ -6,5 +6,6 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Massage(
     var title:String,
-    val content:String
+    val content:String,
+    val notificationID:Int
     ):Parcelable
