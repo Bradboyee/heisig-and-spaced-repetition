@@ -31,7 +31,7 @@ class ControllerHomeCategory:EpoxyController() {
         override fun bind() {
             textViewTopicCategory.text = topic
             textViewTopicCategory.setOnClickListener {
-                val bundle = bundleOf("amount" to topic)
+                val bundle = bundleOf("category" to topic)
                 it.findNavController().navigate(R.id.action_homeFragment_to_kanjiListFragment, bundle)
             }
         }

@@ -29,7 +29,7 @@ class KanjiRecyclerAdapter(kanji: List<Kanji>, private val value: Int) : Recycle
         fun bind(kanji: Kanji) {
             kanjiTextview.text = kanji.kanji
             itemView.setOnClickListener {
-                val action = KanjiListFragmentDirections.actionKanjiListFragmentToHeisigFragment(kanji)
+                val action = KanjiListFragmentDirections.actionKanjiListFragmentToHeisigFragment()
                 Navigation.findNavController(it).navigate(action)
             }
         }

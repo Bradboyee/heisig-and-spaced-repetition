@@ -20,7 +20,6 @@ class ControllerHeisig:EpoxyController() {
             HeisigKanji(kanji.component2kanji,kanji.component2Meaning,kanji.component2ReadingOn,kanji.component2ReadingKun).id(kanji.kanji).addTo(this)
             HeisigLabel("=").id("EQUAL").addTo(this)
             HeisigKanji(kanji.kanji,kanji.kanjiMeaning,kanji.kanjiReadingOn,kanji.kanjiReadingKun).id(kanji.kanji).addTo(this)
-
         }
     }
     data class HeisigKanji(val kanji:String,val meaning:String,val readingOn:String,val readingKun:String):KotlinModel(R.layout.epoxy_heisig_kanji){

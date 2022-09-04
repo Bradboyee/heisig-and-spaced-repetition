@@ -32,7 +32,7 @@ class KanjiListFragment : Fragment() {
     }
 
     private fun getCategoryValue(): Int {
-        val category = when (arguments?.getString("amount")) {
+        val category = when (arguments?.getString("category")) {
             "GRADE 1" -> 1
             "GRADE 2" -> 2
             "GRADE 3" -> 3

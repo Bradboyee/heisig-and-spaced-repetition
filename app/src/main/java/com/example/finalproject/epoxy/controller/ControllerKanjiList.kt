@@ -1,6 +1,8 @@
 package com.example.finalproject.epoxy.controller
 
 import android.widget.TextView
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import com.airbnb.epoxy.EpoxyController
 import com.example.finalproject.R
 import com.example.finalproject.epoxy.model.KotlinModel
@@ -19,7 +21,10 @@ class ControllerKanjiList:EpoxyController() {
         private val kanjiTextView by bind<TextView>(R.id.textview_epoxy_kanji_list)
         override fun bind() {
             kanjiTextView.text = kanji
+            kanjiTextView.setOnClickListener {
+                val bundle = bundleOf("chooseKanji" to kanji)
+                it.findNavController().navigate(R.id.action_kanjiListFragment_to_heisigFragment,bundle)
+            }
         }
-
     }
 }
