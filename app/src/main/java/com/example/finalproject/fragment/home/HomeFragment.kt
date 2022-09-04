@@ -6,9 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.finalproject.data_kanji.Data
 import com.example.finalproject.databinding.FragmentHomeBinding
-import com.example.finalproject.utils.CategoryRecyclerAdapter
+import com.example.finalproject.epoxy.controller.ControllerHomeCategory
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -17,13 +16,17 @@ class HomeFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        initEpoxy()
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.homeFragRecyclerview.layoutManager = LinearLayoutManager(context)
-        binding.homeFragRecyclerview.adapter = CategoryRecyclerAdapter(Data.category)
+    private fun initEpoxy() {
+        val epoxyRecyclerView = binding.homeFragRecyclerview
+        val controller = ControllerHomeCategory()
+        epoxyRecyclerView.layoutManager = LinearLayoutManager(context)
+        epoxyRecyclerView.setHasFixedSize(false)
+        epoxyRecyclerView.setController(controller)
+        controller.requestModelBuild()
     }
 
     override fun onDestroyView() {

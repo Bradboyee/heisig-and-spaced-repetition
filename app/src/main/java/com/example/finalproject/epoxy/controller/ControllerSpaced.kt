@@ -1,4 +1,4 @@
-package com.example.finalproject.epoxy
+package com.example.finalproject.epoxy.controller
 
 import android.graphics.Color.*
 import android.os.CountDownTimer
@@ -15,7 +15,7 @@ import com.example.finalproject.roomdatabase.KanjiEntity
 import java.util.concurrent.TimeUnit
 import kotlin.properties.Delegates
 
-class Controller : EpoxyController() {
+class ControllerSpaced : EpoxyController() {
 
     var kanjiController by Delegates.observable(emptyList<KanjiEntity>()) { _, _, _ ->
         requestModelBuild()

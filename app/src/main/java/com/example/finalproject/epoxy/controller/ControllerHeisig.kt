@@ -1,4 +1,4 @@
-package com.example.finalproject.epoxy
+package com.example.finalproject.epoxy.controller
 
 import android.widget.TextView
 import com.airbnb.epoxy.EpoxyController

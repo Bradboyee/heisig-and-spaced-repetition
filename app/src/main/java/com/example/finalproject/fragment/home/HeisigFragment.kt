@@ -10,7 +10,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cesarferreira.tempo.Tempo
 import com.example.finalproject.databinding.FragmentHeisigBinding
-import com.example.finalproject.epoxy.ControllerHeisig
+import com.example.finalproject.epoxy.controller.ControllerHeisig
 import com.example.finalproject.roomdatabase.KanjiDatabase
 import com.example.finalproject.roomdatabase.KanjiEntity
 import com.example.finalproject.roomdatabase.KanjiRepository
