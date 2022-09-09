@@ -10,6 +10,13 @@
         <entry key="..\:/FinalProject/app/src/main/res/drawable/baseline_add_24.xml" value="0.3828125" />
         <entry key="..\:/FinalProject/app/src/main/res/drawable/baseline_circle_24.xml" value="0.3305" />
         <entry key="..\:/FinalProject/app/src/main/res/drawable/baseline_east_24.xml" value="0.1984375" />
+        <entry key="..\:/FinalProject/app/src/main/res/drawable/ic_baseline_bar_chart_24.xml" value="0.1965" />
+        <entry key="..\:/FinalProject/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.197" />
+        <entry key="..\:/FinalProject/app/src/main/res/drawable/ic_baseline_play_arrow_24.xml" value="0.3675" />
+        <entry key="..\:/FinalProject/app/src/main/res/drawable/ic_circle.xml" value="0.1965" />
+        <entry key="..\:/FinalProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1965" />
+        <entry key="..\:/FinalProject/app/src/main/res/drawable/ic_otozu_reru__11.xml" value="0.343" />
+        <entry key="..\:/FinalProject/app/src/main/res/drawable/ic_position_hen.xml" value="0.3675" />
         <entry key="..\:/FinalProject/app/src/main/res/drawable/navigate_next-48px.xml" value="0.3828125" />
         <entry key="..\:/FinalProject/app/src/main/res/font/font_8bit.xml" value="0.396875" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/activity_heisig.xml" value="0.33" />
@@ -20,10 +27,19 @@
         <entry key="..\:/FinalProject/app/src/main/res/layout/bynav.xml" value="0.2015625" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_category.xml" value="0.36666666666666664" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_header_kanji_item.xml" value="0.5" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_heisig_component.xml" value="0.75" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_heisig_example.xml" value="0.5645549318364074" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_heisig_icon_text.xml" value="0.5" />
-        <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_heisig_kanji.xml" value="0.2359375" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_heisig_image.xml" value="0.5" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_heisig_image_order.xml" value="0.36666666666666664" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_heisig_kanji.xml" value="0.5" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_heisig_radical.xml" value="0.75" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_heisig_radical_animation.xml" value="0.33" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_heisig_topic_kanji.xml" value="0.75" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_kanji_item.xml" value="0.67" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_kanji_list_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_radical.xml" value="0.159375" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/error.xml" value="0.20208333333333334" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/fragment_heisig.xml" value="0.25" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/fragment_home.xml" value="0.20520833333333333" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/fragment_kanji_list.xml" value="0.5474339035769828" />
@@ -40,6 +56,9 @@
         <entry key="..\:/FinalProject/app/src/main/res/layout/item_topic.xml" value="0.36367753623188404" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/kanji_item.xml" value="0.2957427536231884" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/kanji_list.xml" value="0.20520833333333333" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/layout_vertical_linear_group.xml" value="0.14427083333333332" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/loading.xml" value="0.22" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/split_line.xml" value="0.365625" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/view_banner.xml" value="0.2598958333333333" />
         <entry key="..\:/FinalProject/app/src/main/res/menu/menu.xml" value="0.2015625" />
       </map>
@@ -50,5 +69,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.5" />
+      </ProjectState>
+    </option>
   </component>
 </project>

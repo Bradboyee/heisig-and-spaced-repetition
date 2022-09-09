@@ -1,4 +1,4 @@
-package com.example.finalproject.json
+package com.example.finalproject.json.jsonpojo
 
 import kotlinx.serialization.Serializable
 

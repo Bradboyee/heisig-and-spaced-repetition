@@ -10,7 +10,6 @@ import com.example.finalproject.epoxy.model.KotlinModel
 class ControllerHomeCategory:EpoxyController() {
 
     override fun buildModels() {
-
         CategoryHeaderModel("GRADE 1").id("GRADE1").addTo(this)
 
         CategoryHeaderModel("GRADE 2").id("GRADE1").addTo(this)

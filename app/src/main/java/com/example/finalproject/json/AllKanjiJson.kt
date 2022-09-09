@@ -1,12 +1,12 @@
 package com.example.finalproject.json
 
 import android.content.Context
-import kotlinx.serialization.Serializable
+import com.example.finalproject.json.jsonpojo.PojoKanjiAllJson
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 
 class AllKanjiJson(context: Context) {
-    private val jsonString = context.assets.open("AllKanji.json").bufferedReader().use {
+    private val jsonString = context.assets.open("allkanji.json").bufferedReader().use {
         it.readText()
     }
     val data = Json.decodeFromString<List<PojoKanjiAllJson>>(jsonString)

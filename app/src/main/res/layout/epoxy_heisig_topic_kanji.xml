@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/imageView_kanji"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/honest_green"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:src="@drawable/ic_otozu_reru__11" />
+
+    <TextView
+        android:id="@+id/Meaning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/eightbit_dragon"
+        android:text="MEANING :"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageView_kanji"
+        app:layout_constraintTop_toTopOf="@+id/imageView_kanji" />
+
+    <TextView
+        android:id="@+id/Reading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/eightbit_dragon"
+        android:text="READING :"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/Meaning"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/Meaning"
+        app:layout_constraintTop_toBottomOf="@+id/textView_meaning" />
+
+    <TextView
+        android:id="@+id/textView_meaning"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/bestten_crt"
+        android:lineSpacingExtra="8sp"
+        android:text="@string/exampleMeaning"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/Meaning"
+        app:layout_constraintTop_toTopOf="@+id/Meaning" />
+
+    <TextView
+        android:id="@+id/textView_reading"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/bestten_crt"
+        android:lineSpacingExtra="8sp"
+        android:text="@string/exampleOn"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/Reading"
+        app:layout_constraintTop_toTopOf="@+id/Reading" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="textView_meaning"
+        tools:layout_editor_absoluteY="139dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

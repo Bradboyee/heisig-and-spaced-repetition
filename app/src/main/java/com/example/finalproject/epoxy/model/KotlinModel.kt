@@ -1,5 +1,6 @@
 package com.example.finalproject.epoxy.model
 
+import android.content.Context
 import android.view.View
 import androidx.annotation.IdRes
 import androidx.annotation.LayoutRes

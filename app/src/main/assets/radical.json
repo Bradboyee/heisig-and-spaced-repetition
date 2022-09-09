@@ -1,0 +1,1546 @@
+[
+  {
+    "Radical": "一",
+    "Stroke count": 1,
+    "Hiragana-Romaji": "いち-ichi",
+    "Meaning": "one",
+    "Position": "",
+    "Examples": "一 戸 旦"
+  },
+  {
+    "Radical": "丨",
+    "Stroke count": 1,
+    "Hiragana-Romaji": "",
+    "Meaning": "line",
+    "Position": "",
+    "Examples": "巾 引 中 甲 旧"
+  },
+  {
+    "Radical": "丶",
+    "Stroke count": 1,
+    "Hiragana-Romaji": "てん-ten",
+    "Meaning": "dot",
+    "Position": "",
+    "Examples": "刃 凡 丸 丹 太 犬 丼"
+  },
+  {
+    "Radical": "丿",
+    "Stroke count": 1,
+    "Hiragana-Romaji": "",
+    "Meaning": "bend",
+    "Position": "",
+    "Examples": "丈 久 才 万 丹 少"
+  },
+  {
+    "Radical": "乙 (乚)",
+    "Stroke count": 1,
+    "Hiragana-Romaji": "おつ-otsu",
+    "Meaning": "second, latter",
+    "Position": "",
+    "Examples": "乙 乞 乏 孔 屯 札 礼 宅 乱 枕 乳"
+  },
+  {
+    "Radical": "亅",
+    "Stroke count": 1,
+    "Hiragana-Romaji": "",
+    "Meaning": "hook",
+    "Position": "",
+    "Examples": "了 丁 才"
+  },
+  {
+    "Radical": "二",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "に-ni",
+    "Meaning": "two",
+    "Position": "",
+    "Examples": "井 仁 元 示"
+  },
+  {
+    "Radical": "亠",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "",
+    "Meaning": "lid",
+    "Position": "⊤",
+    "Examples": "六 玄 市 夜 京"
+  },
+  {
+    "Radical": "人",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "ひと-hito",
+    "Meaning": "human, person",
+    "Position": "",
+    "Examples": "人 欠 夫 内 囚 丙 失 肉 扶 快 決"
+  },
+  {
+    "Radical": "亻",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "",
+    "Meaning": "human, person",
+    "Position": "◧",
+    "Examples": "仏 化 付 代 他 仕 休 位 作 体 住 何 花 信"
+  },
+  {
+    "Radical": "𠆢",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "",
+    "Meaning": "person (人); (入; roof)",
+    "Position": "⊤",
+    "Examples": "介 今 合 全 会 谷"
+  },
+  {
+    "Radical": "入",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "いる-iru",
+    "Meaning": "enter",
+    "Position": "",
+    "Examples": "入 込"
+  },
+  {
+    "Radical": "八",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "はち-hachi",
+    "Meaning": "eight; divide",
+    "Position": "⊤",
+    "Examples": "八 分 公 谷 沿 松 俗 盆 翁 紛容 益 粉 浴 挙 訟 欲 船 雰 裕 鉛 溶 寡 総 嬢"
+  },
+  {
+    "Radical": "ハ",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "",
+    "Meaning": "animal legs",
+    "Position": "⊥",
+    "Examples": "六 穴 呉 兵 貝 洪 唄 冥 浜 財 員 棋 貿 貸 買 賛 質 興"
+  },
+  {
+    "Radical": "儿",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "",
+    "Meaning": "human legs",
+    "Position": "⊥",
+    "Examples": "児 兄 四 見"
+  },
+  {
+    "Radical": "丷",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "",
+    "Meaning": "grass, plant; horns",
+    "Position": "⊤",
+    "Examples": "平 半 羊 岡 前 首 南"
+  },
+  {
+    "Radical": "冫",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "",
+    "Meaning": "ice",
+    "Position": "◧",
+    "Examples": "次 冶 冷"
+  },
+  {
+    "Radical": "凵",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "",
+    "Meaning": "container, open mouth",
+    "Position": "⊥",
+    "Examples": "画"
+  },
+  {
+    "Radical": "匚",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "",
+    "Meaning": "box",
+    "Position": "⿴",
+    "Examples": "匯"
+  },
+  {
+    "Radical": "冂",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "",
+    "Meaning": "upside down box",
+    "Position": "⿴",
+    "Examples": "円 冊 再 同"
+  },
+  {
+    "Radical": "冖",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "",
+    "Meaning": "cover",
+    "Position": "⊤",
+    "Examples": "売 学 骨 常"
+  },
+  {
+    "Radical": "几",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "つくえ-tsukue",
+    "Meaning": "desk, table",
+    "Position": "◨",
+    "Examples": ""
+  },
+  {
+    "Radical": "九",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "きゅう-kyū",
+    "Meaning": "nine",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "力",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "ちから-chikara",
+    "Meaning": "power, force",
+    "Position": "",
+    "Examples": "男"
+  },
+  {
+    "Radical": "刀",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "かたな-katana",
+    "Meaning": "knife, sword",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "刂",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "",
+    "Meaning": "knife, sword",
+    "Position": "◨",
+    "Examples": "割 利 前"
+  },
+  {
+    "Radical": "乃",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "の-no",
+    "Meaning": "",
+    "Position": "⊥",
+    "Examples": "秀 透 携 誘 /及"
+  },
+  {
+    "Radical": "勹",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "",
+    "Meaning": "wrap, embrace",
+    "Position": "⿴",
+    "Examples": "与 勾 匂 欠 巧 句 包 号 写 旬 朽 汚 考 均 泡 抱 拘 易 的 物"
+  },
+  {
+    "Radical": "⺈",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "",
+    "Meaning": "knife, sword",
+    "Position": "⊤",
+    "Examples": "危 争 色 角 免 浄 急 負 陥 逸 亀 喚 換 象 像 静 衡 艶"
+  },
+  {
+    "Radical": "マ",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "ま-ma.",
+    "Meaning": "Katakana マ",
+    "Position": "⊤",
+    "Examples": "勇 通 湧 痛 踊 疑 凝 擬 /予 矛"
+  },
+  {
+    "Radical": "匕",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "さじ-saji",
+    "Meaning": "spoon; (七 = seven)",
+    "Position": "",
+    "Examples": "七 匂 化 切 叱 北 旨 死 花 虎 背"
+  },
+  {
+    "Radical": "十",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "じゅう-jū",
+    "Meaning": "ten, complete",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "卜",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "うらない-uranai",
+    "Meaning": "divination",
+    "Position": "◨",
+    "Examples": ""
+  },
+  {
+    "Radical": "又",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "また-mata",
+    "Meaning": "again, right hand",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "厶",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "む-mu",
+    "Meaning": "private",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "卩 (㔾)",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "",
+    "Meaning": "seal",
+    "Position": "◨",
+    "Examples": "厄 犯 令 危 印 服 卵 命 報"
+  },
+  {
+    "Radical": "厂",
+    "Stroke count": 2,
+    "Hiragana-Romaji": "",
+    "Meaning": "cliff",
+    "Position": "⿸",
+    "Examples": ""
+  },
+  {
+    "Radical": "广",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "",
+    "Meaning": "on a cliff",
+    "Position": "⿸",
+    "Examples": "序 店 府"
+  },
+  {
+    "Radical": "口",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "くち-kuchi",
+    "Meaning": "mouth, opening",
+    "Position": "",
+    "Examples": "口 古 可 名 君 否 呉 告 周 味 命 和 哲 唐 善 器"
+  },
+  {
+    "Radical": "囗",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "",
+    "Meaning": "enclosure",
+    "Position": "⿴",
+    "Examples": "四 回"
+  },
+  {
+    "Radical": "土",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "つち-tsuchi",
+    "Meaning": "earth",
+    "Position": "",
+    "Examples": "土 地"
+  },
+  {
+    "Radical": "士",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "さむらい-samurai",
+    "Meaning": "scholar, bachelor",
+    "Position": "",
+    "Examples": "士"
+  },
+  {
+    "Radical": "夂",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "",
+    "Meaning": "go",
+    "Position": "⊥",
+    "Examples": "夏"
+  },
+  {
+    "Radical": "夕",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "ゆうべ-yūbe",
+    "Meaning": "evening, sunset",
+    "Position": "",
+    "Examples": "夕 外 多 夜"
+  },
+  {
+    "Radical": "尢",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "",
+    "Meaning": "",
+    "Position": "",
+    "Examples": "沈 枕 就 蹴 /尤 无"
+  },
+  {
+    "Radical": "大",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "だい-dai",
+    "Meaning": "big, very",
+    "Position": "",
+    "Examples": "大 天"
+  },
+  {
+    "Radical": "女",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "おんな-onna",
+    "Meaning": "woman, female",
+    "Position": "",
+    "Examples": "女"
+  },
+  {
+    "Radical": "子",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "こ-ko",
+    "Meaning": "child, seed",
+    "Position": "",
+    "Examples": "子"
+  },
+  {
+    "Radical": "宀",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "",
+    "Meaning": "roof",
+    "Position": "",
+    "Examples": "家"
+  },
+  {
+    "Radical": "寸",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "すん-sun",
+    "Meaning": "thumb, sundial degree",
+    "Position": "",
+    "Examples": "時"
+  },
+  {
+    "Radical": "小",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "ちいさい-chīsai",
+    "Meaning": "small, insignificant",
+    "Position": "",
+    "Examples": "小 少"
+  },
+  {
+    "Radical": "⺌ (⺍)",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "",
+    "Meaning": "small, insignificant",
+    "Position": "",
+    "Examples": "当 光 鎖 巣 桜 獣 単 脳 悩 厳"
+  },
+  {
+    "Radical": "幺",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "",
+    "Meaning": "short thread",
+    "Position": "",
+    "Examples": "幻 幼"
+  },
+  {
+    "Radical": "尸",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "",
+    "Meaning": "corpse",
+    "Position": "",
+    "Examples": "尺 局"
+  },
+  {
+    "Radical": "山",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "やま-yama",
+    "Meaning": "mountain",
+    "Position": "",
+    "Examples": "山 岡 岩 島"
+  },
+  {
+    "Radical": "川",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "かわ-kawa",
+    "Meaning": "river",
+    "Position": "",
+    "Examples": "川 州 巡"
+  },
+  {
+    "Radical": "工",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "たくみ-takumi",
+    "Meaning": "work",
+    "Position": "",
+    "Examples": "工 左 差"
+  },
+  {
+    "Radical": "已",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "おのれ-onore",
+    "Meaning": "oneself",
+    "Position": "",
+    "Examples": "(己 巳)"
+  },
+  {
+    "Radical": "亡",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "な・くす-nakusu",
+    "Meaning": "dead, gone",
+    "Position": "",
+    "Examples": "亡 妄 忙 忘 盲 荒 望 慌 網"
+  },
+  {
+    "Radical": "巾",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "はば-haba",
+    "Meaning": "turban, scarf",
+    "Position": "",
+    "Examples": "市 布 帝 常"
+  },
+  {
+    "Radical": "干",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "ほし-hoshi",
+    "Meaning": "dry",
+    "Position": "",
+    "Examples": "平 年"
+  },
+  {
+    "Radical": "廾",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "",
+    "Meaning": "two hands, twenty",
+    "Position": "",
+    "Examples": "弁"
+  },
+  {
+    "Radical": "廴",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "",
+    "Meaning": "long stride",
+    "Position": "⿺",
+    "Examples": "延"
+  },
+  {
+    "Radical": "⻌ (辶)",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "",
+    "Meaning": "walk",
+    "Position": "⿺",
+    "Examples": "巡 迎 通 追 逃 迎 進"
+  },
+  {
+    "Radical": "也",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "",
+    "Meaning": "",
+    "Position": "◨",
+    "Examples": "地 池 他 施"
+  },
+  {
+    "Radical": "弋",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "",
+    "Meaning": "ceremony, shoot, arrow",
+    "Position": "",
+    "Examples": "式"
+  },
+  {
+    "Radical": "弓",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "ゆみ-yumi",
+    "Meaning": "bow",
+    "Position": "",
+    "Examples": "弓 引"
+  },
+  {
+    "Radical": "彐",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "",
+    "Meaning": "pig snout",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "彡",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "",
+    "Meaning": "hair, bristle, stubble, beard",
+    "Position": "",
+    "Examples": "杉 形 参 珍 修 彫 惨 彩 診 須 髪 彰 影 膨 顔 鬱"
+  },
+  {
+    "Radical": "彳",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "",
+    "Meaning": "step",
+    "Position": "◧",
+    "Examples": "役 彼 後 得 徳"
+  },
+  {
+    "Radical": "氵",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "",
+    "Meaning": "water",
+    "Position": "◧",
+    "Examples": "泳 決 治 海 演 漢 瀬"
+  },
+  {
+    "Radical": "丬 (爿)",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "",
+    "Meaning": "split wood",
+    "Position": "◧",
+    "Examples": "北 壮 状 荘 背 将 装 寝 奨"
+  },
+  {
+    "Radical": "犭",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "",
+    "Meaning": "dog",
+    "Position": "◧",
+    "Examples": "犯 狂 狙"
+  },
+  {
+    "Radical": "扌",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "",
+    "Meaning": "hand",
+    "Position": "◧",
+    "Examples": "持 掛 打 批 技 抱 押"
+  },
+  {
+    "Radical": "艹",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "",
+    "Meaning": "grass, vegetation",
+    "Position": "⊤",
+    "Examples": "共 花 英 苦 草 茶 落 幕 靴 薬"
+  },
+  {
+    "Radical": "⻖←",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "",
+    "Meaning": "mound (阝-left)",
+    "Position": "◧",
+    "Examples": "阪 防 阻 院 陳"
+  },
+  {
+    "Radical": "→⻏",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "",
+    "Meaning": "town (阝-right)",
+    "Position": "◨",
+    "Examples": "那 邦 郎 部 郭 都"
+  },
+  {
+    "Radical": "忄",
+    "Stroke count": 3,
+    "Hiragana-Romaji": "",
+    "Meaning": "heart",
+    "Position": "◧",
+    "Examples": "忙 快 怪 怖 性 恒 恨 悔 悟 悩 悦 惨 悼 惧 惜 情 愉 惰 慌 慄 慨 慎 憎 慢 慣"
+  },
+  {
+    "Radical": "心",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "こころ-kokoro",
+    "Meaning": "heart",
+    "Position": "⊥",
+    "Examples": "心 必 芯 忍 忌 忘 志 応 泌 忠 念 怒 怠 怨 急 思 恭 恥 恐 恋 恵 恣 秘 恩 息"
+  },
+  {
+    "Radical": "戈",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "",
+    "Meaning": "spear, halberd",
+    "Position": "",
+    "Examples": "成 式 弐 戦"
+  },
+  {
+    "Radical": "戸",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "と-to",
+    "Meaning": "door, house",
+    "Position": "",
+    "Examples": "戸 戻 所"
+  },
+  {
+    "Radical": "手",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "て-te",
+    "Meaning": "hand",
+    "Position": "",
+    "Examples": "手 挙"
+  },
+  {
+    "Radical": "攵",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "のぶん-nobunn",
+    "Meaning": "action, whip",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "文",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "ぶん-bunn",
+    "Meaning": "script, literature",
+    "Position": "",
+    "Examples": "文"
+  },
+  {
+    "Radical": "斗",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "",
+    "Meaning": "dipper, measuring scoop",
+    "Position": "",
+    "Examples": "料"
+  },
+  {
+    "Radical": "斤",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "きん-kinn",
+    "Meaning": "axe",
+    "Position": "",
+    "Examples": "新"
+  },
+  {
+    "Radical": "方",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "ほう-hō",
+    "Meaning": "way, square, raft",
+    "Position": "",
+    "Examples": "方 放 旅 族"
+  },
+  {
+    "Radical": "日",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "にち-nichi",
+    "Meaning": "sun, day",
+    "Position": "",
+    "Examples": "日 白 百 明 的 映 時 晩"
+  },
+  {
+    "Radical": "月",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "つき-tsuki",
+    "Meaning": "moon, month; body, flesh",
+    "Position": "",
+    "Examples": "有 服 青 朝"
+  },
+  {
+    "Radical": "木",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "き-ki",
+    "Meaning": "tree",
+    "Position": "",
+    "Examples": "木 板 相 根 森 楽 機 末 本 杉 林"
+  },
+  {
+    "Radical": "欠",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "けつ-ketsu",
+    "Meaning": "yawn, lack",
+    "Position": "",
+    "Examples": "歌 欧"
+  },
+  {
+    "Radical": "止",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "とめる-tomeru",
+    "Meaning": "stop",
+    "Position": "",
+    "Examples": "止 正 歩"
+  },
+  {
+    "Radical": "歹",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "",
+    "Meaning": "death, decay",
+    "Position": "",
+    "Examples": "死 列"
+  },
+  {
+    "Radical": "殳",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "るまた-rumata",
+    "Meaning": "weapon, lance",
+    "Position": "",
+    "Examples": "役 投 殴"
+  },
+  {
+    "Radical": "毋",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "",
+    "Meaning": "do not",
+    "Position": "",
+    "Examples": "毎 梅"
+  },
+  {
+    "Radical": "比",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "くらべる-kuraberu",
+    "Meaning": "compare, compete",
+    "Position": "",
+    "Examples": "皆 昆"
+  },
+  {
+    "Radical": "毛",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "け-ke",
+    "Meaning": "fur, hair",
+    "Position": "",
+    "Examples": "毛"
+  },
+  {
+    "Radical": "氏",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "うじ-uji",
+    "Meaning": "clan",
+    "Position": "",
+    "Examples": "氏 民 紙"
+  },
+  {
+    "Radical": "气",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "",
+    "Meaning": "steam, breath",
+    "Position": "",
+    "Examples": "汽 気"
+  },
+  {
+    "Radical": "水",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "みず-mizu",
+    "Meaning": "water",
+    "Position": "",
+    "Examples": "水 永"
+  },
+  {
+    "Radical": "火",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "ひ-hi",
+    "Meaning": "fire",
+    "Position": "",
+    "Examples": "火 灯"
+  },
+  {
+    "Radical": "灬",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "",
+    "Meaning": "fire",
+    "Position": "",
+    "Examples": "焦 然 煮"
+  },
+  {
+    "Radical": "⺤ (爪)",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "つめ-tsume",
+    "Meaning": "claw, nail, talon",
+    "Position": "",
+    "Examples": "爪 妥 采 乳 受 浮 将 渓 淫 彩 授 採 菜 援 揺 媛 奨 暖 愛 稲 緩 謡 穏 曖 爵"
+  },
+  {
+    "Radical": "父",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "ちち-chichi",
+    "Meaning": "father",
+    "Position": "",
+    "Examples": "釜"
+  },
+  {
+    "Radical": "牛",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "うし-ushi",
+    "Meaning": "cow",
+    "Position": "",
+    "Examples": "牛 告 牧 物 特 解"
+  },
+  {
+    "Radical": "犬",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "いぬ-inu",
+    "Meaning": "dog",
+    "Position": "",
+    "Examples": "犬 献 獣"
+  },
+  {
+    "Radical": "王",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "おう-ō",
+    "Meaning": "king",
+    "Position": "",
+    "Examples": "王 玉 主 国 弄 皇 理 差 聖"
+  },
+  {
+    "Radical": "礻",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "",
+    "Meaning": "altar, display",
+    "Position": "",
+    "Examples": "礼 社 神 視 福"
+  },
+  {
+    "Radical": "耂",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "",
+    "Meaning": "old",
+    "Position": "",
+    "Examples": "孝"
+  },
+  {
+    "Radical": "勿",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "",
+    "Meaning": "do not",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "五",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "ご-go",
+    "Meaning": "five",
+    "Position": "",
+    "Examples": "五"
+  },
+  {
+    "Radical": "巴",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "",
+    "Meaning": "cylinder with a trailing tail",
+    "Position": "",
+    "Examples": "色 把 肥"
+  },
+  {
+    "Radical": "元",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "もと-moto",
+    "Meaning": "base, origin",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "井",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "せい-sei",
+    "Meaning": "well",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "予",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "よ-yo",
+    "Meaning": "beforehand, previously",
+    "Position": "",
+    "Examples": "予 序 野 預 /矛"
+  },
+  {
+    "Radical": "屯",
+    "Stroke count": 4,
+    "Hiragana-Romaji": "トン-ton",
+    "Meaning": "",
+    "Position": "",
+    "Examples": "屯 純 鈍 頓"
+  },
+  {
+    "Radical": "甘",
+    "Stroke count": 5,
+    "Hiragana-Romaji": "あまい-amai",
+    "Meaning": "sweet",
+    "Position": "",
+    "Examples": "甘 甚 某 勘 紺 基 欺 堪 棋 媒 期 旗 謀"
+  },
+  {
+    "Radical": "生",
+    "Stroke count": 5,
+    "Hiragana-Romaji": "うまれる-umareru",
+    "Meaning": "life",
+    "Position": "",
+    "Examples": "牲 甥"
+  },
+  {
+    "Radical": "用",
+    "Stroke count": 5,
+    "Hiragana-Romaji": "よう-yō",
+    "Meaning": "use",
+    "Position": "",
+    "Examples": "用"
+  },
+  {
+    "Radical": "田",
+    "Stroke count": 5,
+    "Hiragana-Romaji": "た-ta",
+    "Meaning": "field",
+    "Position": "",
+    "Examples": "田 町 思 留 略 番"
+  },
+  {
+    "Radical": "疋",
+    "Stroke count": 5,
+    "Hiragana-Romaji": "ひき-hiki",
+    "Meaning": "small animal; bolt of cloth",
+    "Position": "",
+    "Examples": "延"
+  },
+  {
+    "Radical": "疒",
+    "Stroke count": 5,
+    "Hiragana-Romaji": "",
+    "Meaning": "sickness",
+    "Position": "⿸",
+    "Examples": "病 症 痛 癖"
+  },
+  {
+    "Radical": "癶",
+    "Stroke count": 5,
+    "Hiragana-Romaji": "",
+    "Meaning": "footsteps",
+    "Position": "",
+    "Examples": "発 登"
+  },
+  {
+    "Radical": "白",
+    "Stroke count": 5,
+    "Hiragana-Romaji": "しろ-shiro",
+    "Meaning": "white",
+    "Position": "",
+    "Examples": "的 皆 皇"
+  },
+  {
+    "Radical": "皮",
+    "Stroke count": 5,
+    "Hiragana-Romaji": "けがわ-kegawa",
+    "Meaning": "skin",
+    "Position": "",
+    "Examples": "披 彼 波"
+  },
+  {
+    "Radical": "皿",
+    "Stroke count": 5,
+    "Hiragana-Romaji": "さら-sara",
+    "Meaning": "dish",
+    "Position": "",
+    "Examples": "皿"
+  },
+  {
+    "Radical": "目",
+    "Stroke count": 5,
+    "Hiragana-Romaji": "め-me",
+    "Meaning": "eye",
+    "Position": "",
+    "Examples": "目 見 具 省 眠 眼 観 覧"
+  },
+  {
+    "Radical": "矢",
+    "Stroke count": 5,
+    "Hiragana-Romaji": "や-ya",
+    "Meaning": "arrow",
+    "Position": "",
+    "Examples": "医 族"
+  },
+  {
+    "Radical": "石",
+    "Stroke count": 5,
+    "Hiragana-Romaji": "いし-ishi",
+    "Meaning": "stone",
+    "Position": "",
+    "Examples": "石 岩 砂 破 碑"
+  },
+  {
+    "Radical": "示",
+    "Stroke count": 5,
+    "Hiragana-Romaji": "しめす-shimesu",
+    "Meaning": "altar, display",
+    "Position": "",
+    "Examples": "示 奈 祭 禁"
+  },
+  {
+    "Radical": "禾",
+    "Stroke count": 5,
+    "Hiragana-Romaji": "のぎ-nogi",
+    "Meaning": "grain",
+    "Position": "",
+    "Examples": "利 私 季 和 科 香"
+  },
+  {
+    "Radical": "穴",
+    "Stroke count": 5,
+    "Hiragana-Romaji": "あな-ana",
+    "Meaning": "cave",
+    "Position": "",
+    "Examples": "空 突"
+  },
+  {
+    "Radical": "立",
+    "Stroke count": 5,
+    "Hiragana-Romaji": "たつ-tatsu",
+    "Meaning": "stand, erect",
+    "Position": "",
+    "Examples": "立 音 産 翌 意 新 端 親 競"
+  },
+  {
+    "Radical": "母",
+    "Stroke count": 5,
+    "Hiragana-Romaji": "はは-haha",
+    "Meaning": "mother",
+    "Position": "",
+    "Examples": "母"
+  },
+  {
+    "Radical": "衤",
+    "Stroke count": 5,
+    "Hiragana-Romaji": "",
+    "Meaning": "clothes",
+    "Position": "",
+    "Examples": "初 被 複"
+  },
+  {
+    "Radical": "罒",
+    "Stroke count": 5,
+    "Hiragana-Romaji": "",
+    "Meaning": "net",
+    "Position": "",
+    "Examples": "買 罪 置 羅"
+  },
+  {
+    "Radical": "世",
+    "Stroke count": 5,
+    "Hiragana-Romaji": "よ-yo",
+    "Meaning": "society, world; generation",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "⺻",
+    "Stroke count": 5,
+    "Hiragana-Romaji": "",
+    "Meaning": "brush",
+    "Position": "",
+    "Examples": "津 律 建 書 庸 健 筆 鍵"
+  },
+  {
+    "Radical": "冊",
+    "Stroke count": 5,
+    "Hiragana-Romaji": "さつ-satsu",
+    "Meaning": "(counting) books",
+    "Position": "",
+    "Examples": "冊 柵 倫 偏 遍 論 編 輪"
+  },
+  {
+    "Radical": "而",
+    "Stroke count": 6,
+    "Hiragana-Romaji": "",
+    "Meaning": "rake",
+    "Position": "",
+    "Examples": "耐 需 端 儒"
+  },
+  {
+    "Radical": "⺮",
+    "Stroke count": 6,
+    "Hiragana-Romaji": "たけ-take",
+    "Meaning": "bamboo",
+    "Position": "",
+    "Examples": "竹 第 筆 竿 算 答 管 筋 等 笑 箸"
+  },
+  {
+    "Radical": "米",
+    "Stroke count": 6,
+    "Hiragana-Romaji": "こめ-kome",
+    "Meaning": "rice",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "糸",
+    "Stroke count": 6,
+    "Hiragana-Romaji": "いと-ito",
+    "Meaning": "silk",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "缶",
+    "Stroke count": 6,
+    "Hiragana-Romaji": "かん-kann",
+    "Meaning": "tin can",
+    "Position": "",
+    "Examples": "缶 陶 鬱"
+  },
+  {
+    "Radical": "羊",
+    "Stroke count": 6,
+    "Hiragana-Romaji": "ひつじ-hitsuji",
+    "Meaning": "sheep",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "羽",
+    "Stroke count": 6,
+    "Hiragana-Romaji": "はね-hane",
+    "Meaning": "feather, wing",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "耳",
+    "Stroke count": 6,
+    "Hiragana-Romaji": "みみ-mimi",
+    "Meaning": "ear",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "自",
+    "Stroke count": 6,
+    "Hiragana-Romaji": "じ-ji",
+    "Meaning": "self (nose=self)",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "至",
+    "Stroke count": 6,
+    "Hiragana-Romaji": "いたる-itaru",
+    "Meaning": "arrive",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "舌",
+    "Stroke count": 6,
+    "Hiragana-Romaji": "した-shita",
+    "Meaning": "tongue",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "舟",
+    "Stroke count": 6,
+    "Hiragana-Romaji": "ふね-fune",
+    "Meaning": "boat",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "艮 (良)",
+    "Stroke count": 6,
+    "Hiragana-Romaji": "うしとら-ushitora",
+    "Meaning": "stopping(?); (good)",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "虍",
+    "Stroke count": 6,
+    "Hiragana-Romaji": "",
+    "Meaning": "tiger stripes",
+    "Position": "",
+    "Examples": "虎 虐 虚 虜 虞 戯 膚 慮 劇"
+  },
+  {
+    "Radical": "虫",
+    "Stroke count": 6,
+    "Hiragana-Romaji": "むし-mushi",
+    "Meaning": "insect",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "血",
+    "Stroke count": 6,
+    "Hiragana-Romaji": "ち-chi",
+    "Meaning": "blood",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "行",
+    "Stroke count": 6,
+    "Hiragana-Romaji": "ぎょう-gyō",
+    "Meaning": "go, do",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "衣",
+    "Stroke count": 6,
+    "Hiragana-Romaji": "ころも-koromo",
+    "Meaning": "clothes",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "覀 (襾)",
+    "Stroke count": 6,
+    "Hiragana-Romaji": "にし-nishi",
+    "Meaning": "west",
+    "Position": "",
+    "Examples": "西 価 要 票 煙 腰 慄 漂 遷 標 覆 覇"
+  },
+  {
+    "Radical": "臣",
+    "Stroke count": 7,
+    "Hiragana-Romaji": "しん-shin",
+    "Meaning": "minister, official; slave (building a brick wall)",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "見",
+    "Stroke count": 7,
+    "Hiragana-Romaji": "みる-miru",
+    "Meaning": "see",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "角",
+    "Stroke count": 7,
+    "Hiragana-Romaji": "つの-tsuno",
+    "Meaning": "horn",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "言",
+    "Stroke count": 7,
+    "Hiragana-Romaji": "こと-koto",
+    "Meaning": "speech",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "谷",
+    "Stroke count": 7,
+    "Hiragana-Romaji": "たに-tani",
+    "Meaning": "valley",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "豆",
+    "Stroke count": 7,
+    "Hiragana-Romaji": "まめ-mame",
+    "Meaning": "bean",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "豕",
+    "Stroke count": 7,
+    "Hiragana-Romaji": "いのこ-inoko",
+    "Meaning": "pig",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "貝",
+    "Stroke count": 7,
+    "Hiragana-Romaji": "かい-kai",
+    "Meaning": "shell",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "足",
+    "Stroke count": 7,
+    "Hiragana-Romaji": "あし-ashi",
+    "Meaning": "foot",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "身",
+    "Stroke count": 7,
+    "Hiragana-Romaji": "み-mi",
+    "Meaning": "body",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "車",
+    "Stroke count": 7,
+    "Hiragana-Romaji": "くるま-kuruma",
+    "Meaning": "cart, car",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "辛",
+    "Stroke count": 7,
+    "Hiragana-Romaji": "からい-karai",
+    "Meaning": "spicy, bitter",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "辰",
+    "Stroke count": 7,
+    "Hiragana-Romaji": "たつ-tatsu",
+    "Meaning": "dragon; morning",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "酉",
+    "Stroke count": 7,
+    "Hiragana-Romaji": "とり-tori",
+    "Meaning": "wine, alcohol",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "里",
+    "Stroke count": 7,
+    "Hiragana-Romaji": "さと-sato",
+    "Meaning": "village, mile",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "赤",
+    "Stroke count": 7,
+    "Hiragana-Romaji": "あか-aka",
+    "Meaning": "red",
+    "Position": "",
+    "Examples": "赤 赦 跡 嚇 繊"
+  },
+  {
+    "Radical": "走",
+    "Stroke count": 7,
+    "Hiragana-Romaji": "そう-sō",
+    "Meaning": "race",
+    "Position": "",
+    "Examples": "走 赴 徒 起 越 超 趣"
+  },
+  {
+    "Radical": "金",
+    "Stroke count": 8,
+    "Hiragana-Romaji": "かね-kane",
+    "Meaning": "metal, gold",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "長",
+    "Stroke count": 8,
+    "Hiragana-Romaji": "ながい-nagai; ちょう-chyō",
+    "Meaning": "long, grow; leader",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "門",
+    "Stroke count": 8,
+    "Hiragana-Romaji": "もん-mon",
+    "Meaning": "gate",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "隹",
+    "Stroke count": 8,
+    "Hiragana-Romaji": "ふるとり-furutori",
+    "Meaning": "small bird",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "雨",
+    "Stroke count": 8,
+    "Hiragana-Romaji": "あめ-ame",
+    "Meaning": "rain",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "青",
+    "Stroke count": 8,
+    "Hiragana-Romaji": "あお-ao",
+    "Meaning": "blue, green",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "岡",
+    "Stroke count": 8,
+    "Hiragana-Romaji": "おか-oka",
+    "Meaning": "hill",
+    "Position": "",
+    "Examples": "岡 剛 綱 鋼"
+  },
+  {
+    "Radical": "免",
+    "Stroke count": 8,
+    "Hiragana-Romaji": "めん-menn",
+    "Meaning": "dismissal",
+    "Position": "",
+    "Examples": "免 勉 逸 晩"
+  },
+  {
+    "Radical": "斉",
+    "Stroke count": 8,
+    "Hiragana-Romaji": "せい-sei",
+    "Meaning": "Chinese Qi kingdom",
+    "Position": "",
+    "Examples": "斉 剤 斎 済"
+  },
+  {
+    "Radical": "音",
+    "Stroke count": 9,
+    "Hiragana-Romaji": "おと-oto",
+    "Meaning": "sound",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "頁",
+    "Stroke count": 9,
+    "Hiragana-Romaji": "おおがい-ōgai",
+    "Meaning": "big shell",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "食",
+    "Stroke count": 9,
+    "Hiragana-Romaji": "しょく-shyoku",
+    "Meaning": "eat, food",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "首",
+    "Stroke count": 9,
+    "Hiragana-Romaji": "くび-kubi",
+    "Meaning": "neck, head",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "品",
+    "Stroke count": 9,
+    "Hiragana-Romaji": "ひん-hin",
+    "Meaning": "item",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "馬",
+    "Stroke count": 10,
+    "Hiragana-Romaji": "うま-uma",
+    "Meaning": "horse",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "高",
+    "Stroke count": 10,
+    "Hiragana-Romaji": "たかい-takai",
+    "Meaning": "tall, high",
+    "Position": "",
+    "Examples": ""
+  },
+  {
+    "Radical": "啇",
+    "Stroke count": 11,
+    "Hiragana-Romaji": "",
+    "Meaning": "base, stem",
+    "Position": "",
+    "Examples": "嫡 滴 摘 適 敵"
+  },
+  {
+    "Radical": "無",
+    "Stroke count": 12,
+    "Hiragana-Romaji": "む-mu",
+    "Meaning": "nothing",
+    "Position": "",
+    "Examples": "無 舞"
+  }
+]

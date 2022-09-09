@@ -6,13 +6,21 @@
     <string name="navSpaced_menu">Review</string>
     <string name="navHome_menu">Home</string>
     <string name="navStat_menu">Stat</string>
-    <string name="meaning">Meaning</string>
-    <string name="reading">Reading</string>
     <string name="add_fab">ADD</string>
-    <string name="exampleMeaning">relax, cheap, low, quiet, rested, contented, peaceful</string>
+    <string name="exampleMeaning">visit</string>
     <string name="exampleKun">やす.い、 やす.まる、 やす、 やす.らか</string>
-    <string name="exampleOn">アン</string>
+    <string name="exampleOn">Kun : ホウ\nOn : おとず、たず</string>
     <string name="exampleKanji">語</string>
     <string name="next">next</string>
     <string name="finish">FINISH</string>
+    <string name="position">POSITION :</string>
+    <string name="radical">RADICAL :</string>
+    <string name="example_component">小</string>
+    <string name="meaning">MEANING :</string>
+    <string name="reading">READING :</string>
+    <string name="stroke">STROKE :</string>
+    <string name="radical_position">⿸</string>
+    <string name="example_stroke">3</string>
+    <string name="example_meaning">small, insignificant</string>
+    <string name="example_reading">ちいさい-chīsai</string>
 </resources>
