@@ -1,6 +1,5 @@
 package com.example.finalproject.roomdatabase
 
-import androidx.lifecycle.LiveData
 import androidx.room.*
 import androidx.room.Dao
 import kotlinx.coroutines.flow.Flow

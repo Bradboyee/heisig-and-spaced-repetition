@@ -70,11 +70,11 @@ class StatFragment : Fragment() {
     }
 
     private fun loadData(listKanji: List<KanjiEntity>) {
-        val n1 = listKanji.filter { it.Japanese_Language_Proficiency_Test == 1 }.size
-        val n2 = listKanji.filter { it.Japanese_Language_Proficiency_Test == 2 }.size
-        val n3 = listKanji.filter { it.Japanese_Language_Proficiency_Test == 3 }.size
-        val n4 = listKanji.filter { it.Japanese_Language_Proficiency_Test == 4 }.size
-        val n5 = listKanji.filter { it.Japanese_Language_Proficiency_Test == 5 }.size
+        val n1 = listKanji.filter { it.Grade == 1 }.size
+        val n2 = listKanji.filter { it.Grade == 2 }.size
+        val n3 = listKanji.filter { it.Grade == 3 }.size
+        val n4 = listKanji.filter { it.Grade == 4 }.size
+        val n5 = listKanji.filter { it.Grade == 5 }.size
         pieDataList = ArrayList()
         pieDataList.add(PieEntry(n1.toFloat(),"N1"))
         pieDataList.add(PieEntry(n2.toFloat(),"N2"))
