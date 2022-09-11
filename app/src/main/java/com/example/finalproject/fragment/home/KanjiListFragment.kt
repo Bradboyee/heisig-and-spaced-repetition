@@ -52,4 +52,8 @@ class KanjiListFragment : Fragment() {
         recyclerView.layoutManager = GridLayoutManager(requireContext(),5)
         recyclerView.setController(controller)
     }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

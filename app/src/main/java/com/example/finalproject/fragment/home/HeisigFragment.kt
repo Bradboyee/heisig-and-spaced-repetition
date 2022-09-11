@@ -11,11 +11,13 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.coroutineScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.cesarferreira.tempo.Tempo
 import com.example.finalproject.databinding.FragmentHeisigBinding
 import com.example.finalproject.epoxy.controller.ControllerHeisig
 import com.example.finalproject.json.Kanji2Element
 import com.example.finalproject.json.RadicalJson
 import com.example.finalproject.json.jsonpojo.PojoRadicalItem
+import com.example.finalproject.roomdatabase.SpacedEntity
 import com.example.finalproject.viewmodel.SpacedViewModel
 import com.example.finalproject.viewmodel.ViewModelKanjiAlive
 import dagger.hilt.android.AndroidEntryPoint
@@ -58,9 +60,17 @@ class HeisigFragment : Fragment() {
 
         lifecycle.coroutineScope.launch {
             viewModelKanjiAlive.fetchRapid(data)
-            viewModelKanjiAlive.kanjiAlive.observe(viewLifecycleOwner) {
-                controller.kanjiDetail = it
+            viewModelKanjiAlive.kanjiAlive.observe(viewLifecycleOwner) { kanjiAlive ->
+                controller.kanjiDetail = kanjiAlive
                 binding.floatingActionAdd.setOnClickListener {
+                    val spacedData = SpacedEntity(id = 0,
+                        kanji = kanjiAlive!!.kanji.character,
+                        Grade = kanjiAlive.references.grade,
+                        kanjiMeaning = kanjiAlive.kanji.meaning.english,
+                        spacedDate = Tempo.now,
+                        addDate = Tempo.now,
+                        spacedStatus = 0)
+                    spacedViewModel.insert(spacedData)
                 }
             }
             viewModelKanjiAlive.errorMessage.observe(viewLifecycleOwner) {
@@ -72,5 +82,9 @@ class HeisigFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.setController(controller)
         controller.requestModelBuild()
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

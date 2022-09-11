@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.finalproject.R
@@ -29,7 +29,7 @@ class QuizFragment : Fragment(), View.OnClickListener {
     private val args by navArgs<QuizFragmentArgs>()
     private val sharedViewModel: SharedViewModel by activityViewModels()
     private var submitAnswer: String? = null
-    private lateinit var spacedViewModel: SpacedViewModel
+    private val spacedViewModel: SpacedViewModel by viewModels()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View {
         _binding = FragmentQuizBinding.inflate(inflater, container, false)
         sharedViewModel.index.observe(viewLifecycleOwner) {
@@ -154,7 +154,6 @@ class QuizFragment : Fragment(), View.OnClickListener {
     }
 
     private fun updateSpaced(correct: Array<SpacedEntity>, wrong: Array<SpacedEntity>) {
-        init()
         when {
             correct.isEmpty() -> {
                 spacedViewModel.updateWrong(wrong)
@@ -167,9 +166,5 @@ class QuizFragment : Fragment(), View.OnClickListener {
                 spacedViewModel.updateWrong(wrong)
             }
         }
-    }
-
-    private fun init() {
-        spacedViewModel = ViewModelProvider(this)[SpacedViewModel::class.java]
     }
 }

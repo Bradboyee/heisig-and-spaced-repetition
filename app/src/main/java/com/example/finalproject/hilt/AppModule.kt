@@ -39,7 +39,7 @@ object AppModule {
     @Singleton
     @Provides
     fun provideSpacedDatabase(@ApplicationContext context: Context): SpacedDatabase {
-        return Room.databaseBuilder(context, SpacedDatabase::class.java, databaseName).fallbackToDestructiveMigration().build()
+        return Room.databaseBuilder(context, SpacedDatabase::class.java, databaseName).build()
     }
 
     @Provides

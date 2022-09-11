@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.coroutineScope
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.fragment.navArgs
 import com.example.finalproject.databinding.FragmentResultBinding
 import com.example.finalproject.notification.alarm.AlarmManagerCall
@@ -21,13 +23,11 @@ class ResultFragment : Fragment() {
     private val binding get() = _binding!!
     private val sharedViewModel:SharedViewModel by activityViewModels()
     private val args by navArgs<ResultFragmentArgs>()
-    private lateinit var spacedViewModel: SpacedViewModel
+    private val spacedViewModel by viewModels<SpacedViewModel>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View {
         _binding = FragmentResultBinding.inflate(inflater, container, false)
         sharedViewModel.clearViewModel()
-        init()
-        bindView()
         setNotification()
         return binding.root
     }
@@ -43,16 +43,6 @@ class ResultFragment : Fragment() {
                 }
             }
         }
-    }
-
-    private fun init() {
-        spacedViewModel = ViewModelProvider(this)[SpacedViewModel::class.java]
-    }
-
-    private fun bindView() {
-        val correctTotal = args.correct!!.size
-        val wrongTotal = args.wrong!!.size
-        binding.textViewTotalCorrect.text = "Point ${correctTotal}/${correctTotal + wrongTotal}"
     }
 
     override fun onDestroyView() {

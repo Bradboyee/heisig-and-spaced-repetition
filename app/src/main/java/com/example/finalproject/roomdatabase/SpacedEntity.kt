@@ -2,6 +2,7 @@ package com.example.finalproject.roomdatabase
 
 import android.os.Parcelable
 import androidx.room.Entity
+import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 import java.util.*
@@ -13,7 +14,6 @@ data class SpacedEntity(
     val kanji:String,
     val Grade:Int,
     var kanjiMeaning: String,
-    var story: String,
     var spacedStatus: Int,
     var addDate: Date,
     var spacedDate:Date

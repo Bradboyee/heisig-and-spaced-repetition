@@ -6,15 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.coroutineScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.finalproject.databinding.FragmentSpacedBinding
 import com.example.finalproject.epoxy.controller.ControllerSpaced
-import com.example.finalproject.roomdatabase.SpacedDatabase
-import com.example.finalproject.roomdatabase.SpacedRepository
-import com.example.finalproject.viewmodel.KanjiViewModelFactory
 import com.example.finalproject.viewmodel.SpacedViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -23,7 +20,7 @@ import kotlinx.coroutines.launch
 class SpacedFragment : Fragment() {
     private var _binding: FragmentSpacedBinding? = null
     private val binding get() = _binding!!
-    private lateinit var spacedViewModel: SpacedViewModel
+    private val spacedViewModel by viewModels<SpacedViewModel>()
 
 
     override fun onCreateView(
@@ -32,7 +29,12 @@ class SpacedFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentSpacedBinding.inflate(inflater, container, false)
-        spacedViewModel = ViewModelProvider(this)[SpacedViewModel::class.java]
+        initEpoxy()
+        spacedButton()
+        return binding.root
+    }
+
+    private fun initEpoxy() {
         val epoxyRecyclerView = binding.epoxyRecyclerview
         val controllerSpaced = ControllerSpaced()
         epoxyRecyclerView.setHasFixedSize(false)
@@ -48,6 +50,9 @@ class SpacedFragment : Fragment() {
                 epoxyRecyclerView.setController(controllerSpaced)
             }
         }
+    }
+
+    private fun spacedButton(){
         lifecycle.coroutineScope.launch {
             spacedViewModel.spacedKanji().collect { spacedKanji ->
                 if (spacedKanji.isEmpty()) {
@@ -67,12 +72,6 @@ class SpacedFragment : Fragment() {
             }
 
         }
-        return binding.root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 
 }
