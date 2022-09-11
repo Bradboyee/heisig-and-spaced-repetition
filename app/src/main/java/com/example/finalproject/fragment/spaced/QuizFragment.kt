@@ -17,25 +17,20 @@ import androidx.navigation.fragment.navArgs
 import com.example.finalproject.R
 import com.example.finalproject.data_kanji.Data
 import com.example.finalproject.databinding.FragmentQuizBinding
-import com.example.finalproject.roomdatabase.KanjiDatabase
-import com.example.finalproject.roomdatabase.KanjiEntity
-import com.example.finalproject.roomdatabase.KanjiRepository
-import com.example.finalproject.viewmodel.KanjiViewModel
-import com.example.finalproject.viewmodel.KanjiViewModelFactory
+import com.example.finalproject.roomdatabase.SpacedEntity
+import com.example.finalproject.viewmodel.SpacedViewModel
 import com.example.finalproject.viewmodel.SharedViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class QuizFragment : Fragment(), View.OnClickListener {
     private var _binding: FragmentQuizBinding? = null
     private val binding get() = _binding!!
     private val args by navArgs<QuizFragmentArgs>()
     private val sharedViewModel: SharedViewModel by activityViewModels()
     private var submitAnswer: String? = null
-    private lateinit var kanjiViewModel: KanjiViewModel
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View {
+    private lateinit var spacedViewModel: SpacedViewModel
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View {
         _binding = FragmentQuizBinding.inflate(inflater, container, false)
         sharedViewModel.index.observe(viewLifecycleOwner) {
             initChoice()
@@ -158,26 +153,23 @@ class QuizFragment : Fragment(), View.OnClickListener {
         }
     }
 
-    private fun updateSpaced(correct: Array<KanjiEntity>, wrong: Array<KanjiEntity>) {
+    private fun updateSpaced(correct: Array<SpacedEntity>, wrong: Array<SpacedEntity>) {
         init()
         when {
             correct.isEmpty() -> {
-                kanjiViewModel.updateWrong(wrong)
+                spacedViewModel.updateWrong(wrong)
             }
             wrong.isEmpty() -> {
-                kanjiViewModel.updateCorrect(correct)
+                spacedViewModel.updateCorrect(correct)
             }
             else -> {
-                kanjiViewModel.updateCorrect(correct)
-                kanjiViewModel.updateWrong(wrong)
+                spacedViewModel.updateCorrect(correct)
+                spacedViewModel.updateWrong(wrong)
             }
         }
     }
 
     private fun init() {
-        val dao = KanjiDatabase.getInstance(requireContext()).dao()
-        val repository = KanjiRepository(dao)
-        val factory = KanjiViewModelFactory(repository)
-        kanjiViewModel = ViewModelProvider(this, factory)[KanjiViewModel::class.java]
+        spacedViewModel = ViewModelProvider(this)[SpacedViewModel::class.java]
     }
 }

@@ -22,7 +22,7 @@
         tools:layout="@layout/fragment_quiz" >
         <argument
             android:name="quizKanji"
-            app:argType="com.example.finalproject.roomdatabase.KanjiEntity[]" />
+            app:argType="com.example.finalproject.roomdatabase.SpacedEntity[]" />
         <action
             android:id="@+id/action_quizFragment_to_resultFragment"
             app:destination="@id/resultFragment"
@@ -37,11 +37,11 @@
         tools:layout="@layout/fragment_result">
         <argument
             android:name="correct"
-            app:argType="com.example.finalproject.roomdatabase.KanjiEntity[]"
+            app:argType="com.example.finalproject.roomdatabase.SpacedEntity[]"
             app:nullable="true" />
         <argument
             android:name="wrong"
-            app:argType="com.example.finalproject.roomdatabase.KanjiEntity[]"
+            app:argType="com.example.finalproject.roomdatabase.SpacedEntity[]"
             app:nullable="true" />
     </fragment>
 </navigation>

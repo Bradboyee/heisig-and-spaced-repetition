@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.coroutineScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,6 +16,7 @@ import com.example.finalproject.epoxy.controller.ControllerHeisig
 import com.example.finalproject.json.Kanji2Element
 import com.example.finalproject.json.RadicalJson
 import com.example.finalproject.json.jsonpojo.PojoRadicalItem
+import com.example.finalproject.viewmodel.SpacedViewModel
 import com.example.finalproject.viewmodel.ViewModelKanjiAlive
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -23,6 +25,7 @@ import kotlinx.coroutines.launch
 class HeisigFragment : Fragment() {
     private var _binding: FragmentHeisigBinding? = null
     private val binding get() = _binding!!
+    private val spacedViewModel by viewModels<SpacedViewModel>()
     private lateinit var viewModelKanjiAlive: ViewModelKanjiAlive
 
     override fun onCreateView(
@@ -45,7 +48,7 @@ class HeisigFragment : Fragment() {
         val elementList = Kanji2Element(requireContext()).getElement(data!!)
         Log.i("ELEMENT", elementList.toString())
         val radical = RadicalJson(requireContext())
-        if (elementList!=null){
+        if (elementList != null) {
             elementList.map {
                 mapRadical.put(it, radical.getRadicalDetail(it))
             }
@@ -55,15 +58,16 @@ class HeisigFragment : Fragment() {
 
         lifecycle.coroutineScope.launch {
             viewModelKanjiAlive.fetchRapid(data)
-        }
-        viewModelKanjiAlive.kanjiAlive.observe(viewLifecycleOwner) {
-            controller.kanjiDetail = it
-            binding.floatingActionAdd.setOnClickListener{
+            viewModelKanjiAlive.kanjiAlive.observe(viewLifecycleOwner) {
+                controller.kanjiDetail = it
+                binding.floatingActionAdd.setOnClickListener {
+                }
+            }
+            viewModelKanjiAlive.errorMessage.observe(viewLifecycleOwner) {
+                Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
             }
         }
-        viewModelKanjiAlive.errorMessage.observe(viewLifecycleOwner) {
-            Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
-        }
+
         //epoxy
         recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.setController(controller)

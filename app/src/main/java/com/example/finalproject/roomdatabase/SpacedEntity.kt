@@ -8,7 +8,7 @@ import java.util.*
 
 @Parcelize
 @Entity(tableName = "kanji_table")
-data class KanjiEntity(
+data class SpacedEntity(
     @PrimaryKey(autoGenerate = true) val id:Int,
     val kanji:String,
     val Grade:Int,

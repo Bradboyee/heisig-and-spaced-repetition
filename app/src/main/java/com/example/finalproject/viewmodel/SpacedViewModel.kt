@@ -2,21 +2,23 @@ package com.example.finalproject.viewmodel
 
 import androidx.lifecycle.*
 import com.cesarferreira.tempo.*
-import com.example.finalproject.roomdatabase.KanjiEntity
-import com.example.finalproject.roomdatabase.KanjiRepository
+import com.example.finalproject.roomdatabase.SpacedEntity
+import com.example.finalproject.roomdatabase.SpacedRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import java.util.*
+import javax.inject.Inject
 
-
-class KanjiViewModel(private val repository: KanjiRepository) : ViewModel() {
+@HiltViewModel
+class SpacedViewModel @Inject constructor(private val repository: SpacedRepository) : ViewModel() {
     private lateinit var todoDate: Date
-    fun spacedKanji(): Flow<List<KanjiEntity>> = repository.getSpaced(Tempo.now)
-    val allKanji: Flow<List<KanjiEntity>> = repository.allKanji
+    fun spacedKanji(): Flow<List<SpacedEntity>> = repository.getSpaced(Tempo.now)
+    val allKanji: Flow<List<SpacedEntity>> = repository.allKanji
     val spacedNumber: Flow<Int> = repository.getSpacedNumber(Tempo.now)
 
-    fun insert(kanji: KanjiEntity) {
+    fun insert(kanji: SpacedEntity) {
         viewModelScope.launch(Dispatchers.IO) {
             val rowCount = repository.isExist(kanji.kanji)
             if (rowCount == 0) {
@@ -25,13 +27,13 @@ class KanjiViewModel(private val repository: KanjiRepository) : ViewModel() {
         }
     }
 
-    private fun update(kanji: KanjiEntity) {
+    private fun update(kanji: SpacedEntity) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.update(kanji)
         }
     }
 
-    fun delete(kanji: KanjiEntity) {
+    fun delete(kanji: SpacedEntity) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.delete(kanji)
         }
@@ -39,7 +41,7 @@ class KanjiViewModel(private val repository: KanjiRepository) : ViewModel() {
 
     //Update Spaced function
 
-    fun updateCorrect(ArrayKanji: Array<KanjiEntity>) {
+    fun updateCorrect(ArrayKanji: Array<SpacedEntity>) {
         for (kanji in ArrayKanji) {
             when (kanji.spacedStatus) {
                 0 -> todoDate = 1.day.forward
@@ -54,7 +56,7 @@ class KanjiViewModel(private val repository: KanjiRepository) : ViewModel() {
         }
     }
 
-    fun updateWrong(ArrayKanji: Array<KanjiEntity>) {
+    fun updateWrong(ArrayKanji: Array<SpacedEntity>) {
         for (kanji in ArrayKanji) {
             if (kanji.spacedStatus > 0) {
                 val status = kanji.spacedStatus - 1

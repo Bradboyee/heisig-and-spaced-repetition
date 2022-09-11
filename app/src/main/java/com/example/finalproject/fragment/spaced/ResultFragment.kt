@@ -11,19 +11,17 @@ import androidx.lifecycle.coroutineScope
 import androidx.navigation.fragment.navArgs
 import com.example.finalproject.databinding.FragmentResultBinding
 import com.example.finalproject.notification.alarm.AlarmManagerCall
-import com.example.finalproject.roomdatabase.KanjiDatabase
-import com.example.finalproject.roomdatabase.KanjiRepository
-import com.example.finalproject.viewmodel.KanjiViewModel
-import com.example.finalproject.viewmodel.KanjiViewModelFactory
+import com.example.finalproject.viewmodel.SpacedViewModel
 import com.example.finalproject.viewmodel.SharedViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-
+@AndroidEntryPoint
 class ResultFragment : Fragment() {
     private var _binding: FragmentResultBinding?= null
     private val binding get() = _binding!!
     private val sharedViewModel:SharedViewModel by activityViewModels()
     private val args by navArgs<ResultFragmentArgs>()
-    private lateinit var kanjiViewModel: KanjiViewModel
+    private lateinit var spacedViewModel: SpacedViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View {
         _binding = FragmentResultBinding.inflate(inflater, container, false)
@@ -38,7 +36,7 @@ class ResultFragment : Fragment() {
         val mergeAnswer = args.correct!!.plus(args.wrong!!)
         for(item in mergeAnswer){
             lifecycle.coroutineScope.launch{
-                kanjiViewModel.allKanji.collect { updatedKanji ->
+                spacedViewModel.allKanji.collect { updatedKanji ->
                     val updatedTime = updatedKanji.find { it.kanji == item.kanji }!!.spacedDate
                     val alarm = AlarmManagerCall(requireContext(),item,updatedTime)
                     alarm.startAlarm()
@@ -48,10 +46,7 @@ class ResultFragment : Fragment() {
     }
 
     private fun init() {
-        val dao = KanjiDatabase.getInstance(requireContext()).dao()
-        val repository = KanjiRepository(dao)
-        val factory = KanjiViewModelFactory(repository)
-        kanjiViewModel = ViewModelProvider(this, factory)[KanjiViewModel::class.java]
+        spacedViewModel = ViewModelProvider(this)[SpacedViewModel::class.java]
     }
 
     private fun bindView() {

@@ -12,17 +12,18 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.finalproject.databinding.FragmentSpacedBinding
 import com.example.finalproject.epoxy.controller.ControllerSpaced
-import com.example.finalproject.roomdatabase.KanjiDatabase
-import com.example.finalproject.roomdatabase.KanjiRepository
+import com.example.finalproject.roomdatabase.SpacedDatabase
+import com.example.finalproject.roomdatabase.SpacedRepository
 import com.example.finalproject.viewmodel.KanjiViewModelFactory
-import com.example.finalproject.viewmodel.KanjiViewModel
+import com.example.finalproject.viewmodel.SpacedViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
-
+@AndroidEntryPoint
 class SpacedFragment : Fragment() {
     private var _binding: FragmentSpacedBinding? = null
     private val binding get() = _binding!!
-    private lateinit var kanjiViewModel: KanjiViewModel
+    private lateinit var spacedViewModel: SpacedViewModel
 
 
     override fun onCreateView(
@@ -31,16 +32,13 @@ class SpacedFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentSpacedBinding.inflate(inflater, container, false)
-        val dao = KanjiDatabase.getInstance(requireContext()).dao()
-        val repository = KanjiRepository(dao)
-        val factory = KanjiViewModelFactory(repository)
-        kanjiViewModel = ViewModelProvider(this, factory)[KanjiViewModel::class.java]
+        spacedViewModel = ViewModelProvider(this)[SpacedViewModel::class.java]
         val epoxyRecyclerView = binding.epoxyRecyclerview
         val controllerSpaced = ControllerSpaced()
         epoxyRecyclerView.setHasFixedSize(false)
         epoxyRecyclerView.setController(controllerSpaced)
         lifecycle.coroutineScope.launch {
-            kanjiViewModel.allKanji.collect { allKanji ->
+            spacedViewModel.allKanji.collect { allKanji ->
                 //epoxy
                 controllerSpaced.apply {
                     kanjiController = allKanji
@@ -51,7 +49,7 @@ class SpacedFragment : Fragment() {
             }
         }
         lifecycle.coroutineScope.launch {
-            kanjiViewModel.spacedKanji().collect { spacedKanji ->
+            spacedViewModel.spacedKanji().collect { spacedKanji ->
                 if (spacedKanji.isEmpty()) {
                     binding.floatingActionButton.setOnClickListener {
                         Toast.makeText(requireContext(),

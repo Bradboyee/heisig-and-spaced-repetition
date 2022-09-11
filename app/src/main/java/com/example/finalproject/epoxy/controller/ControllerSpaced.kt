@@ -11,13 +11,13 @@ import com.cesarferreira.tempo.toString
 import com.example.finalproject.R
 import com.example.finalproject.epoxy.model.GridCarouselModel_
 import com.example.finalproject.epoxy.model.KotlinModel
-import com.example.finalproject.roomdatabase.KanjiEntity
+import com.example.finalproject.roomdatabase.SpacedEntity
 import java.util.concurrent.TimeUnit
 import kotlin.properties.Delegates
 
 class ControllerSpaced : EpoxyController() {
 
-    var kanjiController by Delegates.observable(emptyList<KanjiEntity>()) { _, _, _ ->
+    var kanjiController by Delegates.observable(emptyList<SpacedEntity>()) { _, _, _ ->
         requestModelBuild()
     }
 
@@ -92,7 +92,7 @@ class ControllerSpaced : EpoxyController() {
 
     }
 
-    data class KanjiItemModel(val kanji: KanjiEntity) : KotlinModel(R.layout.epoxy_kanji_item) {
+    data class KanjiItemModel(val kanji: SpacedEntity) : KotlinModel(R.layout.epoxy_kanji_item) {
         private var timer: CountDownTimer? = null
         private val textViewKanji by bind<TextView>(R.id.textview_epoxy_kanji)
         private val textViewSpacedDate by bind<TextView>(R.id.textView_epoxy_spacedDate)

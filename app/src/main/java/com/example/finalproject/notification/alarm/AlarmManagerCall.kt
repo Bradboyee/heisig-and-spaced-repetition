@@ -6,13 +6,11 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.SystemClock
-import com.cesarferreira.tempo.Tempo
-import com.cesarferreira.tempo.hour
 import com.example.finalproject.notification.MyReceiver
-import com.example.finalproject.roomdatabase.KanjiEntity
+import com.example.finalproject.roomdatabase.SpacedEntity
 import java.util.*
 
-class AlarmManagerCall(var context: Context, val kanji: KanjiEntity, time: Date) {
+class AlarmManagerCall(var context: Context, val kanji: SpacedEntity, time: Date) {
     private val newDate = time.time
     private val oldDate = kanji.spacedDate.time
     private val notificationTime = newDate - oldDate

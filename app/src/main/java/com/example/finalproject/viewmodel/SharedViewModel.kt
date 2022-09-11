@@ -3,17 +3,17 @@ package com.example.finalproject.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.finalproject.roomdatabase.KanjiEntity
+import com.example.finalproject.roomdatabase.SpacedEntity
 
 class SharedViewModel:ViewModel() {
     private val _index = MutableLiveData(0)
     val index:LiveData<Int> = _index
 
-    private val _correct = MutableLiveData<MutableList<KanjiEntity>>(mutableListOf())
-    val correct:LiveData<MutableList<KanjiEntity>> = _correct
+    private val _correct = MutableLiveData<MutableList<SpacedEntity>>(mutableListOf())
+    val correct:LiveData<MutableList<SpacedEntity>> = _correct
 
-    private val _wrong = MutableLiveData<MutableList<KanjiEntity>>(mutableListOf())
-    val wrong:LiveData<MutableList<KanjiEntity>> = _wrong
+    private val _wrong = MutableLiveData<MutableList<SpacedEntity>>(mutableListOf())
+    val wrong:LiveData<MutableList<SpacedEntity>> = _wrong
 
     fun plusIndex(){
         _index.value = _index.value!!.plus(1)
@@ -23,11 +23,11 @@ class SharedViewModel:ViewModel() {
         _correct.value = mutableListOf()
         _wrong.value = mutableListOf()
     }
-    fun addCorrect(kanjiEntity: KanjiEntity){
-        _correct.value!!.add(kanjiEntity)
+    fun addCorrect(spacedEntity: SpacedEntity){
+        _correct.value!!.add(spacedEntity)
     }
-    fun addWrong(kanjiEntity: KanjiEntity){
-        _wrong.value!!.add(kanjiEntity)
+    fun addWrong(spacedEntity: SpacedEntity){
+        _wrong.value!!.add(spacedEntity)
     }
 
 

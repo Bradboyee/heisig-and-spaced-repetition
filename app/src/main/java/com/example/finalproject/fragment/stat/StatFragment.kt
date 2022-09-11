@@ -11,10 +11,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.coroutineScope
 import com.example.finalproject.R
 import com.example.finalproject.databinding.FragmentStatBinding
-import com.example.finalproject.roomdatabase.KanjiDatabase
-import com.example.finalproject.roomdatabase.KanjiEntity
-import com.example.finalproject.roomdatabase.KanjiRepository
-import com.example.finalproject.viewmodel.KanjiViewModel
+import com.example.finalproject.roomdatabase.SpacedDatabase
+import com.example.finalproject.roomdatabase.SpacedEntity
+import com.example.finalproject.roomdatabase.SpacedRepository
+import com.example.finalproject.viewmodel.SpacedViewModel
 import com.example.finalproject.viewmodel.KanjiViewModelFactory
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.data.PieData
@@ -26,13 +26,13 @@ import kotlinx.coroutines.launch
 class StatFragment : Fragment() {
     private var _binding: FragmentStatBinding? = null
     private val binding get() = _binding!!
-    private lateinit var kanjiViewModel : KanjiViewModel
+    private lateinit var spacedViewModel : SpacedViewModel
     private lateinit var pieDataList : ArrayList<PieEntry>
     private lateinit var pieDataSet: PieDataSet
     private lateinit var colors: ArrayList<Int>
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View {
         _binding = FragmentStatBinding.inflate(inflater,container,false)
-        init()
+//        init()
         return binding.root
     }
 
@@ -58,18 +58,15 @@ class StatFragment : Fragment() {
     }
 
     private fun init() {
-        val dao = KanjiDatabase.getInstance(requireContext()).dao()
-        val repository = KanjiRepository(dao)
-        val factory = KanjiViewModelFactory(repository)
-        kanjiViewModel = ViewModelProvider(this, factory)[KanjiViewModel::class.java]
+        spacedViewModel = ViewModelProvider(this)[SpacedViewModel::class.java]
         lifecycle.coroutineScope.launch {
-            kanjiViewModel.allKanji.collect{
+            spacedViewModel.allKanji.collect{
                 loadData(it)
             }
         }
     }
 
-    private fun loadData(listKanji: List<KanjiEntity>) {
+    private fun loadData(listKanji: List<SpacedEntity>) {
         val n1 = listKanji.filter { it.Grade == 1 }.size
         val n2 = listKanji.filter { it.Grade == 2 }.size
         val n3 = listKanji.filter { it.Grade == 3 }.size
