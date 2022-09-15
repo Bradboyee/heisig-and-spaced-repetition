@@ -29,7 +29,14 @@ class ResultFragment : Fragment() {
         _binding = FragmentResultBinding.inflate(inflater, container, false)
         sharedViewModel.clearViewModel()
         setNotification()
+        initUI()
         return binding.root
+    }
+
+    private fun initUI() {
+        val correct = args.correct
+        val wrong = args.wrong
+        binding.textViewScore.text = "Score : ${correct!!.size}/${correct.size+wrong!!.size}"
     }
 
     private fun setNotification() {
@@ -37,7 +44,7 @@ class ResultFragment : Fragment() {
         for(item in mergeAnswer){
             lifecycle.coroutineScope.launch{
                 spacedViewModel.allKanji.collect { updatedKanji ->
-                    val updatedTime = updatedKanji.find { it.kanji == item.kanji }!!.spacedDate
+                    val updatedTime = updatedKanji.find { it.kanji == item.kanji }!!.status.spacedDate
                     val alarm = AlarmManagerCall(requireContext(),item,updatedTime)
                     alarm.startAlarm()
                 }

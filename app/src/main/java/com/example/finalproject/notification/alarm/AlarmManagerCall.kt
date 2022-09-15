@@ -7,17 +7,17 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.SystemClock
 import com.example.finalproject.notification.MyReceiver
-import com.example.finalproject.roomdatabase.SpacedEntity
+import com.example.finalproject.roomdatabase.roomentity.SpacedEntity
 import java.util.*
 
 class AlarmManagerCall(var context: Context, val kanji: SpacedEntity, time: Date) {
     private val newDate = time.time
-    private val oldDate = kanji.spacedDate.time
+    private val oldDate = kanji.status.spacedDate.time
     private val notificationTime = newDate - oldDate
     private val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
     private val title = "Hey ,You have Review today !"
     private val content = "${kanji.kanji} is waiting you to review .."
-    private val pendingID = kanji.id
+    private val pendingID = 0
     fun startAlarm() {
         val intent = Intent(context, MyReceiver::class.java)
         val bundle = Bundle()

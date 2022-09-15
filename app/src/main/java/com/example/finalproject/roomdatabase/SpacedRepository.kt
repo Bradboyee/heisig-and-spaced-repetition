@@ -1,19 +1,26 @@
 package com.example.finalproject.roomdatabase
 
+import com.example.finalproject.roomdatabase.dao.SpacedDao
+import com.example.finalproject.roomdatabase.roomentity.SpacedEntity
+import com.example.finalproject.roomdatabase.roomentity.Story
 import kotlinx.coroutines.flow.Flow
 import java.util.*
 import javax.inject.Inject
 
 
-class SpacedRepository@Inject constructor(private val spacedDao:SpacedDao) {
+class SpacedRepository@Inject constructor(private val spacedDao: SpacedDao) {
     val allKanji: Flow<List<SpacedEntity>> = spacedDao.getAllKanji()
 
-    suspend fun insert(kanji:SpacedEntity){
+    suspend fun insert(kanji: SpacedEntity){
         return spacedDao.insertKanji(kanji)
     }
 
-    suspend fun delete(kanji:SpacedEntity){
+    suspend fun delete(kanji: SpacedEntity){
         return spacedDao.deleteKanji(kanji)
+    }
+
+    suspend fun deleteStory(story: Story){
+        return spacedDao.deleteStory(story)
     }
 
     suspend fun update(kanji: SpacedEntity){
@@ -32,4 +39,15 @@ class SpacedRepository@Inject constructor(private val spacedDao:SpacedDao) {
         return spacedDao.getSpacedNumber(date)
     }
 
+    suspend fun insertStory(story: Story){
+        return spacedDao.insertStory(story)
+    }
+
+    suspend fun updateStory(story: Story){
+        return spacedDao.updateStory(story)
+    }
+
+    fun getStoryByKanji(kanji: String): Flow<List<Story>> {
+        return spacedDao.getStoryByKanji(kanji)
+    }
 }

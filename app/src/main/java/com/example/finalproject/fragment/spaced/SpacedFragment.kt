@@ -52,14 +52,13 @@ class SpacedFragment : Fragment() {
         }
     }
 
-    private fun spacedButton(){
+    private fun spacedButton() {
         lifecycle.coroutineScope.launch {
             spacedViewModel.spacedKanji().collect { spacedKanji ->
                 if (spacedKanji.isEmpty()) {
                     binding.floatingActionButton.setOnClickListener {
-                        Toast.makeText(requireContext(),
-                            "You don't have TODO today !",
-                            Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "You don't have Todo.", Toast.LENGTH_SHORT)
+                            .show()
                     }
                 } else {
                     binding.floatingActionButton.setOnClickListener {
@@ -70,7 +69,6 @@ class SpacedFragment : Fragment() {
                 }
 
             }
-
         }
     }
 

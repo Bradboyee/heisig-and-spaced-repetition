@@ -5,7 +5,7 @@ import androidx.room.Room
 import com.example.finalproject.Constant.BASE_URL_KANJI_ALIVE
 import com.example.finalproject.Constant.databaseName
 import com.example.finalproject.retrofit.KanjiAliveService
-import com.example.finalproject.roomdatabase.SpacedDao
+import com.example.finalproject.roomdatabase.dao.SpacedDao
 import com.example.finalproject.roomdatabase.SpacedDatabase
 import com.example.finalproject.roomdatabase.SpacedRepository
 import dagger.Module

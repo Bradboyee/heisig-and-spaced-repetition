@@ -8,7 +8,7 @@ plugins {
     id "kotlinx-serialization"
 }
 android {
-    compileSdk 33
+    compileSdk 32
 
     defaultConfig {
         applicationId "com.example.finalproject"
@@ -50,13 +50,13 @@ android {
 }
 
 dependencies {
-    def lifecycle_version = "2.6.0-alpha02"
+    def lifecycle_version = "2.5.1"
     def room_version = "2.4.3"
     def nav_version = "2.5.2"
     def epoxyVersion = "5.0.0-beta05"
     def retrofit_version = "2.9.0"
 
-    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -104,4 +104,9 @@ dependencies {
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.25'
     //fragment-ktx
     implementation "androidx.fragment:fragment-ktx:1.5.2"
+    //dialog
+    implementation 'com.afollestad.material-dialogs:core:3.3.0'
+    implementation 'com.afollestad.material-dialogs:input:3.3.0'
+    //lottie
+    implementation "com.airbnb.android:lottie-compose:5.2.0"
 }

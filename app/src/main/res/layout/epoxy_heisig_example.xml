@@ -10,40 +10,39 @@
         android:id="@+id/textView_example"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/bestten_crt"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/sfprodisplaybold"
         android:text="歴訪する（れきほうする）"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        android:textSize="@dimen/title3"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonImageView_play"
+        app:layout_constraintStart_toEndOf="@+id/buttonImageView_play"
+        app:layout_constraintTop_toTopOf="@+id/buttonImageView_play" />
 
     <TextView
         android:id="@+id/textView_example_meaning"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
-        android:fontFamily="@font/bestten_crt"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/sfprodisplayregular"
         android:text="visit [v.t.]"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_example"
+        android:textSize="@dimen/body"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buttonImageView_play"
+        app:layout_constraintStart_toEndOf="@+id/textView_example"
         app:layout_constraintTop_toTopOf="@+id/textView_example"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageButton
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/buttonImageView_play"
-        android:layout_width="20dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="8dp"
-        android:background="@null"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_example"
-        app:layout_constraintStart_toEndOf="@+id/textView_example"
-        app:layout_constraintTop_toTopOf="@+id/textView_example"
-        app:srcCompat="@drawable/play_8bit" />
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_rawRes="@raw/audio_button"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

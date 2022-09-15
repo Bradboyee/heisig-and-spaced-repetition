@@ -6,6 +6,15 @@
     <dimen name="heisigKanjiCard_textSize">20sp</dimen>
     <dimen name="spaced_view">10dp</dimen>
 
+    <dimen name="kanji_textSize">22sp</dimen>
+    <dimen name="large_title">26sp</dimen>
+    <dimen name="title1">22sp</dimen>
+    <dimen name="title2">17sp</dimen>
+    <dimen name="title3">15sp</dimen>
+    <dimen name="body">15sp</dimen>
+    //shape
+    <dimen name="circle">20dp</dimen>
+
 
 
 </resources>

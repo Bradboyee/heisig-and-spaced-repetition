@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/split_line"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textView_line_story"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/sfprodisplaybold"
+        android:text="@string/example"
+        android:textSize="@dimen/title2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/card_add_story"
+        android:clickable="true"
+        android:layout_width="@dimen/circle"
+        android:layout_height="@dimen/circle"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView_line_story"
+        app:layout_constraintTop_toTopOf="parent"
+        android:focusable="true"
+        app:tint="@color/malachite"
+        app:srcCompat="@drawable/ic_circle"
+        android:contentDescription="@string/description" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/add"
+        app:layout_constraintBottom_toBottomOf="@+id/card_add_story"
+        app:layout_constraintEnd_toStartOf="@+id/card_add_story"
+        app:layout_constraintTop_toTopOf="@+id/card_add_story" />
+</androidx.constraintlayout.widget.ConstraintLayout>

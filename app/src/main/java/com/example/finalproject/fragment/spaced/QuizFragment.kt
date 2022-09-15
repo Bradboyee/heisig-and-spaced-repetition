@@ -17,7 +17,7 @@ import androidx.navigation.fragment.navArgs
 import com.example.finalproject.R
 import com.example.finalproject.data_kanji.Data
 import com.example.finalproject.databinding.FragmentQuizBinding
-import com.example.finalproject.roomdatabase.SpacedEntity
+import com.example.finalproject.roomdatabase.roomentity.SpacedEntity
 import com.example.finalproject.viewmodel.SpacedViewModel
 import com.example.finalproject.viewmodel.SharedViewModel
 import dagger.hilt.android.AndroidEntryPoint

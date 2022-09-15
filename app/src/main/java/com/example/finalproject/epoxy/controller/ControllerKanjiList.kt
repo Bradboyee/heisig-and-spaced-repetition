@@ -18,7 +18,7 @@ class ControllerKanjiList:EpoxyController() {
             KanjiItemModel(item).id(item).addTo(this)
         }
     }
-    data class KanjiItemModel(val kanji:String): KotlinModel(R.layout.epoxy_kanji_list_item){
+    data class KanjiItemModel(val kanji:String): KotlinModel(R.layout.epoxy_category_kanji){
         private val cardViewKanji by bind<CardView>(R.id.cardView_kanji)
         private val TextViewkanji by bind<TextView>(R.id.textview_epoxy_kanji_list)
         override fun bind() {

@@ -3,7 +3,7 @@ package com.example.finalproject.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.finalproject.roomdatabase.SpacedEntity
+import com.example.finalproject.roomdatabase.roomentity.SpacedEntity
 
 class SharedViewModel:ViewModel() {
     private val _index = MutableLiveData(0)

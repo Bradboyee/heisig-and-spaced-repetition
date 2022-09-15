@@ -24,8 +24,15 @@
     <color name="space_gray">#949494</color>
     <color name="little_light_gray">#f3f3f3</color>
     <color name="angel_white">#ffffff</color>
-    //BottomNavigationBarColor
-    <color name="backgroundBottomNavigationBarColor">#0336FF</color>
-    <color name="logoBottomNavigationBarColor">#FFFFFF</color>
-    <color name="frontBottomNavigationBarColor">#FFFFFF</color>
+    <color name="sunset_orange">#FF605C</color>
+    <color name="pastel_orange">#FFBD44</color>
+    <color name="malachite">#00CA4E</color>
+    <color name="platinum">#E1DFE1</color>
+    <color name="argent">#C0BFC0</color>
+    <color name="cultured">#C0BFC0</color>
+
+    <color name="split_line">#E1DFE1</color>
+    <color name="background">#F5F5F5</color>
+    <color name="title_bar">#C0BFC0</color>
+    //theme color
 </resources>

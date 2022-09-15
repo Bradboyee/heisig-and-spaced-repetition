@@ -25,7 +25,12 @@
         <entry key="..\:/FinalProject/app/src/main/res/layout/activity_quiz.xml" value="0.25" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/activity_quiz1.xml" value="0.20520833333333333" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/bynav.xml" value="0.2015625" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/dialog_delete_story.xml" value="0.203125" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/dialog_story.xml" value="0.365625" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/dialog_story_add.xml" value="0.33" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/dialog_story_delete.xml" value="0.25" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_category.xml" value="0.36666666666666664" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_category_kanji.xml" value="0.159375" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_header_kanji_item.xml" value="0.5" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_heisig_component.xml" value="0.75" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_heisig_example.xml" value="0.5645549318364074" />
@@ -39,7 +44,11 @@
         <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_kanji_item.xml" value="0.67" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_kanji_list_item.xml" value="0.36666666666666664" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_radical.xml" value="0.159375" />
-        <entry key="..\:/FinalProject/app/src/main/res/layout/error.xml" value="0.20208333333333334" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_spaced_kanji.xml" value="0.159375" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_splitline.xml" value="0.36666666666666664" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_splitline_story.xml" value="0.67" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_story.xml" value="0.67" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/error.xml" value="0.33" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/fragment_heisig.xml" value="0.5" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/fragment_home.xml" value="0.20520833333333333" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/fragment_kanji_list.xml" value="0.5474339035769828" />
@@ -58,7 +67,7 @@
         <entry key="..\:/FinalProject/app/src/main/res/layout/kanji_list.xml" value="0.20520833333333333" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/layout_vertical_linear_group.xml" value="0.14427083333333332" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/loading.xml" value="0.22" />
-        <entry key="..\:/FinalProject/app/src/main/res/layout/split_line.xml" value="0.365625" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/split_line.xml" value="0.67" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/view_banner.xml" value="0.2598958333333333" />
         <entry key="..\:/FinalProject/app/src/main/res/menu/menu.xml" value="0.2015625" />
       </map>

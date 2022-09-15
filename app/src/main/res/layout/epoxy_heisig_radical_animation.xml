@@ -6,7 +6,7 @@
 
     <ImageView
         android:id="@+id/imageView_radical_animations"
-        android:background="@color/sky_light_blue"
+        android:background="@color/split_line"
         android:layout_width="144dp"
         android:layout_height="143dp"
         android:layout_margin="16dp"
