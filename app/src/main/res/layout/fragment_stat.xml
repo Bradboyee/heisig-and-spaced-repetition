@@ -15,16 +15,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="4dp"
         android:gravity="center"
         android:padding="4dp"
-        android:text="Kanji Pie Chart"
+        android:text="Pie Chart"
         android:textAlignment="center"
-        android:textColor="@color/purple_200"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textSize="20sp" />
 
     <!--Ui component for our pie chart-->
     <com.github.mikephil.charting.charts.PieChart
@@ -33,7 +31,7 @@
         android:layout_height="300dp"
         android:layout_below="@id/idTVHead"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="20dp" />
 
 <!--    <LinearLayout-->
 <!--        android:layout_width="match_parent"-->

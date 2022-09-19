@@ -8,7 +8,7 @@ class MyValueFormatter : ValueFormatter() {
         return if (value == 0f) {
             ""
         } else {
-            value.roundToInt().toString() + " Kanji"
+            value.roundToInt().toString() + " %"
         }
     }
 }

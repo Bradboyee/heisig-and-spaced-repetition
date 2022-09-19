@@ -18,7 +18,7 @@ class SpacedViewModel @Inject constructor(private val repository: SpacedReposito
     fun spacedKanji(): Flow<List<SpacedEntity>> = repository.getSpaced(Tempo.now)
     val allKanji: Flow<List<SpacedEntity>> = repository.allKanji
     val spacedNumber: Flow<Int> = repository.getSpacedNumber(Tempo.now)
-    fun story(kanji:String) : Flow<List<Story>> = repository.getStoryByKanji(kanji)
+    fun story(kanji: String): Flow<List<Story>> = repository.getStoryByKanji(kanji)
 
     fun insert(kanji: SpacedEntity) {
         viewModelScope.launch(Dispatchers.IO) {
@@ -30,7 +30,7 @@ class SpacedViewModel @Inject constructor(private val repository: SpacedReposito
     }
 
 
-    fun insertStory(story: Story){
+    fun insertStory(story: Story) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.insertStory(story)
         }
@@ -42,8 +42,8 @@ class SpacedViewModel @Inject constructor(private val repository: SpacedReposito
         }
     }
 
-    fun updateStory(story: Story){
-        viewModelScope.launch(Dispatchers.IO){
+    fun updateStory(story: Story) {
+        viewModelScope.launch(Dispatchers.IO) {
             repository.updateStory(story)
         }
     }
@@ -54,8 +54,8 @@ class SpacedViewModel @Inject constructor(private val repository: SpacedReposito
         }
     }
 
-    fun delete(story: Story){
-        viewModelScope.launch(Dispatchers.IO){
+    fun delete(story: Story) {
+        viewModelScope.launch(Dispatchers.IO) {
             repository.deleteStory(story)
         }
     }
@@ -72,7 +72,8 @@ class SpacedViewModel @Inject constructor(private val repository: SpacedReposito
                 4 -> todoDate = 6.months.forward
             }
             val status = kanji.status.spacedStatus + 1
-            val newStatus = kanji.status.copy(spacedStatus = status, spacedDate = todoDate)
+            val newCorrect = kanji.status.correct + 1
+            val newStatus = kanji.status.copy(spacedStatus = status, spacedDate = todoDate, correct = newCorrect)
             val newSpaced = kanji.copy(status = newStatus)
             update(newSpaced)
         }
@@ -80,15 +81,16 @@ class SpacedViewModel @Inject constructor(private val repository: SpacedReposito
 
     fun updateWrong(ArrayKanji: Array<SpacedEntity>) {
         for (kanji in ArrayKanji) {
+            val newWrong = kanji.status.wrong + 1
             if (kanji.status.spacedStatus > 0) {
                 val status = kanji.status.spacedStatus - 1
                 val doDate = Tempo.now // if wrong reset to today
-                val newStatus = kanji.status.copy(spacedStatus = status, spacedDate = doDate)
+                val newStatus = kanji.status.copy(spacedStatus = status, spacedDate = doDate, wrong = newWrong)
                 val newSpaced = kanji.copy(status = newStatus)
                 update(newSpaced)
             } else if (kanji.status.spacedStatus == 0) {
                 val doDate = 1.day.forward // if wrong reset to today
-                val newStatus = kanji.status.copy(spacedDate = doDate)
+                val newStatus = kanji.status.copy(spacedDate = doDate, wrong = newWrong)
                 val newSpaced = kanji.copy(status = newStatus)
                 update(newSpaced)
             }

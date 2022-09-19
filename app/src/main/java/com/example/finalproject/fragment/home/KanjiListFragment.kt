@@ -14,10 +14,7 @@ class KanjiListFragment : Fragment() {
     private var _binding: FragmentKanjiListBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         // Inflate the layout for this fragment
         _binding = FragmentKanjiListBinding.inflate(inflater,container,false)
         val categoryValue = getCategoryValue()
@@ -39,9 +36,7 @@ class KanjiListFragment : Fragment() {
             "GRADE 4" -> 4
             "GRADE 5" -> 5
             "GRADE 6" -> 6
-            else -> {
-                0
-            }
+            else -> 0
         }
         return category
     }
@@ -52,6 +47,7 @@ class KanjiListFragment : Fragment() {
         recyclerView.layoutManager = GridLayoutManager(requireContext(),5)
         recyclerView.setController(controller)
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

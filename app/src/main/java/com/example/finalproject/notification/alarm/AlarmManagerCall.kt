@@ -17,7 +17,7 @@ class AlarmManagerCall(var context: Context, val kanji: SpacedEntity, time: Date
     private val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
     private val title = "Hey ,You have Review today !"
     private val content = "${kanji.kanji} is waiting you to review .."
-    private val pendingID = 0
+    private val pendingID = kanji.id
     fun startAlarm() {
         val intent = Intent(context, MyReceiver::class.java)
         val bundle = Bundle()

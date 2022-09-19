@@ -36,6 +36,7 @@ class ResultFragment : Fragment() {
     private fun initUI() {
         val correct = args.correct
         val wrong = args.wrong
+        binding.textViewDetail.text = "Correct : ${args.correct.contentToString()}\nWrong : ${args.wrong.contentToString()}"
         binding.textViewScore.text = "Score : ${correct!!.size}/${correct.size+wrong!!.size}"
     }
 

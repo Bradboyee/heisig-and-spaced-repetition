@@ -37,6 +37,6 @@
     <fragment
         android:id="@+id/heisigFragment"
         android:name="com.example.finalproject.fragment.home.HeisigFragment"
-        android:label="fragment_heisig"
+        android:label="Heisig"
         tools:layout="@layout/fragment_heisig" />
 </navigation>
