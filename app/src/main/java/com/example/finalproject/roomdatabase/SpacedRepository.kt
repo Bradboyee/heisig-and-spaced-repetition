@@ -10,6 +10,7 @@ import javax.inject.Inject
 
 class SpacedRepository@Inject constructor(private val spacedDao: SpacedDao) {
     val allKanji: Flow<List<SpacedEntity>> = spacedDao.getAllKanji()
+    val allMeaning: Flow<List<String>> = spacedDao.getMeaning()
 
     suspend fun insert(kanji: SpacedEntity){
         return spacedDao.insertKanji(kanji)
@@ -27,12 +28,8 @@ class SpacedRepository@Inject constructor(private val spacedDao: SpacedDao) {
         return spacedDao.updateKanji(kanji)
     }
 
-    fun isExist(kanji: String): Int {
-        return spacedDao.isExist(kanji)
-    }
-
-    fun getSpaced(date: Date): Flow<List<SpacedEntity>> {
-        return spacedDao.getSpaced(date)
+    fun getSpacedTodo(date: Date): Flow<List<SpacedEntity>> {
+        return spacedDao.getSpacedTodo(date)
     }
 
     fun getSpacedNumber(date: Date): Flow<Int> {
@@ -49,5 +46,17 @@ class SpacedRepository@Inject constructor(private val spacedDao: SpacedDao) {
 
     fun getStoryByKanji(kanji: String): Flow<List<Story>> {
         return spacedDao.getStoryByKanji(kanji)
+    }
+
+    fun exist(kanji: String): Flow<Boolean> {
+        return spacedDao.exist(kanji)
+    }
+
+    fun getSpacedKanji(kanji: String): Flow<SpacedEntity> {
+        return spacedDao.getSpacedKanji(kanji)
+    }
+
+    fun getAllCharacter(grade:Int): Flow<List<String>> {
+        return spacedDao.getAllCharacter(grade)
     }
 }

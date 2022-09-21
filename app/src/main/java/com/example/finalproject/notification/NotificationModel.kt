@@ -20,7 +20,7 @@ class NotificationModel (val context:Context, private val title:String, val cont
 
     fun createNotificationBuilder(): NotificationCompat.Builder {
         return NotificationCompat.Builder(context, CHANNEL_ID)
-            .setSmallIcon(R.drawable.ic_circle)
+            .setSmallIcon(R.drawable.baseline_circle_24)
             .setContentTitle(title)
             .setContentText(content)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)

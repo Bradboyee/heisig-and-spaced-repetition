@@ -54,7 +54,7 @@ class SpacedFragment : Fragment() {
 
     private fun spacedButton() {
         lifecycle.coroutineScope.launch {
-            spacedViewModel.spacedKanji().collect { spacedKanji ->
+            spacedViewModel.getSpacedTodo().collect { spacedKanji ->
                 if (spacedKanji.isEmpty()) {
                     binding.floatingActionButton.setOnClickListener {
                         Toast.makeText(requireContext(), "You don't have Todo.", Toast.LENGTH_SHORT)

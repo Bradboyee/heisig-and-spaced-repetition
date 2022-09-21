@@ -32,10 +32,7 @@ class QuizFragment : Fragment(), View.OnClickListener {
     private val spacedViewModel: SpacedViewModel by viewModels()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View {
         _binding = FragmentQuizBinding.inflate(inflater, container, false)
-        sharedViewModel.index.observe(viewLifecycleOwner) {
-            initChoice()
-            progressBar()
-        }
+        sharedViewModel.index.observe(viewLifecycleOwner) { initChoice(); progressBar() }
         initOnClickListener()
         return binding.root
     }
@@ -57,19 +54,18 @@ class QuizFragment : Fragment(), View.OnClickListener {
                         wrong.toTypedArray())
                 findNavController().navigate(action)
             }
-            else -> {
-                sharedViewModel.plusIndex()
-            }
+            else -> sharedViewModel.plusIndex()
         }
     }
 
 
     private fun initChoice() {
         val index = sharedViewModel.index.value!!
-        binding.textViewTotal.text = "${index + 1}/${args.quizKanji.size}"
+        binding.textViewTotal.text = getString(R.string.welcome_messages, index + 1, args.quizKanji.size)
         val question = args.quizKanji[index].kanji
         val answer = args.quizKanji[index].kanjiMeaning
-        val choice = (Data.kanji).let { data ->
+        val choiceData = Data.kanji
+        val choice = (choiceData).let { data ->
             val list = data.map { it.kanjiMeaning }
             val listWithoutAnswer = list.minus(answer)
             val shuffledList = listWithoutAnswer.shuffled()
@@ -94,9 +90,7 @@ class QuizFragment : Fragment(), View.OnClickListener {
             R.color.ripple)
         setDefaultColor()
         when (buttonView.id) {
-            R.id.buttonSubmit -> {
-                checkNull()
-            }
+            R.id.buttonSubmit -> checkNull()
             else -> {
                 clickedBtn.setBackgroundColor(buttonClickedColor)
                 submitAnswer = clickedBtn.text.toString()
@@ -120,9 +114,7 @@ class QuizFragment : Fragment(), View.OnClickListener {
     private fun checkNull() {
         if (submitAnswer.isNullOrBlank()) {
             Toast.makeText(activity, "Please Select Your Answer", Toast.LENGTH_SHORT).show()
-        } else {
-            checkAnswer()
-        }
+        } else checkAnswer()
     }
 
     private fun checkAnswer() {
@@ -155,12 +147,8 @@ class QuizFragment : Fragment(), View.OnClickListener {
 
     private fun updateSpaced(correct: Array<SpacedEntity>, wrong: Array<SpacedEntity>) {
         when {
-            correct.isEmpty() -> {
-                spacedViewModel.updateWrong(wrong)
-            }
-            wrong.isEmpty() -> {
-                spacedViewModel.updateCorrect(correct)
-            }
+            correct.isEmpty() -> spacedViewModel.updateWrong(wrong)
+            wrong.isEmpty() -> spacedViewModel.updateCorrect(correct)
             else -> {
                 spacedViewModel.updateCorrect(correct)
                 spacedViewModel.updateWrong(wrong)

@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -13,7 +12,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/sfprodisplayregular"
-        android:text="1 month longer than 1 day"
+        android:text="@string/example_story"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView10"
         app:layout_constraintStart_toEndOf="@+id/textView7"
@@ -30,8 +29,9 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView9"
-        app:srcCompat="@drawable/ic_circle"
-        app:tint="@color/sunset_orange" />
+        app:srcCompat="@drawable/baseline_circle_24"
+        app:tint="@color/sunset_orange"
+        android:contentDescription="@string/description" />
 
     <ImageButton
         android:id="@+id/button_update"
@@ -43,8 +43,9 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView10"
         app:layout_constraintEnd_toStartOf="@+id/textView9"
         app:layout_constraintTop_toTopOf="@+id/textView10"
-        app:srcCompat="@drawable/ic_circle"
-        app:tint="@color/pastel_orange" />
+        app:srcCompat="@drawable/baseline_circle_24"
+        app:tint="@color/pastel_orange"
+        android:contentDescription="@string/description"/>
 
     <TextView
         android:id="@+id/textView7"
@@ -53,7 +54,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Story :"
+        android:text="@string/story"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -63,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:text="DELETE"
+        android:text="@string/delete"
         app:layout_constraintBottom_toBottomOf="@+id/button_update"
         app:layout_constraintEnd_toStartOf="@+id/button_delete"
         app:layout_constraintTop_toTopOf="@+id/button_update" />
@@ -73,7 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:text="EDIT"
+        android:text="@string/edit"
         app:layout_constraintBottom_toBottomOf="@+id/textView7"
         app:layout_constraintEnd_toStartOf="@+id/button_update"
         app:layout_constraintTop_toTopOf="@+id/textView7" />

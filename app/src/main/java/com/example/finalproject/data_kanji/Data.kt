@@ -8,11 +8,4 @@ object Data {
         Kanji("加",3,"くわ.える、 くわ.わる","カ","add, addition, increase, join, include, Canada","力","ちから","リョク、 リキ、 リイ","power, strength, strong, strain, bear up, exert","口","くち","コウ、 ク","mouth","If you eat anymore, you will be adding more カロrices. (katakana karo).",0),
         Kanji("枯",2,"か.れる、 か.らす","コ","wither, die, dry up, be seasoned","木","き、 こ-","ボク、モク","tree, wood","古","ふる.い、 ふる-、 -ふる.す","コ","old","A tree withers away as it gets old.",0),
     )
-    val category = listOf(
-        Category("N5",5),
-        Category("N4",4),
-        Category("N3",3),
-        Category("N2",2),
-        Category("N1",1),
-    )
 }

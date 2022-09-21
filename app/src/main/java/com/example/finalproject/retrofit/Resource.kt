@@ -1,4 +1,4 @@
-package com.example.finalproject
+package com.example.finalproject.retrofit
 
 
 sealed class Resource<out T : Any> {

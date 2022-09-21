@@ -1,6 +1,5 @@
 package com.example.finalproject.retrofit
 
-import com.example.finalproject.Resource
 import com.example.finalproject.retrofit.pojo.PojoSingleKanjiDetail
 import javax.inject.Inject
 

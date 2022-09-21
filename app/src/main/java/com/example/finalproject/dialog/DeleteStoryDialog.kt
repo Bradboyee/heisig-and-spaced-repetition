@@ -20,7 +20,7 @@ class DeleteStoryDialog(private val story: Story) : DialogFragment() {
             .setTitle("Delete")
             .setMessage("Story : ${story.story}.")
             .setPositiveButton("DELETE"
-            ) { _, _ -> spacedViewModel.delete(story) }
+            ) { _, _ -> spacedViewModel.deleteStory(story) }
             .setNegativeButton("LATER"
             ) { dialogInterface, _ -> dialogInterface.dismiss() }
             .show()

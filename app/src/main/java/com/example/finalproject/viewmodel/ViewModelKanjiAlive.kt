@@ -3,7 +3,7 @@ package com.example.finalproject.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.finalproject.Resource
+import com.example.finalproject.retrofit.Resource
 import com.example.finalproject.retrofit.RepositoryKanjiAlive
 import com.example.finalproject.retrofit.pojo.PojoSingleKanjiDetail
 import dagger.hilt.android.lifecycle.HiltViewModel

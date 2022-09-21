@@ -29,9 +29,4 @@ class HomeFragment : Fragment() {
         controller.requestModelBuild()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
 }
