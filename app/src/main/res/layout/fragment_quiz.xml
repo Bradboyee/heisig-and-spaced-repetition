@@ -103,8 +103,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:fontFamily="@font/sfprodisplaybold"
-        android:text="2 / 5"
+        android:fontFamily="@font/sfprodisplayregular"
+        android:text="@string/_2_5"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

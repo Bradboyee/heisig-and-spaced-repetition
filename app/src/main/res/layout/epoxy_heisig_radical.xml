@@ -12,7 +12,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/japanese_radicals_regular"
-        android:text=""
+        android:text="@string/example_radical"
         android:textSize="@dimen/body"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/textView_title_radical"
@@ -51,11 +51,13 @@
         android:layout_height="50dp"
         android:layout_margin="15dp"
         android:layout_marginStart="16dp"
+        android:contentDescription="@string/description"
         app:layout_constraintBottom_toBottomOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView_title_radical"
+        tools:ignore="ImageContrastCheck"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -90,7 +92,7 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/sfprodisplayregular"
         android:lineSpacingExtra="8sp"
-        android:text="ごんべん"
+        android:text="@string/example_radical_name"
         android:textSize="@dimen/body"
         app:layout_constraintBottom_toBottomOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
@@ -106,7 +108,7 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/sfprodisplayregular"
         android:lineSpacingExtra="8sp"
-        android:text="words, to speak, say"
+        android:text="@string/example_radical_meaning"
         android:textSize="@dimen/body"
         app:layout_constraintBottom_toBottomOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="parent"
@@ -123,7 +125,7 @@
         android:layout_marginBottom="24dp"
         android:fontFamily="@font/sfprodisplayregular"
         android:lineSpacingExtra="8sp"
-        android:text="hen"
+        android:text="@string/example_position"
         android:textSize="@dimen/body"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -138,7 +140,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView6"
         app:layout_constraintStart_toEndOf="@+id/textView6"
         app:layout_constraintTop_toTopOf="@+id/textView6"
-        app:srcCompat="@drawable/ic_position_hen" />
+        app:srcCompat="@drawable/ic_position_hen"
+        android:contentDescription="@string/description" />
 
     <androidx.constraintlayout.widget.Barrier
         android:layout_width="wrap_content"

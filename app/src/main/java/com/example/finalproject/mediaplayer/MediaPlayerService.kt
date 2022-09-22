@@ -1,4 +1,4 @@
-package com.example.finalproject
+package com.example.finalproject.mediaplayer
 
 import android.media.AudioAttributes
 import android.media.MediaPlayer

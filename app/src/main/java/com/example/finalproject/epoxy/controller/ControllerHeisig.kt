@@ -10,7 +10,7 @@ import com.airbnb.epoxy.*
 import com.airbnb.lottie.LottieAnimationView
 import com.example.finalproject.Constant.errorImage
 import com.example.finalproject.Constant.loadingImage
-import com.example.finalproject.MediaPlayerService
+import com.example.finalproject.mediaplayer.MediaPlayerService
 import com.example.finalproject.R
 import com.example.finalproject.dialog.InsertStoryDialog
 import com.example.finalproject.dialog.DeleteStoryDialog
@@ -106,7 +106,9 @@ class ControllerHeisig : EpoxyController() {
             GlideToVectorYou.init().with(this.imageView.context)
                 .setPlaceHolder(loadingImage, errorImage).load(uri, imageView)
             meaningTextView.text = kanji.meaning.english
-            readingTextView.text = "${kanji.kunyomi.hiragana}\n${kanji.onyomi.katakana}"
+            readingTextView.text = readingTextView.context.getString(R.string.newline,
+                kanji.kunyomi.hiragana,
+                kanji.onyomi.katakana)
         }
     }
 
@@ -172,14 +174,17 @@ data class RadicalModel(private val radical: Radical) :
         GlideToVectorYou.init().with(this.imageViewRadical.context)
             .setPlaceHolder(loadingImage, errorImage).load(uriRadical, imageViewRadical)
         textViewRadical.text = radical.character
-        textViewRadicalName.text = "${radical.name.hiragana},${radical.name.romaji}"
+        textViewRadicalName.text = textViewRadicalName.context.getString(R.string.comma,
+            radical.name.hiragana,
+            radical.name.romaji)
         textViewRadicalMeaning.text = radical.meaning.english
         //position
         if (radical.position.icon.isNotEmpty()) {
             GlideToVectorYou.init().with(this.imageViewPosition.context)
                 .setPlaceHolder(loadingImage, errorImage).load(uriPosition, imageViewPosition)
-            textViewRadicalPosition.text =
-                "${radical.position.hiragana},${radical.position.romaji}"
+            textViewRadicalPosition.text = textViewRadicalPosition.context.getString(R.string.comma,
+                radical.position.hiragana,
+                radical.position.romaji)
         } else {
             imageViewPosition.isVisible = false
             textViewRadicalPosition.text = "n/a"

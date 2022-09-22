@@ -33,6 +33,23 @@
     <string name="story">Story :</string>
     <string name="add_button">Add_button</string>
     //
-    <string name="welcome_messages">%1$d/%2$d</string>
+    <string name="total_messages">%1$d/%2$d</string>
+    <string name="newline">%1$s\n%2$s</string>
+    <string name="comma">%1$s,%2$s</string>
+    //
+    <string name="grade_1">Grade 1</string>
+    <string name="total_example">TOTAL : 15 KANJI</string>
+    <string name="start">START</string>
+    <string name="stage">STAGE</string>
+    <string name="example_vocab">歴訪する（れきほうする）</string>
+    <string name="example_vocab_meaning">visit [v.t.]</string>
+    <string name="example_radical"></string>
+    <string name="example_radical_name">ごんべん</string>
+    <string name="example_radical_meaning">words, to speak, say</string>
+    <string name="example_position">hen</string>
+    <string name="example_text_error">No Internet Connect</string>
+    <string name="no_internet_connect">No Internet Connect</string>
+    <string name="_2_5">2/5</string>
+    <string name="pie_chart">Pie Chart</string>
 
 </resources>

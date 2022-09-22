@@ -15,7 +15,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.finalproject.R
-import com.example.finalproject.data_kanji.Data
 import com.example.finalproject.databinding.FragmentQuizBinding
 import com.example.finalproject.roomdatabase.roomentity.SpacedEntity
 import com.example.finalproject.viewmodel.SpacedViewModel
@@ -61,13 +60,12 @@ class QuizFragment : Fragment(), View.OnClickListener {
 
     private fun initChoice() {
         val index = sharedViewModel.index.value!!
-        binding.textViewTotal.text = getString(R.string.welcome_messages, index + 1, args.quizKanji.size)
+        binding.textViewTotal.text = getString(R.string.total_messages, index + 1, args.quizKanji.size)
         val question = args.quizKanji[index].kanji
         val answer = args.quizKanji[index].kanjiMeaning
-        val choiceData = Data.kanji
+        val choiceData = listOf("A","B","C")
         val choice = (choiceData).let { data ->
-            val list = data.map { it.kanjiMeaning }
-            val listWithoutAnswer = list.minus(answer)
+            val listWithoutAnswer = data.minus(answer)
             val shuffledList = listWithoutAnswer.shuffled()
             val threeChoices = shuffledList.subList(0, 3)
             val fourChoices = threeChoices.plus(answer)

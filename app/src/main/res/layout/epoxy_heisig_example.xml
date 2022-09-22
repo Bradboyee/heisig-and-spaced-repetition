@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -12,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:fontFamily="@font/sfprodisplaybold"
-        android:text="歴訪する（れきほうする）"
+        android:text="@string/example_vocab"
         android:textSize="@dimen/title3"
         app:layout_constraintBottom_toBottomOf="@+id/buttonImageView_play"
         app:layout_constraintStart_toEndOf="@+id/buttonImageView_play"
@@ -26,7 +25,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/sfprodisplayregular"
-        android:text="visit [v.t.]"
+        android:text="@string/example_vocab_meaning"
         android:textSize="@dimen/body"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
