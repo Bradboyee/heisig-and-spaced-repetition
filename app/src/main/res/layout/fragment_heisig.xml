@@ -10,6 +10,7 @@
         android:id="@+id/heart_fall"
         app:lottie_rawRes="@raw/falling_heart"
         android:layout_width="match_parent"
+        app:lottie_autoPlay="false"
         android:scaleType="centerCrop"
         android:layout_height="match_parent"/>
     <com.airbnb.epoxy.EpoxyRecyclerView

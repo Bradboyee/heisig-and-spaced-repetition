@@ -21,7 +21,7 @@ class SpacedViewModel @Inject constructor(private val repository: SpacedReposito
     val spacedNumber: Flow<Int> = repository.getSpacedNumber(Tempo.now)
     fun story(kanji: String): Flow<List<Story>> = repository.getStoryByKanji(kanji)
     fun exist(kanji: String): Flow<Boolean> = repository.exist(kanji)
-    fun getSpacedKanji(kanji: String) = repository.getSpacedKanji(kanji)
+    fun getSpacedKanji(kanji: String):Flow<SpacedEntity> = repository.getSpacedKanji(kanji)
     fun getAllCharacter(grade:Int):Flow<List<String>> = repository.getAllCharacter(grade)
 
     fun insertSpaced(kanji: SpacedEntity) {

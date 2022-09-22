@@ -14,6 +14,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.finalproject.viewmodel.QuizResult
 import com.example.finalproject.R
 import com.example.finalproject.databinding.FragmentQuizBinding
 import com.example.finalproject.roomdatabase.roomentity.SpacedEntity
@@ -29,7 +30,11 @@ class QuizFragment : Fragment(), View.OnClickListener {
     private val sharedViewModel: SharedViewModel by activityViewModels()
     private var submitAnswer: String? = null
     private val spacedViewModel: SpacedViewModel by viewModels()
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
+    ): View {
         _binding = FragmentQuizBinding.inflate(inflater, container, false)
         sharedViewModel.index.observe(viewLifecycleOwner) { initChoice(); progressBar() }
         initOnClickListener()
@@ -46,11 +51,13 @@ class QuizFragment : Fragment(), View.OnClickListener {
             args.quizKanji.size - 1 -> {
                 val correct = sharedViewModel.correct.value
                 val wrong = sharedViewModel.wrong.value
+                val correctResult = sharedViewModel.correctResult.value
+                val wrongResult = sharedViewModel.wrongResult.value
                 updateSpaced(correct!!.toTypedArray(),
                     wrong!!.toTypedArray())
                 val action =
-                    QuizFragmentDirections.actionQuizFragmentToResultFragment(correct.toTypedArray(),
-                        wrong.toTypedArray())
+                    QuizFragmentDirections.actionQuizFragmentToResultFragment(correctResult!!.toTypedArray(),
+                        wrongResult!!.toTypedArray())
                 findNavController().navigate(action)
             }
             else -> sharedViewModel.plusIndex()
@@ -60,10 +67,11 @@ class QuizFragment : Fragment(), View.OnClickListener {
 
     private fun initChoice() {
         val index = sharedViewModel.index.value!!
-        binding.textViewTotal.text = getString(R.string.total_messages, index + 1, args.quizKanji.size)
+        binding.textViewTotal.text =
+            getString(R.string.total_messages, index + 1, args.quizKanji.size)
         val question = args.quizKanji[index].kanji
         val answer = args.quizKanji[index].kanjiMeaning
-        val choiceData = listOf("A","B","C")
+        val choiceData = listOf("A", "B", "C")
         val choice = (choiceData).let { data ->
             val listWithoutAnswer = data.minus(answer)
             val shuffledList = listWithoutAnswer.shuffled()
@@ -117,12 +125,19 @@ class QuizFragment : Fragment(), View.OnClickListener {
 
     private fun checkAnswer() {
         val index = sharedViewModel.index.value!!
-        when (args.quizKanji[index].kanjiMeaning) {
+        val kanji = args.quizKanji[index]
+        when (kanji.kanjiMeaning) {
             submitAnswer -> {
-                sharedViewModel.addCorrect(args.quizKanji[index])
+                sharedViewModel.addCorrect(kanji)
+                sharedViewModel.addCorrectResult(QuizResult(kanji.kanji,
+                    kanji.kanjiMeaning,
+                    submitAnswer!!))
             }
             else -> {
                 sharedViewModel.addWrong(args.quizKanji[index])
+                sharedViewModel.addWrongResult(QuizResult(kanji.kanji,
+                    kanji.kanjiMeaning,
+                    submitAnswer!!))
             }
         }
         Log.i("Selected ", submitAnswer!!)

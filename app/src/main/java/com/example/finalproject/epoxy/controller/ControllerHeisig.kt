@@ -158,99 +158,100 @@ class ControllerHeisig : EpoxyController() {
         }
     }
 
-}
 
-data class RadicalModel(private val radical: Radical) :
-    KotlinModel(R.layout.epoxy_heisig_radical) {
-    private val imageViewRadical by bind<ImageView>(R.id.imageView_radical)
-    private val textViewRadical by bind<TextView>(R.id.textView_radical)
-    private val textViewRadicalName by bind<TextView>(R.id.textView_name_radical)
-    private val textViewRadicalMeaning by bind<TextView>(R.id.textView_radical_meaning)
-    private val textViewRadicalPosition by bind<TextView>(R.id.textView_position)
-    private val imageViewPosition by bind<ImageView>(R.id.imageView_position)
-    private val uriRadical: Uri = Uri.parse(radical.image)
-    private val uriPosition: Uri = Uri.parse(radical.position.icon)
-    override fun bind() {
-        GlideToVectorYou.init().with(this.imageViewRadical.context)
-            .setPlaceHolder(loadingImage, errorImage).load(uriRadical, imageViewRadical)
-        textViewRadical.text = radical.character
-        textViewRadicalName.text = textViewRadicalName.context.getString(R.string.comma,
-            radical.name.hiragana,
-            radical.name.romaji)
-        textViewRadicalMeaning.text = radical.meaning.english
-        //position
-        if (radical.position.icon.isNotEmpty()) {
-            GlideToVectorYou.init().with(this.imageViewPosition.context)
-                .setPlaceHolder(loadingImage, errorImage).load(uriPosition, imageViewPosition)
-            textViewRadicalPosition.text = textViewRadicalPosition.context.getString(R.string.comma,
-                radical.position.hiragana,
-                radical.position.romaji)
-        } else {
-            imageViewPosition.isVisible = false
-            textViewRadicalPosition.text = "n/a"
+    data class RadicalModel(private val radical: Radical) :
+        KotlinModel(R.layout.epoxy_heisig_radical) {
+        private val imageViewRadical by bind<ImageView>(R.id.imageView_radical)
+        private val textViewRadical by bind<TextView>(R.id.textView_radical)
+        private val textViewRadicalName by bind<TextView>(R.id.textView_name_radical)
+        private val textViewRadicalMeaning by bind<TextView>(R.id.textView_radical_meaning)
+        private val textViewRadicalPosition by bind<TextView>(R.id.textView_position)
+        private val imageViewPosition by bind<ImageView>(R.id.imageView_position)
+        private val uriRadical: Uri = Uri.parse(radical.image)
+        private val uriPosition: Uri = Uri.parse(radical.position.icon)
+        override fun bind() {
+            GlideToVectorYou.init().with(this.imageViewRadical.context)
+                .setPlaceHolder(loadingImage, errorImage).load(uriRadical, imageViewRadical)
+            textViewRadical.text = radical.character
+            textViewRadicalName.text = textViewRadicalName.context.getString(R.string.comma,
+                radical.name.hiragana,
+                radical.name.romaji)
+            textViewRadicalMeaning.text = radical.meaning.english
+            //position
+            if (radical.position.icon.isNotEmpty()) {
+                GlideToVectorYou.init().with(this.imageViewPosition.context)
+                    .setPlaceHolder(loadingImage, errorImage).load(uriPosition, imageViewPosition)
+                textViewRadicalPosition.text =
+                    textViewRadicalPosition.context.getString(R.string.comma,
+                        radical.position.hiragana,
+                        radical.position.romaji)
+            } else {
+                imageViewPosition.isVisible = false
+                textViewRadicalPosition.text = "n/a"
+            }
         }
     }
-}
 
-data class RadicalAnimationImage(val animationsURL: String) :
-    KotlinModel(R.layout.epoxy_heisig_radical_animation) {
-    private val imageViewAnimation by bind<ImageView>(R.id.imageView_radical_animations)
-    private val uri: Uri = Uri.parse(animationsURL)
-    override fun bind() {
-        GlideToVectorYou.init().with(this.imageViewAnimation.context)
-            .setPlaceHolder(loadingImage,
-                errorImage).load(uri, imageViewAnimation)
-    }
-}
-
-data class ComponentModel(private val radical: PojoRadicalItem) :
-    KotlinModel(R.layout.epoxy_heisig_component) {
-    private val textViewComponent by bind<TextView>(R.id.textView_component)
-    private val textViewReading by bind<TextView>(R.id.textView_component_reading)
-    private val textViewMeaning by bind<TextView>(R.id.textView_component_meaning)
-    private val textViewStroke by bind<TextView>(R.id.textView_component_stroke)
-    private val textViewPosition by bind<TextView>(R.id.textView_component_position)
-    override fun bind() {
-        textViewComponent.text = radical.radical
-        textViewReading.text = radical.hiragana_romaji
-        textViewMeaning.text = radical.meaning
-        textViewStroke.text = radical.stroke_count.toString()
-        textViewPosition.text = radical.position
-    }
-}
-
-data class ExampleModel(private val example: Example) :
-    KotlinModel(R.layout.epoxy_heisig_example) {
-    private val textViewExample by bind<TextView>(R.id.textView_example)
-    private val textViewExampleMeaning by bind<TextView>(R.id.textView_example_meaning)
-    private val audioAnimation by bind<LottieAnimationView>(R.id.buttonImageView_play)
-    override fun bind() {
-        textViewExample.text = example.japanese
-        textViewExampleMeaning.text = example.meaning.english
-        audioAnimation.setOnClickListener {
-            audioAnimation.playAnimation()
-            MediaPlayerService(example.audio.mp3).mediaPlayer.start()
+    data class RadicalAnimationImage(val animationsURL: String) :
+        KotlinModel(R.layout.epoxy_heisig_radical_animation) {
+        private val imageViewAnimation by bind<ImageView>(R.id.imageView_radical_animations)
+        private val uri: Uri = Uri.parse(animationsURL)
+        override fun bind() {
+            GlideToVectorYou.init().with(this.imageViewAnimation.context)
+                .setPlaceHolder(loadingImage,
+                    errorImage).load(uri, imageViewAnimation)
         }
     }
-}
 
-class SplitLineModel(private val text: String) : KotlinModel(R.layout.epoxy_splitline) {
-    private val spitLineTextView by bind<TextView>(R.id.textView_line)
-    override fun bind() {
-        spitLineTextView.text = text
+    data class ComponentModel(private val radical: PojoRadicalItem) :
+        KotlinModel(R.layout.epoxy_heisig_component) {
+        private val textViewComponent by bind<TextView>(R.id.textView_component)
+        private val textViewReading by bind<TextView>(R.id.textView_component_reading)
+        private val textViewMeaning by bind<TextView>(R.id.textView_component_meaning)
+        private val textViewStroke by bind<TextView>(R.id.textView_component_stroke)
+        private val textViewPosition by bind<TextView>(R.id.textView_component_position)
+        override fun bind() {
+            textViewComponent.text = radical.radical
+            textViewReading.text = radical.hiragana_romaji
+            textViewMeaning.text = radical.meaning
+            textViewStroke.text = radical.stroke_count.toString()
+            textViewPosition.text = radical.position
+        }
     }
 
-}
-
-class LoadingModel : KotlinModel(R.layout.loading) {
-    override fun bind() {
+    data class ExampleModel(private val example: Example) :
+        KotlinModel(R.layout.epoxy_heisig_example) {
+        private val textViewExample by bind<TextView>(R.id.textView_example)
+        private val textViewExampleMeaning by bind<TextView>(R.id.textView_example_meaning)
+        private val audioAnimation by bind<LottieAnimationView>(R.id.buttonImageView_play)
+        override fun bind() {
+            textViewExample.text = example.japanese
+            textViewExampleMeaning.text = example.meaning.english
+            audioAnimation.setOnClickListener {
+                audioAnimation.playAnimation()
+                MediaPlayerService(example.audio.mp3).mediaPlayer.start()
+            }
+        }
     }
-}
 
-class ErrorModel(private val errorMassage: String) : KotlinModel(R.layout.error) {
-    private val textViewError by bind<TextView>(R.id.textViewError)
-    override fun bind() {
-        textViewError.text = errorMassage
+    class SplitLineModel(private val text: String) : KotlinModel(R.layout.epoxy_splitline) {
+        private val spitLineTextView by bind<TextView>(R.id.textView_line)
+        override fun bind() {
+            spitLineTextView.text = text
+        }
+
     }
 
+    class LoadingModel : KotlinModel(R.layout.lottie_loading) {
+        override fun bind() {
+        }
+    }
+
+    data class ErrorModel(private val errorMassage: String) : KotlinModel(R.layout.lottie_error) {
+        private val textViewError by bind<TextView>(R.id.textViewError)
+        override fun bind() {
+            textViewError.text = errorMassage
+        }
+
+    }
 }

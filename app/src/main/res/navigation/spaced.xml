@@ -36,12 +36,12 @@
         android:label="fragment_result"
         tools:layout="@layout/fragment_result">
         <argument
-            android:name="correct"
-            app:argType="com.example.finalproject.roomdatabase.roomentity.SpacedEntity[]"
+            android:name="correctResult"
+            app:argType="com.example.finalproject.viewmodel.QuizResult[]"
             app:nullable="true" />
         <argument
-            android:name="wrong"
-            app:argType="com.example.finalproject.roomdatabase.roomentity.SpacedEntity[]"
+            android:name="wrongResult"
+            app:argType="com.example.finalproject.viewmodel.QuizResult[]"
             app:nullable="true" />
     </fragment>
 </navigation>

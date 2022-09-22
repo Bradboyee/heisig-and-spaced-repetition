@@ -7,11 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.coroutineScope
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.finalproject.databinding.FragmentResultBinding
+import com.example.finalproject.epoxy.controller.ControllerResult
 import com.example.finalproject.notification.alarm.AlarmManagerCall
 import com.example.finalproject.viewmodel.SpacedViewModel
 import com.example.finalproject.viewmodel.SharedViewModel
@@ -29,24 +29,29 @@ class ResultFragment : Fragment() {
         _binding = FragmentResultBinding.inflate(inflater, container, false)
         sharedViewModel.clearViewModel()
         setNotification()
-        initUI()
+        initEpoxy()
         return binding.root
     }
 
-    private fun initUI() {
-        val correct = args.correct
-        val wrong = args.wrong
-        binding.textViewDetail.text = "Correct : ${args.correct.contentToString()}\nWrong : ${args.wrong.contentToString()}"
-        binding.textViewScore.text = "Score : ${correct!!.size}/${correct.size+wrong!!.size}"
+    private fun initEpoxy() {
+        val recyclerview = binding.epoxyRecyclerviewResult
+        val controller = ControllerResult()
+        controller.apply {
+            correct = args.correctResult!!.toList()
+            wrong = args.wrongResult!!.toList()
+        }
+        recyclerview.layoutManager = LinearLayoutManager(this.context)
+        recyclerview.setController(controller)
+        recyclerview.requestModelBuild()
     }
 
     private fun setNotification() {
-        val mergeAnswer = args.correct!!.plus(args.wrong!!)
+        val mergeAnswer = args.correctResult!!.plus(args.wrongResult!!)
         for(item in mergeAnswer){
             lifecycle.coroutineScope.launch{
-                spacedViewModel.allKanji.collect { updatedKanji ->
-                    val updatedTime = updatedKanji.find { it.kanji == item.kanji }!!.status.spacedDate
-                    val alarm = AlarmManagerCall(requireContext(),item,updatedTime)
+                spacedViewModel.getSpacedKanji(item.kanji).collect { updatedSpaced ->
+                    val updatedTime = updatedSpaced.status.spacedDate
+                    val alarm = AlarmManagerCall(requireContext(),updatedSpaced,updatedTime)
                     alarm.startAlarm()
                 }
             }

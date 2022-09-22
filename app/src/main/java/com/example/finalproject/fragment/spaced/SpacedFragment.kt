@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.finalproject.databinding.FragmentSpacedBinding
 import com.example.finalproject.epoxy.controller.ControllerSpaced
+import com.example.finalproject.viewmodel.SharedViewModel
 import com.example.finalproject.viewmodel.SpacedViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -42,9 +43,7 @@ class SpacedFragment : Fragment() {
         lifecycle.coroutineScope.launch {
             spacedViewModel.allKanji.collect { allKanji ->
                 //epoxy
-                controllerSpaced.apply {
-                    kanjiController = allKanji
-                }
+                controllerSpaced.apply { kanjiController = allKanji }
                 epoxyRecyclerView.layoutManager = LinearLayoutManager(context)
                 epoxyRecyclerView.setHasFixedSize(false)
                 epoxyRecyclerView.setController(controllerSpaced)
