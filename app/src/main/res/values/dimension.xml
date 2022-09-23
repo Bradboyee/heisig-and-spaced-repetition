@@ -12,6 +12,7 @@
     <dimen name="title2">17sp</dimen>
     <dimen name="title3">15sp</dimen>
     <dimen name="body">15sp</dimen>
+    <dimen name="button_text">10sp</dimen>
     //shape
     <dimen name="circle">20dp</dimen>
 

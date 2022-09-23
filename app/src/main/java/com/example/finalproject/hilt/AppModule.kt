@@ -13,9 +13,12 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.SupervisorJob
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Named
+import javax.inject.Qualifier
 import javax.inject.Singleton
 
 @Module
@@ -38,8 +41,8 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideSpacedDatabase(@ApplicationContext context: Context): SpacedDatabase {
-        return Room.databaseBuilder(context, SpacedDatabase::class.java, databaseName).build()
+    fun provideSpacedDatabase(@ApplicationContext context: Context,callback: SpacedDatabase.Callback): SpacedDatabase {
+        return Room.databaseBuilder(context, SpacedDatabase::class.java, databaseName).addCallback(callback).build()
     }
 
     @Provides
@@ -52,4 +55,11 @@ object AppModule {
         return SpacedRepository(spacedDao)
     }
 
+    @ApplicationScope
+    @Provides
+    @Singleton
+    fun provideApplicationScope() = CoroutineScope(SupervisorJob())
 }
+@Retention(AnnotationRetention.RUNTIME)
+@Qualifier
+annotation class ApplicationScope

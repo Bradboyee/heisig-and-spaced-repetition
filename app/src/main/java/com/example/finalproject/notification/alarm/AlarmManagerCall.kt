@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.SystemClock
+import com.example.finalproject.Constant.notification_test
 import com.example.finalproject.notification.MyReceiver
 import com.example.finalproject.roomdatabase.roomentity.SpacedEntity
 import java.util.*
@@ -26,8 +27,7 @@ class AlarmManagerCall(var context: Context, val kanji: SpacedEntity, time: Date
         val pendingIntent = PendingIntent.getBroadcast(context, pendingID, intent,
             PendingIntent.FLAG_UPDATE_CURRENT or
                     PendingIntent.FLAG_IMMUTABLE)
-        val test = 10000 //1 day = 8.64 second
         alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP,
-            SystemClock.elapsedRealtime() + notificationTime/test, pendingIntent)
+            SystemClock.elapsedRealtime() + notificationTime/notification_test, pendingIntent)
     }
 }
