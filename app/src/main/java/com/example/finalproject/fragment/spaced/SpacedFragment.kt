@@ -5,15 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.coroutineScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.finalproject.R
 import com.example.finalproject.databinding.FragmentSpacedBinding
 import com.example.finalproject.epoxy.controller.ControllerSpaced
-import com.example.finalproject.viewmodel.SharedViewModel
 import com.example.finalproject.viewmodel.SpacedViewModel
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -56,7 +57,8 @@ class SpacedFragment : Fragment() {
             spacedViewModel.getSpacedTodo().collect { spacedKanji ->
                 if (spacedKanji.isEmpty()) {
                     binding.floatingActionButton.setOnClickListener {
-                        Toast.makeText(requireContext(), "You don't have Todo.", Toast.LENGTH_SHORT)
+                        val bottomNavigationView = requireActivity().findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+                        Snackbar.make(requireView(),"You don't have Todo.",Snackbar.LENGTH_SHORT).apply { anchorView = bottomNavigationView }
                             .show()
                     }
                 } else {

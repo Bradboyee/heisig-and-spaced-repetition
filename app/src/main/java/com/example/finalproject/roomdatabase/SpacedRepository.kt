@@ -1,5 +1,6 @@
 package com.example.finalproject.roomdatabase
 
+import androidx.lifecycle.LiveData
 import com.example.finalproject.roomdatabase.dao.SpacedDao
 import com.example.finalproject.roomdatabase.roomentity.SpacedEntity
 import com.example.finalproject.roomdatabase.roomentity.Story
@@ -10,7 +11,7 @@ import javax.inject.Inject
 
 class SpacedRepository@Inject constructor(private val spacedDao: SpacedDao) {
     val allKanji: Flow<List<SpacedEntity>> = spacedDao.getAllKanji()
-    val allMeaning: Flow<List<String>> = spacedDao.getMeaning()
+    val allMeaning: LiveData<List<String>> = spacedDao.getMeaning()
 
     suspend fun insert(kanji: SpacedEntity){
         return spacedDao.insertKanji(kanji)

@@ -16,6 +16,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.finalproject.viewmodel.QuizResult
 import com.example.finalproject.R
+import com.example.finalproject.data.Data
 import com.example.finalproject.databinding.FragmentQuizBinding
 import com.example.finalproject.roomdatabase.roomentity.SpacedEntity
 import com.example.finalproject.viewmodel.SpacedViewModel
@@ -36,7 +37,9 @@ class QuizFragment : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentQuizBinding.inflate(inflater, container, false)
-        sharedViewModel.index.observe(viewLifecycleOwner) { initChoice(); progressBar() }
+        spacedViewModel.allMeaning.observe(viewLifecycleOwner) { allMeaning ->
+            sharedViewModel.index.observe(viewLifecycleOwner) { initChoice(allMeaning); progressBar() }
+        }
         initOnClickListener()
         return binding.root
     }
@@ -65,13 +68,14 @@ class QuizFragment : Fragment(), View.OnClickListener {
     }
 
 
-    private fun initChoice() {
+    private fun initChoice(allMeaning: List<String>) {
         val index = sharedViewModel.index.value!!
         binding.textViewTotal.text =
             getString(R.string.total_messages, index + 1, args.quizKanji.size)
         val question = args.quizKanji[index].kanji
         val answer = args.quizKanji[index].kanjiMeaning
-        val choiceData = listOf("A", "B", "C")
+        val choiceData: List<String> = if (allMeaning.size > 4) allMeaning
+        else Data.choice
         val choice = (choiceData).let { data ->
             val listWithoutAnswer = data.minus(answer)
             val shuffledList = listWithoutAnswer.shuffled()
@@ -118,9 +122,9 @@ class QuizFragment : Fragment(), View.OnClickListener {
     }
 
     private fun checkNull() {
-        if (submitAnswer.isNullOrBlank()) {
-            Toast.makeText(activity, "Please Select Your Answer", Toast.LENGTH_SHORT).show()
-        } else checkAnswer()
+        if (submitAnswer.isNullOrBlank()) Toast.makeText(activity,
+            "Please Select Your Answer",
+            Toast.LENGTH_SHORT).show() else checkAnswer()
     }
 
     private fun checkAnswer() {

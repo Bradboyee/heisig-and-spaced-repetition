@@ -76,7 +76,7 @@ class HeisigFragment : Fragment() {
         lifecycle.coroutineScope.launch {
             spacedViewModel.exist(argsValue).collect { isExist ->
                 if (isExist) {
-                    val bottomNavView: BottomNavigationView = activity?.findViewById(R.id.bottomNavigationView)!!
+                    val bottomNavView: BottomNavigationView = requireActivity().findViewById(R.id.bottomNavigationView)
                     Snackbar.make(requireView(),"$argsValue : You have already added :D",Snackbar.LENGTH_SHORT).apply { anchorView = bottomNavView }.show()
                 } else {
                     //insert

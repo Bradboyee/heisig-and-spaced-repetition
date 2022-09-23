@@ -1,5 +1,6 @@
 package com.example.finalproject.roomdatabase.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import androidx.room.Dao
 import com.example.finalproject.roomdatabase.roomentity.SpacedEntity
@@ -40,7 +41,7 @@ interface SpacedDao {
     fun getAllKanji(): Flow<List<SpacedEntity>>
 
     @Query("SELECT kanjiMeaning FROM kanji_table")
-    fun getMeaning():Flow<List<String>>
+    fun getMeaning():LiveData<List<String>>
 
     @Transaction
     @Query("SELECT * FROM story WHERE kanji = :kanji")

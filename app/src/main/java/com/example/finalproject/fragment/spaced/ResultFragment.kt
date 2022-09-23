@@ -24,12 +24,11 @@ class ResultFragment : Fragment() {
     private val sharedViewModel:SharedViewModel by activityViewModels()
     private val args by navArgs<ResultFragmentArgs>()
     private val spacedViewModel by viewModels<SpacedViewModel>()
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View {
         _binding = FragmentResultBinding.inflate(inflater, container, false)
         sharedViewModel.clearViewModel()
-        setNotification()
         initEpoxy()
+        setNotification()
         return binding.root
     }
 

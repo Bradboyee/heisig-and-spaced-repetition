@@ -17,7 +17,7 @@ class SpacedViewModel @Inject constructor(private val repository: SpacedReposito
     private lateinit var todoDate: Date
     fun getSpacedTodo(): Flow<List<SpacedEntity>> = repository.getSpacedTodo(Tempo.now)
     val allKanji: Flow<List<SpacedEntity>> = repository.allKanji
-    val allMeaning: Flow<List<String>> = repository.allMeaning
+    val allMeaning: LiveData<List<String>> = repository.allMeaning
     val spacedNumber: Flow<Int> = repository.getSpacedNumber(Tempo.now)
     fun story(kanji: String): Flow<List<Story>> = repository.getStoryByKanji(kanji)
     fun exist(kanji: String): Flow<Boolean> = repository.exist(kanji)
