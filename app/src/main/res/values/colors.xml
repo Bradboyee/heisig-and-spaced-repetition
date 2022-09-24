@@ -30,8 +30,14 @@
     <color name="platinum">#E1DFE1</color>
     <color name="argent">#C0C0C0</color>
     <color name="cultured">#C0BFC0</color>
-
     <color name="split_line">#E1DFE1</color>
     <color name="background">#F5F5F5</color>
     <color name="title_bar">#C0BFC0</color>
+    //pie Chart
+    <color name="pie1">#98A9D7</color>
+    <color name="pie2">#8ED2CD</color>
+    <color name="pie3">#C2ED98</color>
+    <color name="pie4">#F1F487</color>
+    <color name="pie5">#FED776</color>
+    <color name="pie6">#F59B7C</color>
 </resources>

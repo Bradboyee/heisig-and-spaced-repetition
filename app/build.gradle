@@ -100,8 +100,6 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0"
     //GlideToVectorYou
     implementation 'com.github.corouteam:GlideToVectorYou:v2.0.0'
-    //gif
-    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.25'
     //fragment-ktx
     implementation "androidx.fragment:fragment-ktx:1.5.2"
     //dialog

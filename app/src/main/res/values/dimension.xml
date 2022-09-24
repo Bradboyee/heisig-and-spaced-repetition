@@ -15,6 +15,7 @@
     <dimen name="button_text">10sp</dimen>
     //shape
     <dimen name="circle">20dp</dimen>
+    <dimen name="legend_text">15sp</dimen>
 
 
 

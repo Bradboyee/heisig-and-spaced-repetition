@@ -39,6 +39,11 @@
     <string name="score">Score:%1$d/%2$d</string>
     //
     <string name="grade_1">Grade 1</string>
+    <string name="grade_2">Grade 2</string>
+    <string name="grade_3">Grade 3</string>
+    <string name="grade_4">Grade 4</string>
+    <string name="grade_5">Grade 5</string>
+    <string name="grade_6">Grade 6</string>
     <string name="total_example">TOTAL : 15 KANJI</string>
     <string name="start">START</string>
     <string name="stage">STAGE</string>
