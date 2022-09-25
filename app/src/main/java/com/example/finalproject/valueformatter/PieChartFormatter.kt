@@ -1,14 +1,14 @@
-package com.example.finalproject.fragment.stat
+package com.example.finalproject.valueformatter
 
 import com.github.mikephil.charting.formatter.ValueFormatter
 import kotlin.math.roundToInt
 
-class MyValueFormatter : ValueFormatter() {
+class PieChartFormatter(val text:String) : ValueFormatter() {
     override fun getFormattedValue(value: Float): String {
         return if (value == 0f) {
             ""
         } else {
-            value.roundToInt().toString() + " %"
+            value.roundToInt().toString() + text
         }
     }
 }

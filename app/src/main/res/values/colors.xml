@@ -40,4 +40,10 @@
     <color name="pie4">#F1F487</color>
     <color name="pie5">#FED776</color>
     <color name="pie6">#F59B7C</color>
+    //bar Chart Correct
+    <color name="bar_correct1">#0d73b4</color>
+    <color name="bar_correct2">#fdc011</color>
+    <color name="bar_correct3">#ee525d</color>
+    <color name="bar_correct4">#11b4d4</color>
+    <color name="bar_correct5">#27bdb4</color>
 </resources>

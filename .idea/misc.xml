@@ -53,6 +53,7 @@
         <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_spaced_kanji.xml" value="0.33" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_splitline.xml" value="0.36666666666666664" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_splitline_story.xml" value="0.67" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_stat_barchart.xml" value="0.36666666666666664" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_stat_piechart.xml" value="0.365625" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/epoxy_story.xml" value="0.67" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/error.xml" value="0.33" />
@@ -63,7 +64,7 @@
         <entry key="..\:/FinalProject/app/src/main/res/layout/fragment_result.xml" value="0.36666666666666664" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/fragment_spaced.xml" value="0.19114583333333332" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/fragment_spaced_repitition.xml" value="0.36666666666666664" />
-        <entry key="..\:/FinalProject/app/src/main/res/layout/fragment_stat.xml" value="0.616361071932299" />
+        <entry key="..\:/FinalProject/app/src/main/res/layout/fragment_stat.xml" value="0.5950972104818258" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/introduction.xml" value="0.20520833333333333" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/item_category.xml" value="0.75" />
         <entry key="..\:/FinalProject/app/src/main/res/layout/item_kanji.xml" value="0.5" />

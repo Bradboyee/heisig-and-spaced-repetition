@@ -1,21 +1,22 @@
 package com.example.finalproject.epoxy.controller
 
+import android.util.Log
 import com.airbnb.epoxy.EpoxyController
-import com.example.finalproject.R
-import com.example.finalproject.epoxy.model.KotlinModel
+import com.example.finalproject.epoxy.model.BarChartModelCorrect
+import com.example.finalproject.epoxy.model.BarChartModelWrong
+import com.example.finalproject.epoxy.model.PieChartModel
 import com.example.finalproject.roomdatabase.roomentity.SpacedEntity
-import com.github.mikephil.charting.charts.PieChart
 
-class ControllerStat:EpoxyController() {
-    val spacedKanji = listOf<SpacedEntity>()
-    val pieChartColor = listOf<Int>()
+
+class ControllerStat : EpoxyController() {
+    var spacedKanji = listOf<SpacedEntity>()
     override fun buildModels() {
-        PieChartModel(pieChartColor).id("PIE CHART").addTo(this)
+        val correct = spacedKanji.sortedBy { it.status.correct }.takeLast(5)
+        val wrong = spacedKanji.sortedBy { it.status.wrong }.takeLast(5)
+        Log.i("WRONG",wrong.toString())
+        PieChartModel(spacedKanji).id("PIE CHART").addTo(this)
+        BarChartModelCorrect(correct,"Most Correct Bar Chart").id("BAR CHART").addTo(this)
+        BarChartModelWrong(wrong,"Most Wrong Bar Chart").id("BAR CHART").addTo(this)
     }
-    data class PieChartModel(val color:List<Int>):KotlinModel(R.layout.epoxy_stat_piechart){
-        private val pieChart by bind<PieChart>(R.id.pieChart)
-        override fun bind() {
-            TODO("Not yet implemented")
-        }
-    }
+
 }
