@@ -13,6 +13,7 @@ import com.example.finalproject.Constant.sunset_orange
 import com.example.finalproject.R
 import com.example.finalproject.epoxy.model.GridCarouselModel_
 import com.example.finalproject.epoxy.model.KotlinModel
+import com.example.finalproject.epoxy.model.NoDataModel
 import com.example.finalproject.roomdatabase.roomentity.SpacedEntity
 import java.util.concurrent.TimeUnit
 import kotlin.properties.Delegates
@@ -24,13 +25,15 @@ class ControllerSpaced : EpoxyController() {
     }
 
     override fun buildModels() {
+        if (kanjiController.isEmpty()){
+            NoDataModel().id("No Data").addTo(this)
+        }
         val spacedStart = kanjiController.filter { it.status.spacedStatus == 0 }
         val spaced1Day = kanjiController.filter { it.status.spacedStatus == 1 }
         val spaced3Days = kanjiController.filter { it.status.spacedStatus == 2 }
         val spaced1Week = kanjiController.filter { it.status.spacedStatus == 3 }
         val spaced1Month = kanjiController.filter { it.status.spacedStatus == 4 }
         val spaced6Months = kanjiController.filter { it.status.spacedStatus == 5 }
-
         HeaderModel("START", spacedStart.size).id("HEADER_START").addTo(this)
 
         GridCarouselModel_()
@@ -79,8 +82,6 @@ class ControllerSpaced : EpoxyController() {
             .models(spaced6Months.map { kanji ->
                 KanjiItemModel(kanji).id(kanji.kanji)
             }).addTo(this)
-
-
     }
 
     data class HeaderModel(val topic: String, val total: Int) :
@@ -89,7 +90,7 @@ class ControllerSpaced : EpoxyController() {
         private val textViewTotal by bind<TextView>(R.id.textView_total_kanji)
         override fun bind() {
             textViewTopic.text = topic
-            textViewTotal.text = "TOTAL : $total KANJI"
+            textViewTotal.text = textViewTotal.context.getString(R.string.total_kanji_messages,total)
         }
 
     }
@@ -104,7 +105,7 @@ class ControllerSpaced : EpoxyController() {
             val spacedDate = kanji.status.spacedDate
             when {
                 spacedDate <= Tempo.now -> {
-                    textViewSpacedDate.text = "You can do it !"
+                    textViewSpacedDate.text = textViewSpacedDate.context.getString(R.string.spaced_do_it)
                     iconCircle.setColorFilter(malachite)
                 }
                 spacedDate < Tempo.tomorrow -> {
@@ -127,7 +128,7 @@ class ControllerSpaced : EpoxyController() {
                         }
 
                         override fun onFinish() {
-                            textViewSpacedDate.text = "Do it!"
+                            textViewSpacedDate.text = textViewSpacedDate.context.getString(R.string.do_it)
                             iconCircle.setColorFilter(malachite)
                         }
                     }.start()
