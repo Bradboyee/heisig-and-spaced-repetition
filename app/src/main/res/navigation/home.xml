@@ -6,7 +6,7 @@
     app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.finalproject.fragment.home.HomeFragment"
+        android:name="com.thepparat.heisigwithspacedrepetition.fragment.home.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/kanjiListFragment"
-        android:name="com.example.finalproject.fragment.home.KanjiListFragment"
+        android:name="com.thepparat.heisigwithspacedrepetition.fragment.home.KanjiListFragment"
         android:label="Kanji"
         tools:layout="@layout/fragment_kanji_list" >
         <action
@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/heisigFragment"
-        android:name="com.example.finalproject.fragment.home.HeisigFragment"
+        android:name="com.thepparat.heisigwithspacedrepetition.fragment.home.HeisigFragment"
         android:label="Heisig"
         tools:layout="@layout/fragment_heisig" />
 </navigation>

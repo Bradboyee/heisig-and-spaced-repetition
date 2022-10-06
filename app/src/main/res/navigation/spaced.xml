@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/spacedFragment"
-        android:name="com.example.finalproject.fragment.spaced.SpacedFragment"
+        android:name="com.thepparat.heisigwithspacedrepetition.fragment.spaced.SpacedFragment"
         android:label="Spaced Repetition"
         tools:layout="@layout/fragment_spaced" >
         <action
@@ -17,12 +17,12 @@
     </fragment>
     <fragment
         android:id="@+id/quizFragment"
-        android:name="com.example.finalproject.fragment.spaced.QuizFragment"
-        android:label="fragment_quiz"
+        android:name="com.thepparat.heisigwithspacedrepetition.fragment.spaced.QuizFragment"
+        android:label="Quiz"
         tools:layout="@layout/fragment_quiz" >
         <argument
             android:name="quizKanji"
-            app:argType="com.example.finalproject.roomdatabase.roomentity.SpacedEntity[]" />
+            app:argType="com.thepparat.heisigwithspacedrepetition.roomdatabase.roomentity.SpacedEntity[]" />
         <action
             android:id="@+id/action_quizFragment_to_resultFragment"
             app:destination="@id/resultFragment"
@@ -32,16 +32,16 @@
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
-        android:name="com.example.finalproject.fragment.spaced.ResultFragment"
-        android:label="fragment_result"
+        android:name="com.thepparat.heisigwithspacedrepetition.fragment.spaced.ResultFragment"
+        android:label="Result"
         tools:layout="@layout/fragment_result">
         <argument
             android:name="correctResult"
-            app:argType="com.example.finalproject.viewmodel.QuizResult[]"
+            app:argType="com.thepparat.heisigwithspacedrepetition.viewmodel.QuizResult[]"
             app:nullable="true" />
         <argument
             android:name="wrongResult"
-            app:argType="com.example.finalproject.viewmodel.QuizResult[]"
+            app:argType="com.thepparat.heisigwithspacedrepetition.viewmodel.QuizResult[]"
             app:nullable="true" />
     </fragment>
 </navigation>
