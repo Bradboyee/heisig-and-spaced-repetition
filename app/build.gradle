@@ -99,7 +99,7 @@ dependencies {
     //kotlinx
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0"
     //GlideToVectorYou
-    implementation 'com.github.corouteam:GlideToVectorYou:v2.0.0'
+    implementation 'com.github.2coffees1team:GlideToVectorYou:v2.0.0'
     //fragment-ktx
     implementation "androidx.fragment:fragment-ktx:1.5.3"
     //dialog
